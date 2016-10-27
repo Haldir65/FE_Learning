@@ -19,7 +19,9 @@ hr {color:sienna;}
 			text-transform: uppercase;
 			color: red;
 		}*/
-		h1 {color:#00ff00;}
+		h1 {color:#00ff00;
+			text-decoration: line-through;}
+
 		p
 		{
 			color:red;

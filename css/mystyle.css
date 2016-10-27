@@ -1,3 +1,16 @@
 hr {color:sienna;}
-p {margin-left:20px;}
-body {background-image:url("/images/back40.gif");}
+h1
+{
+	/*标题颜色橘黄色*/
+	color:orange;
+	text-align:center;
+}
+p
+{
+	color:red;
+	text-align:center;
+	font-family:"Times New Roman";
+	font-size:20px;
+	margin-left:20px;
+}
+body {background-image:url("assets\\images\\image_002.jpg");}

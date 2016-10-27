@@ -3,14 +3,31 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="css\mystyle.css" />
 	<meta charset="utf-8">
-	<title>菜鸟教程(runoob.com)</title>
+	<title>使用外部样式表展示静态网页</title>
+	<style>
+	body {color:red;}
+	h1 {color:#00ff00;}
+	p.ex {color:rgb(0,0,255);}
+	</style>
 
 </head>
 
 <body>
 
-	<h1>CSS 实例!</h1>
-	<p>这是一个段落。</p>
+	<h1>如何插入样式表</h1>
+	<h1 style="color:sienna;margin-left:20px">使用内联样式设置属性</h1>
+
+	<p>插入样式表的方法有三种。</p>
+	<ol>
+		<li>外部样式表，推荐，可以复用这一类的style</li>
+		<li>内部样式表,在head中设置style</li>
+		<li>内联样式,给单独的元素设置styleTag</li>
+	</ol>
+
+	<p>外部样式表就是将一些style提取到一个
+		<img src="assets/images/image_001.jpg" alt="Pulpit rock" width="300" height="300"><br>
+		独立的css文件中，Html中可以随便插入img不闭合标签
+	</p>	
 
 
 

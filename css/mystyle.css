@@ -1,16 +1,38 @@
 hr {color:sienna;}
-h1
+/*h1
 {
 	/*标题颜色橘黄色*/
 	color:orange;
 	text-align:center;
-}
-p
-{
-	color:red;
-	text-align:center;
-	font-family:"Times New Roman";
-	font-size:20px;
-	margin-left:20px;
-}
-body {background-image:url("assets\\images\\image_002.jpg");}
+	}*/
+	/*p
+	{
+		color:red;
+		text-align:center;
+		font-family:"Times New Roman";
+		font-size:20px;
+		margin-left:20px;
+		}*/
+		/*h1
+		{
+			text-align: center;
+			text-transform: uppercase;
+			color: red;
+		}*/
+		h1 {color:#00ff00;}
+		p
+		{
+			color:red;
+			text-indent: 50px;
+			text-align:justify;
+			letter-spacing:3px;
+
+		}
+
+		a
+		{
+			text-decoration:none;
+		}
+		body {background-image:url("assets\\images\\image_004.jpg");
+		background-repeat:no-repeat;
+		background-position:center;}

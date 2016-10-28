@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>07page测试页面</title> 
+	<style type="text/css">
+	a:link,a:visited
+{
+	display:block;
+	font-weight:bold;
+	color:#FFFFFF;
+	background-color:#98bf21;
+	width:120px;
+	text-align:center;
+	padding:4px;
+	text-decoration:none;
+}
+a:hover,a:active
+{
+	background-color:#7A991A;
+}
+
+
+a.first:link{color: #ff0000}
+a.first:visited{color: #0000ff}
+a.first:hover{color: #98bf21;background-color: red}
+a.first.active{color: #ffcc00;background: #7A991A}
+	</style>
+</head>
+<body>
+	<h1 style="color:pink;font-size=140%">使用链接</h1>
+	<p><b><a href="/html/index.html" target="_blank">点击进入主页，定义了link.visited,hover和active等颜色</a></b></p>
+	<P><b>注意一点： </b>hover在link和visited后面注册</P>
+	<P><b>注意一点： </b>active在hover后面注册</P>
+	<p><b>不同样式的link style</b><a class="first"href="/html/index.html">点击进入主页</a></p>
+</body>
+</html>

@@ -1,22 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8"> 
-<title>测试网页06</title> 
-<style>
-h1 {text-decoration:overline;}
-h2 {text-decoration:line-through;}
-h3 {text-decoration:underline;}
-body {background-image:url("assets\\images\\image_002.jpg");
-		background-repeat:no-repeat;
-		background-position:left top;}
-</style>
-</head>
+	<meta charset="utf-8"> 
+	<title>测试网页06</title> 
+	<style>
+	h1 {text-decoration:overline;}
+	h2 {text-decoration:line-through;}
+	h3 {text-decoration:underline;}
+	li {text-decoration:underline; color: yellow}
 
-<body>
-<h1>使用overline</h1>
-<h2>使用 line-through</h2>
-<h3>使用underline</h3>
-</body>
+	body {background-image:url("assets\\images\\image_007.jpg");
+	background-repeat:no-repeat;
+	background-position: center;}
+	p.uppercase {text-transform:uppercase;}
+	p.lowercase {text-transform:lowercase;}
+	p.capitalize {text-transform:capitalize;
+		color: red}		
+		div.someShadow{text-shadow:2px 2px #FF0000;}
+		img.top {vertical-align:text-top;}
 
-</html>
+		a:link {color:#FF0000;}      /* 未访问链接*/
+		a:visited {color:#00FF00;}  /* 已访问链接 */
+		a:hover {color:#FF00FF;}  /* 鼠标移动到链接上 */
+		a:active {color:#0000FF;}  /* 鼠标点击时 */	
+		</style>
+	</head>
+
+	<body>
+		<h1>使用overline</h1>
+		<h2>使用 line-through</h2>
+		<h3>使用underline</h3>
+		<p class="uppercase">upperCase letter 小写字母全部变成大写</p>
+		<p class="lowercase">LOWERCASE LETTER 大写字母</p> 
+		<p class="capitalize">capitalize letter</p>
+		<p>文字中间添加一张<img class = "top" src="assets\\images\\exe.png" alt="缺省文字" width="40" height = "40">图片，图片顶部与文字顶部对齐</p>
+	</body> 
+
+	<div class="someShadow">
+		<h3 style ="font-style:italic;color:sienna">这是一个在 div 元素中的标题。字体是Times new roman,内联样式的语法是“--- style="color:sienna;margin-left:20px" ----” </h3>
+		<p>这是p,记住，多重样式中，外部样式表会覆盖内部样式表的属性</p>
+	</div>
+	<div>
+		<h2>介绍一下多重样式之间的优先级</h4>
+			<ol>
+				<li>浏览器缺省设置</li>
+				<li>外部样式表</li>
+				<li>内部样式表，位于<head>标签内部</li>
+				<li>内联样式，直接写在HTML元素内部</li>
+			</ol>
+		</div>
+		<p style="font-size:1.875em;color:green">使用1.875em字体</p>
+		<p style="font-size:0.875em;color:green">使用0.875em字体</p>
+		<p style="font-size:120%;color:green">字体大小为1.2倍，即120% 。</p>
+		<p style="font-size:100%;color:green">字体大小为1.0倍</p>
+		<p style="font-size:100%;color:green;font-weight:bold">字体大小为1.0倍，字体加粗</p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>	
+		<br>
+		<br>
+		<br>
+		<br>
+		<div>
+			<h2 style="font-size:130%;color:pink">接下来介绍链接的四种样式</h2>
+			<p><b><a href="/html/index.html" target="_blank">这是一个鼠标移动上去会变色的链接，点击进入主页</a></b></p>
+			<p><b>注意：</b> a:hover 必须在 a:link 和 a:visited 之后，需要严格按顺序才能看到效果。</p>
+			<p><b>注意：</b> a:active 必须在 a:hover 之后。</p>
+
+		</div>
+
+		
+
+		
+		</html>

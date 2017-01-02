@@ -1,71 +1,99 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8"> 
-	<title>07page测试页面</title> 
-	<style type="text/css">
-	a:link,a:visited
-	{
-		display:block;
-		font-weight:bold;
-		color:#FFFFFF;
-		background-color:#98bf21;
-		width:120px;
-		text-align:center;
-		padding:4px;
-		text-decoration:none;
-	}
-	a:hover,a:active
-	{
-		background-color:#7A991A;
-	}
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<meta charset="utf-8"> 
+			<title>07page测试页面</title> 
+			<style type="text/css">
+			p.one 
+			{
+				border-style:solid;
+				border-width:5px;
+			}
+			p.two 
+			{
+				border-style:solid;
+				border-width:medium;
+				border-color:red;
+				border-top-style:dotted;
+				border-right-style:solid;
+				border-bottom-style:dotted;
+				border-left-style:solid;
+			}
+			p.three
+			{
+				border-style:solid;
+				border-width:1px;
+			}
+			
+
+			a:link,a:visited
+			{
+				display:block;
+				font-weight:bold;
+				color:#FFFFFF;
+				background-color:#98bf21;
+				width:120px;
+				text-align:center;
+				padding:4px;
+				text-decoration:none;
+			}
+			a:hover,a:active
+			{
+				background-color:#7A991A;
+			}
 
 
-	a.first:link{color: #ff0000}
-	a.first:visited{color: #0000ff}
-	a.first:hover{color: #98bf21;background-color: red}
-	a.first.active{color: #ffcc00;background: #7A991A}
+			a.first:link{color: #ff0000}
+			a.first:visited{color: #0000ff}
+			a.first:hover{color: #98bf21;background-color: red}
+			a.first.active{color: #ffcc00;background: #7A991A}
 
-	table,td,th
-	{
-		border:4px solid green;
-	}
-	table
-	{
-		width:100%;
-	}
-	th
-	{
-		height:50px;
-	}
-	
-	</style>
-</head>
-<body>
-	<h1 style="color:pink;font-size=140%">使用链接</h1>
-	<p><b><a href="/html/index.html" target="_blank">点击进入主页，定义了link.visited,hover和active等颜色</a></b></p>
-	<P><b>注意一点： </b>hover在link和visited后面注册</P>
-	<P><b>注意一点： </b>active在hover后面注册</P>
-	<p><b>不同样式的link style</b><a class="first"href="/html/index.html">点击进入主页</a></p>
+			table,td,th
+			{
+				border:4px solid green;
+			}
+			table
+			{
+				width:100%;
+			}
+			th
+			{
+				height:50px;
+			}
+			
+			</style>
+		</head>
+		<body>
+			<h1 style="color:pink;font-size=140%">使用链接</h1>
+			<p><b><a href="/html/index.html" target="_blank">点击进入主页，定义了link.visited,hover和active等颜色</a></b></p>
+			<P><b>注意一点： </b>hover在link和visited后面注册</P>
+			<P><b>注意一点： </b>active在hover后面注册</P>
+			<p><b>不同样式的link style</b><a class="first"href="/html/index.html">点击进入主页</a></p>
 
-	<p>这种基本的格式就是在head中定义一个class，在其中使用json的格式保存style，在对应html元素中引用所需要的style 语法为: class = ""<br
-		>如果不去定义class的话，body中所有这一类的元素都将带上这种style</p>
+			<p>这种基本的格式就是在head中定义一个class，在其中使用json的格式保存style，在对应html元素中引用所需要的style 语法为: class = ""<br
+				>如果不去定义class的话，body中所有这一类的元素都将带上这种style</p>
 
-		<br>
-		<br>
-		<table >
-			<tr>
-				<th>第一个Header</th>
-				<th>第2个Header</th>
-			</tr>
-			<tr>
-				<td>第一个column</td>
-				<td>第2个column</td>
-			</tr>
-			<tr>
-				<td>第一个column</td>
-				<td>第2个column</td>
-			</tr>
-		</table>
-	</body>
-	</html>
+				<br>
+				<br>
+				<table >
+					<tr>
+						<th>第一个Header</th>
+						<th>第2个Header</th>
+					</tr>
+					<tr>
+						<td>第一个column</td>
+						<td>第2个column</td>
+					</tr>
+					<tr>
+						<td>第一个column</td>
+						<td>第2个column</td>
+					</tr>
+				</table>
+
+				<p class="one">一些文本。</p>
+				<p class="two">一些文本。</p>
+				<p class="three">一些文本。</p>
+				<p><b>注意:</b> "border-width" 属性 如果单独使用则不起作用。要先使用 "border-style" 属性来设置边框。</p>
+				<p>我把subLimeText的格式化代码(redient)快捷键设置为ctrl_shift+r了</p>
+			</body>
+			</html>

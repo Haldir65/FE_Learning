@@ -1,0 +1,68 @@
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<meta charset="utf-8">
+			<title>js_08测试页面</title>
+
+
+		</head>
+		<body>
+			<div>
+				<h1>This is The Title</h1>
+			</div>
+
+			<h1 style="color:pink;font-size=140%">使用链接</h1>
+			<p><b><a href="/html/index.html" target="_blank">
+
+		<ul>
+			<li>
+				<a href="" onclick='alert("haha")'>使用单引号 </a> <!-- 必须使用单引号  inline scripts-->
+			</li>
+			<li>
+				<a href="" onclick= "function_name()">hey click me !</a> <!-- 必须使用单引号  inline scripts-->
+			</li>
+			<li>
+				<a href="" onclick= "json_object()">Json Objects </a> <!-- 必须使用单引号  inline scripts-->
+			</li>
+
+		</ul>
+
+			</body>
+
+
+		<!-- <script src="js/operations.js"></script> -->
+
+		<!-- embeed and inline javascripts -->
+
+		<script src="js/objects.js">
+				function json_object(argument) {
+					alert(user.user_name)
+				}
+
+			</script>
+
+
+		<script type="text/javascript">
+
+			function function_name(argument) {
+				// body...
+				 num = "10"
+				alert(num+10)
+			}
+
+			function strings_cal() {
+				var mystr= "This is an String "
+				console.log(mystr.indexof('Th'))
+				console.log(mystr.replace('Th','th'))
+
+				alert_msg = "It \"is an alert \"Message"
+			}
+
+		</script>
+
+
+
+
+			</html>
+
+<!-- script Tag可以加在head tag里面，可以加在body tag最后一段，也可以作为external js tag. 放在boay tag前面会阻塞页面加载 -->

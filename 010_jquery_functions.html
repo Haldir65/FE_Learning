@@ -52,11 +52,48 @@ We can show hide buttons
  </p>
 </h3>
 
- 
+ </div>
 
-   
+ <div class="tab-panels">
+   <ul class="tabs">
+    <li class="active">panel1</li>
+    <li>panel2</li>
+    <li>panel3</li>
+    <li>panel4</li>
+   </ul>
+
+   <div id="panel1" class="panel active">
+     content1<br>
+     cotent1<br>
+     content1<br>
+     content1<br>
+   </div>
+
+   <div id="panel2" class="panel">
+     content2<br>
+     cotent2<br>
+     content2<br>
+     content2<br>
+   </div>
+
+   <div id="panel3" class="panel">
+     content3<br>
+     cotent3<br>
+     content3<br>
+     content3<br>
+   </div>
+
+     <div id="panel4" class="panel">
+     content4<br>
+     cotent4<br>
+     content4<br>
+     content4<br>
+   </div>
 
  </div>
+
+
+
    
 
 
@@ -114,6 +151,10 @@ jq('.click_btn').click(function(event) {
   jq('#'+clickId).toggle('slow/400/fast').css('background-color','red')
 });
  
+
+ jq('.click_btn').slideUp(300,function myFunction(argument) {
+    alert('this will invoke after ')
+ })
 
 
 

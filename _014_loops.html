@@ -10,11 +10,17 @@
   <body>
    <div id="vue-app">
      <h1>Looping Through List</h1>
+
      <ul>
        <li v-for='fruit in fruits'>
          {{fruit}}
        </li>
      </ul>
+
+     <ul v-for="(fruit,index) in fruits">
+        {{fruit}} - {{index}}
+     </ul>
+
 
      <ul>
        <li v-for='recepie in recepies'>
@@ -23,9 +29,11 @@
      </ul>
 
 
-    </div>
-
-<script src="js/vue_014.js"></script>
+     <template v-for='(recepie,index) in recepies'>
+       <h3>{{index}} --- {{recepie.name}}</h3>
+    </template>
+</div>
+    <script src="js/vue_014.js"></script>
 
   </body>
 </html>

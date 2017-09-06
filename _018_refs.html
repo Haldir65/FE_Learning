@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Demostrating refs</title>
+    <link href="css/style2.css" rel="stylesheet" />
+    <script src=" https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <h1>Refs</h1>
+    <p>
+      we can grab elements via $refs
+    </p>
+    <div id="vue-app">
+        <input type="text" ref="input" />
+        <p>
+          click button or type Enter to see what you have input
+        </p>
+        <button v-on:click='readRefs' v-bind:keyup.enter='readRefs'>Submit</button>
+        <p>
+          you favorite food:  {{output}}
+        </p>
+    </div>
+
+    <script src="js/vue_ref.js"></script>
+  </body>
+</html>

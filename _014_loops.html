@@ -21,17 +21,22 @@
         {{fruit}} - {{index}}
      </ul>
 
-
      <ul>
        <li v-for='recepie in recepies'>
          {{recepie}}
        </li>
      </ul>
 
+     <div v-for='(val,key) in recepies'>
+       <h3>index {{key}} ,  vaule  {{val}}</h3>
+     </div>
 
      <template v-for='(recepie,index) in recepies'>
        <h3>{{index}} --- {{recepie.name}}</h3>
     </template>
+
+
+
 </div>
     <script src="js/vue_014.js"></script>
 

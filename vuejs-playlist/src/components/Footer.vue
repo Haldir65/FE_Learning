@@ -13,7 +13,7 @@ export default {
 
   data () {
     return {
-      copyRight : CopyRight from another file"
+      copyRight : "CopyRight from another file"
     }
   }
 }

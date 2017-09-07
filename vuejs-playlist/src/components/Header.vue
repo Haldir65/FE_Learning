@@ -1,5 +1,7 @@
 <template>
-
+  <header>
+    <h1>{{title}}</h1>
+  </header>
 </template>
 
 <script>
@@ -7,7 +9,7 @@ export default {
 
   data () {
     return {
-      titile: 'Title from Header'
+      title: 'Title from Header'
     }
   }
 }

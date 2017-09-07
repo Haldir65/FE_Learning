@@ -1,22 +1,26 @@
 <template>
   <div >
-  <h1>{{title}}</h1>
-  <p>{{greeting()}}</p>
+    <app-header></app-header>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-export default {
 
+
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
+
+
+export default {
+  components:{
+    'app-header': Header;
+    'app-footer': Footer;
+  },
   data () {
     return {
-      title : "first vue file"
+      title : "Fruit App"
     }
-  },
-  methods: {
-  greeting:function(){
-    return "custom file"
-  }
   }
 }
 </script>

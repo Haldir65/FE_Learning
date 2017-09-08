@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p>{{copyRight}}</p>
+    <p>copyRight 2017{{ title }}</p>
   </footer>
 </template>
 
@@ -11,9 +11,16 @@
 
 export default {
 
+  props:{
+    title:{
+      type: String,
+      required: true
+    }
+  },
+
   data () {
     return {
-      copyRight : "CopyRight from another file"
+      
     }
   }
 }

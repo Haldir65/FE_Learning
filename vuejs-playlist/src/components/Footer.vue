@@ -6,7 +6,7 @@
 
 <script>
 
-
+import { bus } from '../main';
 
 
 export default {
@@ -22,13 +22,18 @@ export default {
     return {
       
     }
+  },
+  created(){
+    bus.$on('titleChanged',(data) =>{
+      this.title= data;
+    })
   }
 }
 </script>
 
 <style scoped>
   footer{
-    background:#2222;
+    background:#222;
     padding:6px;
   }
   p{

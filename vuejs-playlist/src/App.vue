@@ -1,6 +1,7 @@
 <template>
   <div >
-    <app-header v-bind:title='title'></app-header>
+    <app-header v-bind:title='title' v-on:changeTitle='updateTitle($event)'>
+    </app-header>
     <app-fruits v-bind:fruits='fruits'></app-fruits>
       <ul>
         <li v-for='fruit in fruits'>{{fruit.name}}</li>
@@ -41,7 +42,13 @@ export default {
       ],
       title : "Fruit Shop"
     }
+  },
+  methods:{
+    updateTitle: function (newTitle) {
+      this.title = newTitle;
+    }
   }
+
 }
 </script>
 

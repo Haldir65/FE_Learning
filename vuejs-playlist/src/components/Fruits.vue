@@ -5,9 +5,11 @@
         <h2>{{fruit.name}}</h2>
         <h3 v-show='fruit.show'>{{fruit.id}}</h3>
 
-        <button v-on:click='deleteFruit'>Delete A Fruit</button>
       </li>
+        
+
     </ul>
+    <button v-on:click='deleteFruit'>Delete A Fruit</button>
   </div>
 </template>
 

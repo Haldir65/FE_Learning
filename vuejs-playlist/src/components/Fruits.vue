@@ -35,26 +35,27 @@ export default {
     deleteFruit:function () {
       this.fruits.pop();
     }
-  },
-  // lifecycle hooks
-  beforeCreate(){
-    alert('before created')
-  },
-  created(){
-    alert('created!')
-  },
-  beforeMount(){
-    alert('befor Mounted')
-  },
-  mounted(){
-    alert('mounted')    
-  },
-  beforeUpdate(){
-    alert('before update')
-  },
-  updated(){
-    alert('updated')
   }
+  // ,
+  // // lifecycle hooks
+  // beforeCreate(){
+  //   alert('before created')
+  // },
+  // created(){
+  //   alert('created!')
+  // },
+  // beforeMount(){
+  //   alert('befor Mounted')
+  // },
+  // mounted(){
+  //   alert('mounted')    
+  // },
+  // beforeUpdate(){
+  //   alert('before update')
+  // },
+  // updated(){
+  //   alert('updated')
+  // }
 
 }
 </script>

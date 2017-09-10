@@ -1,51 +1,43 @@
 <template>
-  <div >
-    <app-header v-bind:title='title' v-on:changeTitle='updateTitle($event)'>
-    </app-header>
-    <app-fruits v-bind:fruits='fruits'></app-fruits>
-      <ul>
-        <li v-for='fruit in fruits'>{{fruit.name}}</li>
-      </ul>
-    <app-footer v-bind:title='title'></app-footer>
+  <div>
+  <form-helper>
+   <div slot='form-header'>
+     <h3>this is the title of the form</h3>
+     <p>information about this form</p>
+   </div>
+   <div slot='form-fields'>
+      <input type="text" placeholder="name" required="true">
+      <input type="password" name="pwd" placeholder="please input passwords" required="true">
+   </div>
+   <div slot='form-controls'>
+     <button v-on:click='handleSubmit'>Submit</button>
+   </div>
+  </form-helper>
   </div>
 </template>
 
 <script>
 
 
-import Header from './components/Header.vue';
-import Footer from './components/Footer.vue';
-import fruits from './components/Fruits.vue';
+
+import formHelper from './components/formHelper.vue';
 
 
 
 export default {
   components:{
-    'app-header': Header,
-    'app-footer': Footer,
-    'app-fruits':fruits
+    'form-helper': formHelper
+  
   } ,
   data () {
     return {
-      fruits:[
-        {name: 'Apple', id : 1 , show: false,img:'../assets/logo.png'},
-        {name: 'Banana', id : 2 , show: false,img:'../assets/logo.png'},
-        {name: 'Pie', id : 3 , show: false,img:'../assets/logo.png'},
-        {name: 'Juice', id : 4 , show: false,img:'../assets/logo.png'},
-        {name: 'peach', id : 5 , show: false,img:'../assets/logo.png'},
-        {name: 'Strawberry', id : 6 , show: false,img:'../assets/logo.png'},
-        {name: 'blueBerry', id : 7 , show: false,img:'../assets/logo.png'},
-        {name: 'cherry', id : 8 , show: false,img:'../assets/logo.png'},
-        {name: 'Grape', id : 9 , show: false,img:'../assets/logo.png'},
-        {name: 'PinApple', id : 10 , show: false,img:'../assets/logo.png'}
-
-      ],
-      title : "Fruit Shop"
+      
     }
   },
   methods:{
-    updateTitle: function (newTitle) {
-      this.title = newTitle;
+    handleSubmit:function () {
+      // body...
+      console.log('submited')
     }
   }
 
@@ -53,9 +45,6 @@ export default {
 </script>
 
 <style >
-  body{
-    margin: 0;
-    font-family: 'Nunito SemiBold'
-  }
+  
 
 </style>

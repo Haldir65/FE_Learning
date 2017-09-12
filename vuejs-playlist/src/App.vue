@@ -18,8 +18,6 @@ export default {
   components:{
     'add-blog':addBlog,
     'show-blog':showBlogs,
-
-
   } ,
   data () {
     return {
@@ -33,7 +31,7 @@ export default {
 }
 </script>
 
-<style >
+<style>
   
   #add-blog *{
     box-sizing: border-box;

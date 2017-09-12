@@ -1,8 +1,9 @@
 <template>
   <div id='show-blogs' v-theme:column='narrow'>
     <h1>All Blog Articles</h1>
-    <div v-for='blog in blogs' class="single-blog">
-      <h2 >{{blog.title | to-uppercase}}</h2>
+    <input type="text" v-model='search' placeholder="Seach blogs and stuff">
+    <div v-for='blog in filteredBlogs' class="single-blog">
+      <h2 v-rainbow>{{blog.title | to-uppercase}}</h2>
       <article>{{blog.body}}</article>
     </div>
 
@@ -11,24 +12,47 @@
 
 <script>
 
+import searchMixin from '../mixins/searchMixin';
 export default {
 
   data () {
     return {
-      blogs:[]
+      blogs:[],
+      search:''
     }
   },
   methods:{
 
   },
    created(){ //fired when dom created
-    this.$http.get('https://jsonplaceholder.typicode.com/posts')
+    this.$http.get('http://jsonplaceholder.typicode.com/posts')
     .then(function(data) {
       // body... 
+      console.log(data);
      this.blogs = data.body.slice(0,10);
 
     })
+   },
+   mixins:[searchMixin],
+   computed:{
+      filteredBlogs:function () {
+        return this.blogs.filter((blog) => {
+          return blog.title.match(this.search);
+        });
+      }
+   },
+   filters:{
+      'to-uppercase':function(value){
+        return value.toUpperCase();
+      }
+   },
+   directives:{
+    'rainbow':{
+      bind(el, binding, vnode) {
+        el.style.color =  '#'+Math.random().toString(16).slice(2, 8);
+    }
    }
+ }
 
 
 }

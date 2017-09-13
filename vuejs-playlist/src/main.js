@@ -1,10 +1,16 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueResource from 'vue-resource'
-
+import VueRouter from 'vue-router'
+import Routers from './routes'
 
 Vue.use(VueResource);
+Vue.use(VueRouter);
 
+const router = new VueRouter({
+	routes: Routers,
+	mode:'history'
+});
 
 // Custom directives
 Vue.directive('rainbow',{
@@ -38,5 +44,6 @@ Vue.filter('to-uppercase',function(value) {
 
 new Vue({
   el: '#app',
-  render: h => h(App)
+  render: h => h(App),
+  router:router
 })

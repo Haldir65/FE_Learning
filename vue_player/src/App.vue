@@ -2,7 +2,7 @@
   <div id="app">
     <a href="https://github.com/microzz/vue-music-player" target="_blank">Some reference</a>
     <app-player></app-player>
-    <audio  v-el:audio :src="audio.src" v-bind:autoplay='true' ref='audio'></audio>
+    
   </div>
 </template>
 

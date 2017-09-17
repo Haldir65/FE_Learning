@@ -1,8 +1,15 @@
 <template>
   <div id="app">
-    <a href="https://github.com/microzz/vue-music-player" target="_blank">Some reference</a>
+    <ul>
+      <p>
+        <a href="https://github.com/microzz/vue-music-player" target="_blank">Some reference</a>
+      </p>
+      <p>
+        <a href="https://github.com/shershen08/vuejs-sound-player" target="_blank">a cute Plugin</a>
+      </p>
+    </ul>
     <app-player></app-player>
-    
+
   </div>
 </template>
 

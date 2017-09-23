@@ -1,7 +1,7 @@
 <template>
   <div id="player">
       <h2>Supposedly the main Controller</h2>
-      <button v-on:click='play'>Play</button>
+      <button v-on:click='play' class='play_button'>Play</button>
       <button v-on:click='pause'>Pause</button>
       <button v-on:click ='mute'>Mute</button>
       <button v-on:click = 'next'>Next</button>
@@ -201,5 +201,24 @@ export default {
     background: url(./pause.svg) no-repeat;
     background-size: contain;
   }
+
+}
+
+
+.play_button{
+  background: #0f88eb;
+  margin-top:100px;
+  border: 1px solid #0f88eb;
+  z-index: 103;
+  padding: 16px 24px;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 32px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #ccd8e1;
+  border-radius: 3px;
+  font: 13.3333px Arial;
 }
 </style>

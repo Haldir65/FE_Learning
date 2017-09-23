@@ -49,8 +49,8 @@ export default {
   },
   methods: {
     play: function (id) {
-      if (this.playing) return
       this.paused = false
+      if (this.playing) return
       let playPromise = this.audio.play()
       if (playPromise!=undefined) {
           playPromise.then( _=> {
@@ -66,6 +66,7 @@ export default {
     pause: function () {
       this.paused = !this.paused;
       this.playing = !this.paused;
+      console.log('---------------------------'+this.paused);
       (this.paused) ? this.audio.pause():this.audio.play()
     },
     mute: function () {
@@ -89,7 +90,8 @@ export default {
       }
       this.audio.pause()
       this.audio.src= ''
-      let id = setInterval(this.play,100)
+      this.palying = false
+      let id = setTimeout(this.play,100)
     },
     transformTime(seconds) {
       let m, s;
@@ -101,7 +103,7 @@ export default {
     },
     get_audio_list(){
       self.setTimeout(function () {
-        console.log('excuted');
+        console.log('excuted'); // this is for scheduling a task for later execution
       },100)
       return this.musics;
     }
@@ -136,7 +138,7 @@ export default {
 
       this.interval_id  = setInterval(() =>{
           this.now = this.audio.currentTime;
-          console.log('currentTime = '+this.now);
+          // console.log('currentTime = '+this.now);
         },1000)
 
 
@@ -149,7 +151,7 @@ export default {
       // })
   },
   updated(){
-    console.log('updated'+this.interval_id);
+    // console.log('updated'+this.interval_id);
     // if (this.interval_id!=0) {
     //   self.clearInterval(this.interval_id)
     //   this.interval_id = 0
@@ -157,7 +159,7 @@ export default {
     if (this.interval_id==0) {
       this.interval_id  = setInterval(() =>{
           this.now = this.audio.currentTime;
-          console.log('currentTime = '+this.now);
+          // console.log('currentTime = '+this.now);
         },1000)
     }
 

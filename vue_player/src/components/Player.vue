@@ -5,7 +5,7 @@
       <button v-on:click='pause'>Pause</button>
       <button v-on:click ='mute'>Mute</button>
       <button v-on:click = 'next'>Next</button>
-      <audio  ref='audiofile' :src='this.src' preload="none"></audio>
+      <audio  ref='audiofile' :src='this.src' preload="auto"></audio>
       <div class="music-progress">
         <div class="progress">
           <br/>
@@ -43,24 +43,22 @@ export default {
       playIcon: 'play-icon',
       interval_id: 0,
       src: '../../static/musics/Carpenters - Yesterday Once More.mp3',
-      musics: [{'src' : '../../static/musics/赵雷-成都.mp3'},
-        {'src': '../../static/musics/Carpenters - Yesterday Once More.mp3'}]
+      musics: [{'src' : '../../static/musics/赵雷-成都.mp3','duration' : 0},
+        {'src': '../../static/musics/Carpenters - Yesterday Once More.mp3','duratin': 0}]
     }
   },
   methods: {
-    play: function () {
+    play: function (id) {
       if (this.playing) return
       this.paused = false
-      console.log(this.audio);
       let playPromise = this.audio.play()
       if (playPromise!=undefined) {
           playPromise.then( _=> {
             console.log('auto play started')
             this.playing = true
-
+            self.clearInterval(id)
           })
       .catch(  _=> {
-        console.log()
         this.playing = false
         })
       }
@@ -88,10 +86,10 @@ export default {
           break
         }
         this.audio.currentTime = 0
-
-
-
       }
+      this.audio.pause()
+      this.audio.src= ''
+      let id = setInterval(this.play,100)
     },
     transformTime(seconds) {
       let m, s;
@@ -102,7 +100,9 @@ export default {
       return m + ':' + s;
     },
     get_audio_list(){
-
+      self.setTimeout(function () {
+        console.log('excuted');
+      },100)
       return this.musics;
     }
   },
@@ -118,26 +118,48 @@ export default {
   mounted () {
     console.log('mounted')
     let m = this.get_audio_list()
-    console.log(m[0]['src']);
-    this.audio = this.$el.querySelectorAll('audio')[0]
-
-    this.audio.addEventListener('play',() =>{
-      this.totalTime = this.transformTime(this.audio.duration);
-      console.log(this.totalTime);
-      this.now = this.audio.currentTime;
-
-    this.interval_id  = setInterval(() =>{
+    if (this.audio==undefined) {
+      this.audio = this.$el.querySelectorAll('audio')[0]
+      this.audio.addEventListener('play',() =>{
+        this.totalTime = this.transformTime(this.audio.duration);
+        if (this.totalTime !=undefined) {
+          let length = this.get_audio_list().length
+          let current_src = this.audio.src
+          for (let i =0 ; i<length;i++){
+            let music = m[i]
+            if (music['src'] == current_src && music['duration']==0) {
+              music['duration'] = this.audio.duration
+            }
+          }
+        }
         this.now = this.audio.currentTime;
-        console.log('currentTime = '+this.now);
-      },1000)
 
-    })
+      this.interval_id  = setInterval(() =>{
+          this.now = this.audio.currentTime;
+          console.log('currentTime = '+this.now);
+        },1000)
 
+
+
+      })
+    }
       // this.audio.addEventListener('ended',function () {
       //   this.audio.currentTime = 0
       //   this.audio.play() // for looping this audio
       // })
-
+  },
+  updated(){
+    console.log('updated'+this.interval_id);
+    // if (this.interval_id!=0) {
+    //   self.clearInterval(this.interval_id)
+    //   this.interval_id = 0
+    // }
+    if (this.interval_id==0) {
+      this.interval_id  = setInterval(() =>{
+          this.now = this.audio.currentTime;
+          console.log('currentTime = '+this.now);
+        },1000)
+    }
 
   }
 

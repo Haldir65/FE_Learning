@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    
+  <div id="controller">
+
   </div>
 </template>
 

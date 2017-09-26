@@ -1,14 +1,8 @@
 <template>
   <div id="app">
-    <ul>
-      <p>
-        <a href="https://github.com/microzz/vue-music-player" target="_blank">Some reference</a>
-      </p>
-      <p>
-        <a href="https://github.com/shershen08/vuejs-sound-player" target="_blank">a cute Plugin</a>
-      </p>
-    </ul>
+    
     <app-player></app-player>
+    <app-footer></app-footer>
 
   </div>
 </template>
@@ -19,12 +13,15 @@
 <script>
 import Player from './components/Player'
 import Controller from './components/Controller'
+import Footer from './components/Footer'
+
 
 export default {
   name: 'app',
   components: {
     'app-player': Player,
-    'app-controller': Controller
+    'app-controller': Controller,
+    'app-footer': Footer
   },
   data () {
     return {

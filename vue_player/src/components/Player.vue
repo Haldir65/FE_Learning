@@ -1,16 +1,14 @@
 <template>
   <div id="player">
       <h2>Supposedly the main Controller</h2>
-      <button v-on:click='play' class='play_button'>Play</button>
-      <button v-on:click='pause'>Pause</button>
-      <button v-on:click ='mute'>Mute</button>
+      <button v-on:click='play' class='normal_button play_button'>Play</button>
+      <button v-on:click='pause' class='normal_button pause_button'>Pause</button>
+      <button v-on:click ='mute' class='normal_button mute_button'>Mute</button>
       <button v-on:click = 'next'>Next</button>
       <audio  ref='audiofile' :src='this.src' preload="auto"></audio>
       <div class="music-progress">
         <div class="progress">
           <br/>
-
-
           <span class="start">{{transformTime(now)}}</span>
           <!-- <div @click="changeTime($event)" @touchmove="touchMove($event)" @touchend="touchEnd($event)" ref="progressBar" class="progress-bar">
             <div class="now" ref="now" :style="{width: (now / audio.duration).toFixed(3)*100 + '%'}"></div>
@@ -117,6 +115,12 @@ export default {
     console.log('before created')
 
   },
+  created () {
+
+  },
+  beforeMount () {
+
+  },
   mounted () {
     console.log('mounted')
     let m = this.get_audio_list()
@@ -150,7 +154,10 @@ export default {
       //   this.audio.play() // for looping this audio
       // })
   },
-  updated(){
+  beforeUpdate () {
+    console.log('before updated')
+  },
+  updated () {
     // console.log('updated'+this.interval_id);
     // if (this.interval_id!=0) {
     //   self.clearInterval(this.interval_id)
@@ -163,8 +170,10 @@ export default {
         },1000)
     }
 
+  },
+  beforeDestory () {
+      console.log('beforeDestory');
   }
-
 }
 
 </script>
@@ -204,9 +213,7 @@ export default {
 
 }
 
-
-.play_button{
-  background: #0f88eb;
+.normal_button{
   margin-top:100px;
   border: 1px solid #0f88eb;
   z-index: 103;
@@ -220,5 +227,23 @@ export default {
   border: 1px solid #ccd8e1;
   border-radius: 3px;
   font: 13.3333px Arial;
+
 }
+
+
+  .play_button{
+    background: #0f88eb;
+
+  }
+
+  .pause_button{
+    background: #42b983;
+    font-weight: 600;
+  }
+
+  .mute_button{
+    background: #9eadb6;
+  }
+
+
 </style>

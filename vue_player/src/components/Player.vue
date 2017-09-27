@@ -2,7 +2,7 @@
   <div id="player">
       <h2>Supposedly the main Controller</h2>
       <button v-on:click='play' class='normal_button play_button'>Play</button>
-      <button v-on:click='pause' class='normal_button pause_button'>Pause</button>
+      <button v-on:click='pause' class='normal_button pause_button' v-text='pause_button_text'>Pause</button>
       <button v-on:click ='mute' class='normal_button mute_button'>Mute</button>
       <button v-on:click = 'next'>Next</button>
       <audio  ref='audiofile' :src='this.src' preload="auto"></audio>
@@ -40,6 +40,7 @@ export default {
       pauseIcon: 'pause-icon',
       playIcon: 'play-icon',
       interval_id: 0,
+
       src: '../../static/musics/Carpenters - Yesterday Once More.mp3',
       musics: [{'src' : '../../static/musics/赵雷-成都.mp3','duration' : 0},
         {'src': '../../static/musics/Carpenters - Yesterday Once More.mp3','duratin': 0}]
@@ -109,6 +110,9 @@ export default {
   computed: {
     isPlaying(){
       return this.playing;
+    },
+    pause_button_text(){
+      return this.paused ? 'resume' : 'pause';
     }
   },
   beforeCreate () {

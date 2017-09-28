@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    
+
     <app-player></app-player>
+    <app-controller></app-controller>
     <app-footer></app-footer>
 
   </div>

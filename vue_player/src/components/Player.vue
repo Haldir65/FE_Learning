@@ -102,7 +102,7 @@ export default {
     },
     get_audio_list(){
       self.setTimeout(function () {
-        console.log('excuted'); // this is for scheduling a task for later execution
+        // console.log('excuted'); // this is for scheduling a task for later execution
       },100)
       return this.musics;
     }
@@ -116,8 +116,7 @@ export default {
     }
   },
   beforeCreate () {
-    console.log('before created')
-
+    // console.log('before created')
   },
   created () {
 
@@ -126,7 +125,7 @@ export default {
 
   },
   mounted () {
-    console.log('mounted')
+    // console.log('mounted')
     let m = this.get_audio_list()
     if (this.audio==undefined) {
       this.audio = this.$el.querySelectorAll('audio')[0]
@@ -159,7 +158,7 @@ export default {
       // })
   },
   beforeUpdate () {
-    console.log('before updated')
+    // console.log('before updated')
   },
   updated () {
     // console.log('updated'+this.interval_id);
@@ -176,7 +175,8 @@ export default {
 
   },
   beforeDestory () {
-      console.log('beforeDestory');
+      // console.log('beforeDestory');
+
   }
 }
 

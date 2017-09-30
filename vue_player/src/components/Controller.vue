@@ -36,6 +36,34 @@ export default {
       array[i] = i
     }
 
+    // array.map(x => x*x).forEach(it => console.log(it))
+
+    array = Array.of({'b':12,'a':12},{'b':133,'a':55})
+    // array.forEach(item => console.log(item))
+
+    let index = array.findIndex(function (value,index,arr) {
+      return value['b']>10
+    })
+
+    array = [1,2,45]
+
+    for (let index of array.keys()){
+      // console.log(index);
+    }
+
+
+    // let array2 = [for (i of array) i*3];
+
+    // array2.forEach(it => console.log(it))
+
+    var years = [ 1954, 1974, 1990, 2006, 2010, 2014 ];
+
+    // [for (year of years) if (year > 2000) year];
+
+    years.pop()
+   let out =  years.slice(0,2) //切割数组下标0,1的元素
+   console.log(out);
+
     // for(let i =0;i<array.length;i++){
     //   console.log(array[i]['name'])
     // }
@@ -47,9 +75,8 @@ export default {
     //   console.log(value,is_number);
     // }  )
 
-    let date = new Date()
-    let num = '1'
-    judge_type(0)
+    // let date = new Date()
+    // let num = '1'
 
     // array.forEach(function (arg) {
     //   console.log(arg['name'],arg['age'],10999)

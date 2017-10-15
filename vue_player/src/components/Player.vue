@@ -4,8 +4,8 @@
       <button v-on:click='play' class='normal_button play_button'>Play</button>
       <button v-on:click='pause' class='normal_button pause_button' v-text='pause_button_text'>Pause</button>
       <button v-on:click ='mute' class='normal_button mute_button'>Mute</button>
-      <button v-on:click = 'next'>Next</button>
-      <button v-on:click = 'advance'>advance</button>
+      <button v-on:click = 'next' class="normal_button" >Next</button>
+      <button v-on:click = 'advance' class="normal_button">advance</button>
       <audio  ref='audiofile' :src='this.src' preload="auto"></audio>
       <div class="music-progress">
         <div class="progress">
@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <div class="music-control" >
+      <div class="music-control normal_button" >
         <i @click="play" v-bind:class="[isPlaying ? pauseIcon : playIcon]">music control</i>
       </div>
 
@@ -95,11 +95,11 @@ export default {
     },
     advance : function () {
       console.log('seekTo')
-      let des = this.audio.currentTime+30
+      let des = this.audio.currentTime+60
       if (this.audio.duration<=des) {
         this.next()
       }else {
-        this.audio.currentTime+=30
+        this.audio.currentTime+=60
       }
     },
     transformTime(seconds) {
@@ -161,6 +161,11 @@ export default {
 
 
       })
+      this.audio.addEventListener('ended',() => {
+          console.log('ended')
+          this.next()
+        }
+      )
     }
       // this.audio.addEventListener('ended',function () {
       //   this.audio.currentTime = 0
@@ -193,6 +198,8 @@ export default {
 </script>
 
 <style scoped>
+  @import "../common/stylebase.css";
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -204,7 +211,11 @@ export default {
 
 .music-control {
   flex: 1.5;
-  padding-top: 40px;
+  width: 100px;
+  position: relative;
+  margin-left: 200px;
+  border-radius : 3px;
+  background-color: rgb(32, 241, 164);
   i {
     padding-right: 10px;
     width: 45px;
@@ -224,27 +235,7 @@ export default {
     background: url(./pause.svg) no-repeat;
     background-size: contain;
   }
-
 }
-
-.normal_button{
-  margin-top:100px;
-  border: 1px solid #0f88eb;
-  z-index: 103;
-  padding: 16px 24px;
-  display: inline-block;
-  font-size: 14px;
-  line-height: 32px;
-  color: white;
-  text-align: center;
-  cursor: pointer;
-  border: 1px solid #ccd8e1;
-  border-radius: 3px;
-  font: 13.3333px Arial;
-
-}
-
-
   .play_button{
     background: #0f88eb;
 

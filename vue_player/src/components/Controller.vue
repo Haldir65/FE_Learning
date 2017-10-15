@@ -1,13 +1,52 @@
 <template>
   <div id="controller">
     <h1 >
-       <strong v-text='msg'>Controller</strong>
+       <strong v-text='msg' >Controller</strong>
     </h1>
-    <ul id='people_list'>
-      <li v-for='(author , index) in authors' style="transition: all 1000ms">
-      {{index}} --- {{author.name}} whose age is {{author.age}}
-      </li>
-    </ul>
+    <div class="topstory_container">
+
+      <img src="http://p4.music.126.net/34YW1QtKxJ_3YnX9ZzKhzw==/2946691234868155.jpg" style="width:300px;height:300px"/>
+
+      <ul id='people_list' class='Card'>
+        <li v-for='(author , index) in authors' style="transition: all 1000ms">
+        {{index}} --- {{author.name}} whose age is {{author.age}}
+        </li>
+      </ul>
+
+      <ul id='people_list' class='Card'>
+        <li v-for='(author , index) in authors' style="transition: all 1000ms">
+        {{index}} --- {{author.name}} whose age is {{author.age}}
+        </li>
+      </ul>
+
+      <ul id='people_list' class='Card'>
+        <li v-for='(author , index) in authors' style="transition: all 1000ms">
+        {{index}} --- {{author.name}} whose age is {{author.age}}
+        </li>
+      </ul>
+
+      <ul id='people_list' class='Card'>
+        <li v-for='(author , index) in authors' style="transition: all 1000ms">
+        {{index}} --- {{author.name}} whose age is {{author.age}}
+        </li>
+      </ul>
+
+      <ul id='people_list' class='Card'>
+        <li v-for='(author , index) in authors' style="transition: all 1000ms">
+        {{index}} --- {{author.name}} whose age is {{author.age}}
+        </li>
+      </ul>
+
+      <ul id='people_list' class='Card'>
+        <li v-for='(author , index) in authors' style="transition: all 1000ms">
+        {{index}} --- {{author.name}} whose age is {{author.age}}
+        </li>
+      </ul>
+
+
+    </div>
+
+
 
   </div>
 </template>
@@ -30,64 +69,69 @@ export default {
   created(){},
 
   mounted(){
-
-    let array  = new Array(10)
-    for(let i= 0;i<array.length;i++){
-      array[i] = i
-    }
-
-    // array.map(x => x*x).forEach(it => console.log(it))
-
-    array = Array.of({'b':12,'a':12},{'b':133,'a':55})
-    // array.forEach(item => console.log(item))
-
-    let index = array.findIndex(function (value,index,arr) {
-      return value['b']>10
-    })
-
-    array = [1,2,45]
-
-    for (let index of array.keys()){
-      // console.log(index);
-    }
-
-
-    // let array2 = [for (i of array) i*3];
-
-    // array2.forEach(it => console.log(it))
-
-    var years = [ 1954, 1974, 1990, 2006, 2010, 2014 ];
-
-    // [for (year of years) if (year > 2000) year];
-
-    years.pop()
-   let out =  years.slice(0,2) //切割数组下标0,1的元素
-   console.log(out);
-
-    // for(let i =0;i<array.length;i++){
-    //   console.log(array[i]['name'])
-    // }
-
-    // array.forEach(it => logit(it['name']))
-
-    // array.forEach( (value) => {
-    //   let is_number = (typeof(value) == 'number')
-    //   console.log(value,is_number);
-    // }  )
-
-    // let date = new Date()
-    // let num = '1'
-
-    // array.forEach(function (arg) {
-    //   console.log(arg['name'],arg['age'],10999)
-    // })
-
-
+      junk()
   }
 }
 
 
 // put custom function here
+
+
+function  junk() {
+  let array  = new Array(10)
+  for(let i= 0;i<array.length;i++){
+    array[i] = i
+  }
+
+  // array.map(x => x*x).forEach(it => console.log(it))
+
+  array = Array.of({'b':12,'a':12},{'b':133,'a':55})
+  // array.forEach(item => console.log(item))
+
+  let index = array.findIndex(function (value,index,arr) {
+    return value['b']>10
+  })
+
+  array = [1,2,45]
+
+  for (let index of array.keys()){
+    // console.log(index);
+  }
+
+
+  // let array2 = [for (i of array) i*3];
+
+  // array2.forEach(it => console.log(it))
+
+  var years = [ 1954, 1974, 1990, 2006, 2010, 2014 ];
+
+  // [for (year of years) if (year > 2000) year];
+
+  years.pop()
+ let out =  years.slice(0,2) //切割数组下标0,1的元素
+ console.log(out);
+
+  // for(let i =0;i<array.length;i++){
+  //   console.log(array[i]['name'])
+  // }
+
+  // array.forEach(it => logit(it['name']))
+
+  // array.forEach( (value) => {
+  //   let is_number = (typeof(value) == 'number')
+  //   console.log(value,is_number);
+  // }  )
+
+  // let date = new Date()
+  // let num = '1'
+
+  // array.forEach(function (arg) {
+  //   console.log(arg['name'],arg['age'],10999)
+  // })
+
+
+}
+
 
 function logit(arg) {
   console.log(arg);
@@ -102,6 +146,7 @@ function judge_type(args) {
 </script>
 
 <style scoped>
+  @import "../common/stylebase.css";
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -127,16 +172,15 @@ function judge_type(args) {
 }
 
 #people_list{
-  background: #d7e4de;
   width: auto;
-  list-style-type : square;
-  text-align:center ;
-  position: absolute;
+  position: relative;
   top: 50%;
-  left: 50%;
-  margin-right: -50%;
+  left: 40%;
+  margin-left: 10%;
   margin-top: 50px;
   transform: translate(-50%, -50%);
+  padding: 16px 20px;
+  display: block;
 }
 
 </style>

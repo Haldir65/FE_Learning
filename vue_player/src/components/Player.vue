@@ -5,6 +5,7 @@
       <button v-on:click='pause' class='normal_button pause_button' v-text='pause_button_text'>Pause</button>
       <button v-on:click ='mute' class='normal_button mute_button'>Mute</button>
       <button v-on:click = 'next'>Next</button>
+      <button v-on:click = 'advance'>advance</button>
       <audio  ref='audiofile' :src='this.src' preload="auto"></audio>
       <div class="music-progress">
         <div class="progress">
@@ -91,6 +92,15 @@ export default {
       this.audio.src= ''
       this.palying = false
       let id = setTimeout(this.play,100)
+    },
+    advance : function () {
+      console.log('seekTo')
+      let des = this.audio.currentTime+30
+      if (this.audio.duration<=des) {
+        this.next()
+      }else {
+        this.audio.currentTime+=30
+      }
     },
     transformTime(seconds) {
       let m, s;

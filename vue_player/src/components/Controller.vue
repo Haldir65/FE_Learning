@@ -5,7 +5,7 @@
     </h1>
     <div class="topstory_container">
 
-      <img src="http://p4.music.126.net/34YW1QtKxJ_3YnX9ZzKhzw==/2946691234868155.jpg" style="width:300px;height:300px"/>
+      <img src="http://p4.music.126.net/34YW1QtKxJ_3YnX9ZzKhzw==/2946691234868155.jpg" style="width:300px;height:300px;display:none"/>
 
       <ul id='people_list' class='Card'>
         <li v-for='(author , index) in authors' style="transition: all 1000ms">
@@ -13,35 +13,12 @@
         </li>
       </ul>
 
-      <ul id='people_list' class='Card'>
-        <li v-for='(author , index) in authors' style="transition: all 1000ms">
-        {{index}} --- {{author.name}} whose age is {{author.age}}
-        </li>
-      </ul>
+    
 
-      <ul id='people_list' class='Card'>
-        <li v-for='(author , index) in authors' style="transition: all 1000ms">
-        {{index}} --- {{author.name}} whose age is {{author.age}}
-        </li>
-      </ul>
+      <input v-model="message" placeholder="edit me">
+      <p>Message is: {{ message }}</p>
 
-      <ul id='people_list' class='Card'>
-        <li v-for='(author , index) in authors' style="transition: all 1000ms">
-        {{index}} --- {{author.name}} whose age is {{author.age}}
-        </li>
-      </ul>
 
-      <ul id='people_list' class='Card'>
-        <li v-for='(author , index) in authors' style="transition: all 1000ms">
-        {{index}} --- {{author.name}} whose age is {{author.age}}
-        </li>
-      </ul>
-
-      <ul id='people_list' class='Card'>
-        <li v-for='(author , index) in authors' style="transition: all 1000ms">
-        {{index}} --- {{author.name}} whose age is {{author.age}}
-        </li>
-      </ul>
 
 
     </div>
@@ -60,13 +37,28 @@ export default {
       authors: [{'name':'jane','age':10},
       {'name':'Tim','age':20},
       {'name':'Tina','age':17},
-      {'name':'Bob','age':30}]
+      {'name':'Bob','age':30}],
+      browserHistory : localStorage.browserHistory,
+      message : 'listen to text input'
     }
   },
   beforeCreate(){
     // trying to access this.xxx will only return undefined
   },
-  created(){},
+  created(){
+    let history = localStorage['musics']
+    if (history != undefined){
+      let array = JSON.parse(history)
+      for (let i = 0; i < array.length; i++) {
+        let msg = array[i]['name']+" --- "+array[i]['src']
+        // console.log(msg);
+      }
+    }
+    wirteToLocalStorage(28)
+    // console.log(localStorage)
+    let origin = readFromLocalStorage('myAge')
+    console.log(parseInt(origin)+20)// parseInt change Str 21 to int 21
+  },
 
   mounted(){
       junk()
@@ -82,7 +74,6 @@ function  junk() {
   for(let i= 0;i<array.length;i++){
     array[i] = i
   }
-
   // array.map(x => x*x).forEach(it => console.log(it))
 
   array = Array.of({'b':12,'a':12},{'b':133,'a':55})
@@ -98,7 +89,6 @@ function  junk() {
     // console.log(index);
   }
 
-
   // let array2 = [for (i of array) i*3];
 
   // array2.forEach(it => console.log(it))
@@ -109,7 +99,7 @@ function  junk() {
 
   years.pop()
  let out =  years.slice(0,2) //切割数组下标0,1的元素
- console.log(out);
+ // console.log(out);
 
   // for(let i =0;i<array.length;i++){
   //   console.log(array[i]['name'])
@@ -130,6 +120,16 @@ function  junk() {
   // })
 
 
+}
+
+
+function wirteToLocalStorage(args) {
+  localStorage.setItem('customData','[{"name":"Alice","Age",20},{"name":"Julia","Age",29}]]')
+  localStorage.setItem('myAge',args) //wirte str to local storage wia setItem
+}
+
+function readFromLocalStorage(key) {
+  return  localStorage.getItem(key)
 }
 
 

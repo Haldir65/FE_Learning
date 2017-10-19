@@ -6,12 +6,15 @@ import router from './router'
 
 Vue.config.productionTip = false
 
-let audio
+
+
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
+  components: { App },
+  router:router
 })
+Vue.use(router)

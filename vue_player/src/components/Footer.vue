@@ -12,10 +12,14 @@
       <div class="box f">F</div>
     </div>
 
+    <router-link to='./about'>Go to About Page</router-link>
+    <router-link to='./'>Go to another page</router-link>
 
-  <a href="https://www.baidu.com" target="_blank">some content</a>
+
   </div>
 </template>
+
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 
 <script>
 import { bus } from '../main';

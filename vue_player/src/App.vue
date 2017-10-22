@@ -4,7 +4,8 @@
     <app-player></app-player>
     <app-controller></app-controller>
     <app-footer></app-footer>
-    <app-about></app-about>
+    <!-- <app-about></app-about> -->
+    <router-view></router-view>
 
   </div>
 </template>

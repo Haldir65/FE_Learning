@@ -31,7 +31,6 @@ Vue.mixin({
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
   store,
   template: '<App/>',
   components: { App },

@@ -4,6 +4,7 @@
     <app-player></app-player>
     <app-controller></app-controller>
     <app-footer></app-footer>
+    <app-about></app-about>
 
   </div>
 </template>
@@ -15,6 +16,7 @@
 import Player from './components/Player'
 import Controller from './components/Controller'
 import Footer from './components/Footer'
+import About from './components/About/About'
 
 
 export default {
@@ -22,7 +24,8 @@ export default {
   components: {
     'app-player': Player,
     'app-controller': Controller,
-    'app-footer': Footer
+    'app-footer': Footer,
+    'app-about': About
   },
   data () {
     return {

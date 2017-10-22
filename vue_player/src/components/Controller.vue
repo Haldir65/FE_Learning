@@ -12,6 +12,7 @@
       </ul>
       <input v-model="message" placeholder="edit me">
       <p>Message is: {{ message }}</p>
+
     </div>
   </div>
 </template>
@@ -19,6 +20,8 @@
 <script>
 
 // let clog = require'../utilities/util'
+import { IOUtil } from '../mixins/utils.js'
+import { bus } from '../main';
 
 export default {
   name: 'controller',
@@ -33,11 +36,17 @@ export default {
       message : 'listen to text input'
     }
   },
+  methods:{
+
+  },
+  mixins:[IOUtil],
   beforeCreate(){
     // trying to access this.xxx will only return undefined
   },
   created(){
-
+    this.$bus.on('paused', text => {
+      this.log('message from the playing '+text)
+    })
     let history = localStorage['musics']
     if (history != undefined){
       let array = JSON.parse(history)
@@ -46,16 +55,21 @@ export default {
         // console.log(msg);
       }
     }
-    wirteToLocalStorage(28)
-    // console.log(localStorage)
-    let origin = readFromLocalStorage('myAge')
+    // this.wirteToLocalStorage(28,'name')
+    // // console.log(localStorage)
+    // let origin = this.readFromLocalStorage(28)
+    // this.log(origin);
     // console.log(parseInt(origin)+20)// parseInt change Str 21 to int 21
   },
 
   mounted(){
       junk()
       // console.log(clog);
-      this.log('this is some colorful log, now we have fine grain contro over ouer log output color')
+      // this.log('this is some colorful log, now we have fine grain control over ouer log output color')
+  },
+
+  beforeDestory(){
+    this.$bus.off('paused',this.showPaused)
   }
 }
 
@@ -119,20 +133,14 @@ function  junk() {
 }
 
 
-function wirteToLocalStorage(args) {
-  localStorage.setItem('customData','[{"name":"Alice","Age",20},{"name":"Julia","Age",29}]]')
-  localStorage.setItem('myAge',args) //wirte str to local storage wia setItem
-}
-
-function readFromLocalStorage(key) {
-  return  localStorage.getItem(key)
-}
-
-
-
-function colorLog(msg) {
-  console.log("%c "+msg,"background-image:-webkit-gradient( linear, left top,right top, color-stop(0, #00a419),color-stop(0.15, #f44336), color-stop(0.29, #ff4300),color-stop(0.3, #AA00FF),color-stop(0.4, #8BC34A), color-stop(0.45, #607D8B),color-stop(0.6, #4096EE), color-stop(0.75, #D50000),color-stop(0.9, #4096EE), color-stop(1, #FF1A00));color:transparent;-webkit-background-clip:text;font-size:13px;");
-}
+// function wirteToLocalStorage(args) {
+//   localStorage.setItem('customData','[{"name":"Alice","Age",20},{"name":"Julia","Age",29}]]')
+//   localStorage.setItem('myAge',args) //wirte str to local storage wia setItem
+// }
+//
+// function readFromLocalStorage(key) {
+//   return  localStorage.getItem(key)
+// }
 
 
 function judge_type(args) {

@@ -18,6 +18,9 @@
 </template>
 
 <script>
+import { bus } from '../main';
+
+
 export default {
 
   name: 'footer',
@@ -54,7 +57,7 @@ export default {
   mounted(){
     let timeStamp = Math.round(new Date().getTime()/1000)
     // console.log('mounted time is '+timeStamp);
-    this.log('hello there ++++++++++++++++++');
+    // this.log(this.$bus)
 
   }
 

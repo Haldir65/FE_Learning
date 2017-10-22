@@ -26,9 +26,9 @@
 </template>
 
 <script>
+import { bus } from '../main'
 
 export default {
-
   data () {
     return {
       audio : undefined ,
@@ -54,7 +54,8 @@ export default {
       let playPromise = this.audio.play()
       if (playPromise!=undefined) {
           playPromise.then( _=> {
-            console.log('auto play started')
+            // console.log('auto play started')
+            this.log('playback will start now')
             this.playing = true
             self.clearInterval(id)
           })
@@ -66,8 +67,11 @@ export default {
     pause: function () {
       this.paused = !this.paused;
       this.playing = !this.paused;
-      console.log('---------------------------'+this.paused);
+      // console.log('---------------------------'+this.paused);
       (this.paused) ? this.audio.pause():this.audio.play()
+      // this.log((this.paused)?'paused':'playback resumed')
+      this.$bus.emit('paused', !this.paused?'playing':'paused')
+
     },
     mute: function () {
       this.muted = !this.muted
@@ -129,7 +133,8 @@ export default {
     // console.log('before created')
   },
   created () {
-    this.log('player created')
+    // this.log('player created')
+
   },
   beforeMount () {
 

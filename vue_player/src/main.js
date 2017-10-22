@@ -3,17 +3,28 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import VueBus from 'vue-bus';
+import Vuex from 'vuex'
+
 import {clog} from './mixins/utils'
 
 Vue.config.productionTip = false
+Vue.use(Vuex)
+const store = new Vuex.Store({
+  state: {
+    count: 0
+  },
+  mutations: {
+  	increment: state => state.count++,
+    decrement: state => state.count--
+  }
+})
 
-
+Vue.use(VueBus);
 Vue.use(router)
 Vue.mixin({
   methods:{
-    log : function (msg) {
-      clog(msg);
-    }
+    log : msg => clog(msg)
   }
 })
 
@@ -21,6 +32,7 @@ Vue.mixin({
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App },
   router:router

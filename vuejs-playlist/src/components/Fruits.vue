@@ -4,10 +4,7 @@
       <li v-for='fruit in fruits' v-on:click='fruit.show=!fruit.show'>
         <h2>{{fruit.name}}</h2>
         <h3 v-show='fruit.show'>{{fruit.id}}</h3>
-
       </li>
-        
-
     </ul>
     <button v-on:click='deleteFruit'>Delete A Fruit</button>
   </div>
@@ -28,7 +25,7 @@ export default {
 
   data () {
     return {
-      
+
     }
   },
   methods:{
@@ -48,7 +45,7 @@ export default {
   //   alert('befor Mounted')
   // },
   // mounted(){
-  //   alert('mounted')    
+  //   alert('mounted')
   // },
   // beforeUpdate(){
   //   alert('before update')
@@ -84,7 +81,7 @@ export default {
     border: 1px solid #222;
     margin: 10px;
   }
-  
+
 
 
 </style>

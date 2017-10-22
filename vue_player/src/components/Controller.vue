@@ -4,31 +4,22 @@
        <strong v-text='msg' >Controller</strong>
     </h1>
     <div class="topstory_container">
-
       <img src="http://p4.music.126.net/34YW1QtKxJ_3YnX9ZzKhzw==/2946691234868155.jpg" style="width:300px;height:300px;display:none"/>
-
       <ul id='people_list' class='Card'>
         <li v-for='(author , index) in authors' style="transition: all 1000ms">
         {{index}} --- {{author.name}} whose age is {{author.age}}
         </li>
       </ul>
-
-    
-
       <input v-model="message" placeholder="edit me">
       <p>Message is: {{ message }}</p>
-
-
-
-
     </div>
-
-
-
   </div>
 </template>
 
 <script>
+
+// let clog = require'../utilities/util'
+
 export default {
   name: 'controller',
   data () {
@@ -46,6 +37,7 @@ export default {
     // trying to access this.xxx will only return undefined
   },
   created(){
+
     let history = localStorage['musics']
     if (history != undefined){
       let array = JSON.parse(history)
@@ -57,11 +49,13 @@ export default {
     wirteToLocalStorage(28)
     // console.log(localStorage)
     let origin = readFromLocalStorage('myAge')
-    console.log(parseInt(origin)+20)// parseInt change Str 21 to int 21
+    // console.log(parseInt(origin)+20)// parseInt change Str 21 to int 21
   },
 
   mounted(){
       junk()
+      // console.log(clog);
+      this.log('this is some colorful log, now we have fine grain contro over ouer log output color')
   }
 }
 
@@ -74,6 +68,8 @@ function  junk() {
   for(let i= 0;i<array.length;i++){
     array[i] = i
   }
+
+
   // array.map(x => x*x).forEach(it => console.log(it))
 
   array = Array.of({'b':12,'a':12},{'b':133,'a':55})
@@ -133,9 +129,9 @@ function readFromLocalStorage(key) {
 }
 
 
-function logit(arg) {
-  console.log(arg);
 
+function colorLog(msg) {
+  console.log("%c "+msg,"background-image:-webkit-gradient( linear, left top,right top, color-stop(0, #00a419),color-stop(0.15, #f44336), color-stop(0.29, #ff4300),color-stop(0.3, #AA00FF),color-stop(0.4, #8BC34A), color-stop(0.45, #607D8B),color-stop(0.6, #4096EE), color-stop(0.75, #D50000),color-stop(0.9, #4096EE), color-stop(1, #FF1A00));color:transparent;-webkit-background-clip:text;font-size:13px;");
 }
 
 

@@ -13,7 +13,7 @@
     </div>
 
 
-    <router-view></router-view>
+  <a href="https://www.baidu.com" target="_blank">some content</a>
   </div>
 </template>
 
@@ -54,6 +54,8 @@ export default {
   mounted(){
     let timeStamp = Math.round(new Date().getTime()/1000)
     // console.log('mounted time is '+timeStamp);
+    this.log('hello there ++++++++++++++++++');
+
   }
 
 }

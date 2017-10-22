@@ -129,7 +129,7 @@ export default {
     // console.log('before created')
   },
   created () {
-
+    this.log('player created')
   },
   beforeMount () {
 

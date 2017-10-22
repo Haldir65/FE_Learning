@@ -3,11 +3,19 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import {clog} from './mixins/utils'
 
 Vue.config.productionTip = false
 
 
-
+Vue.use(router)
+Vue.mixin({
+  methods:{
+    log : function (msg) {
+      clog(msg);
+    }
+  }
+})
 
 /* eslint-disable no-new */
 new Vue({
@@ -17,4 +25,3 @@ new Vue({
   components: { App },
   router:router
 })
-Vue.use(router)

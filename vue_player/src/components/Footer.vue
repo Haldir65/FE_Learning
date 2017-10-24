@@ -31,12 +31,13 @@ export default {
   data () {
     return {
       msg: 'copyRight footer',
-      baidu: 'https://www.baidu.com'
+      baidu: 'https://www.baidu.com',
+      results : ''
     }
   },
   methods: {
     handle_mouse_on(args) {
-      mouse_out(args)
+
       // console.log(this.msg);
     },
     handle_mouse_over(args){
@@ -56,7 +57,7 @@ export default {
 
   },
   created (){
-    // console.error('footer created');
+
   },
   mounted(){
     let timeStamp = Math.round(new Date().getTime()/1000)

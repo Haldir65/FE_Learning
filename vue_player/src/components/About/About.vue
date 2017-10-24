@@ -13,7 +13,10 @@
   </div>
 </template>
 
+<script src="https://cdn.bootcss.com/axios/0.16.2/axios.js"></script>
+
 <script>
+import {axios} from '../../main'
 
 export default {
   name : 'about',
@@ -31,10 +34,21 @@ export default {
   },
   computed:{
 
+  },
+  created(){
+    console.error('created')
+    this.log(axios)
+    axios.get("https://www.baidu.com")
+        .then(response => {
+            console.log('get result')
+            // this.results = response.data
+            console.log(this.results)
+          })
   }
 }
 
 </script>
+
 
 <style scoped>
     @import "../../common/stylebase.css";

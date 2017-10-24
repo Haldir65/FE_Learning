@@ -17,8 +17,8 @@
   </div>
 </template>
 
-<script>
 
+<script>
 // let clog = require'../utilities/util'
 import { IOUtil } from '../mixins/utils.js'
 import { bus } from '../main';
@@ -133,14 +133,7 @@ function  junk() {
 }
 
 
-// function wirteToLocalStorage(args) {
-//   localStorage.setItem('customData','[{"name":"Alice","Age",20},{"name":"Julia","Age",29}]]')
-//   localStorage.setItem('myAge',args) //wirte str to local storage wia setItem
-// }
-//
-// function readFromLocalStorage(key) {
-//   return  localStorage.getItem(key)
-// }
+
 
 
 function judge_type(args) {
@@ -148,6 +141,7 @@ function judge_type(args) {
 }
 
 </script>
+
 
 <style scoped>
   @import "../common/stylebase.css";

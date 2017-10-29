@@ -12,6 +12,7 @@
     <button @click ="() => log($store.state.count)">get count</button>
   </div>
 </template>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 <script src="https://cdn.bootcss.com/axios/0.16.2/axios.js"></script>
 
@@ -23,7 +24,8 @@ export default {
   data() {
     return {
       showing : true,
-      ended :false
+      ended :false,
+      results : ''
     }
 
   },
@@ -36,16 +38,53 @@ export default {
 
   },
   created(){
-    console.error('created')
-    this.log(axios)
-    axios.get("https://www.baidu.com")
-        .then(response => {
-            console.log('get result')
-            // this.results = response.data
-            console.log(this.results)
-          })
+    // getBaidu()
+    // getDouBanViaJsonP()
+
+    // axios.get("https://news-at.zhihu.com/api/4/news/latest")
+    //     .then(response => {
+    //         console.log('get result')
+    //         this.results = response.data
+    //         console.log(this.results)
+    //       }).catch(function (error) {
+    //         console.log('error')
+    //
+    //       })
   }
 }
+
+function getBaidu() {
+  axios({
+    method : 'get',
+    url: 'http://api.douban.com/v2/movie/top250',
+    headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        'Access-Control-Allow-Origin': "*",
+        'Access-Control-Allow-Methods': ['get','post'],
+        'method' : 'get',
+        'withCredentials': 'true'
+    },
+    crossDomain: 'true'
+  }).then(function (res) {
+      console.log(res.data)
+  }).catch(function (error) {
+      console.log(error)
+  })
+}
+
+
+function getDouBanViaJsonP(){
+  var jsonp = require('jsonp');
+  jsonp('http://api.douban.com/v2/movie/top250', null, function (err, data) {
+    if (err) {
+      console.error(err.message)
+    } else {
+      console.log(data)
+      return data
+    }
+  });
+}
+
 
 </script>
 

@@ -60,3 +60,17 @@ a:active {color: #0000FF}   /* 被选择的链接 */
   padding: 0 16px;
   margin: 10px auto;
 }
+
+.box {
+  background-color: #444;
+  color: #0f88eb;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 150%;
+  background: #fff;
+  border: 2px ;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.1);
+  text-decoration: none;
+  text-align: center;
+}

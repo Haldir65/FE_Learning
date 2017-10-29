@@ -12,7 +12,7 @@
       <div class="box f">F</div>
     </div>
 
-    <router-link to='./about'>Go to About Page</router-link>
+
     <router-link to='./'>Go to another page</router-link>
 
 
@@ -110,17 +110,5 @@ function mouse_outed(tag) {
 
 }
 
-.box {
-  background-color: #444;
-  color: #0f88eb;
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 150%;
-  background: #fff;
-  border: 2px ;
-  border-radius: 2px;
-  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.1);
-  text-decoration: none;
-  text-align: center;
-}
+
 </style>

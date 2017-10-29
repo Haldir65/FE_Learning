@@ -5,10 +5,13 @@ import App from './App'
 import router from './router'
 import VueBus from 'vue-bus'
 import Vuex from 'vuex'
+import axios from 'axios'
+
 
 
 
 import {clog} from './mixins/utils'
+export {axios}
 
 
 Vue.config.productionTip = false
@@ -31,7 +34,6 @@ const store = new Vuex.Store({
 
   }
 })
-
 Vue.use(VueBus);
 Vue.use(router)
 Vue.mixin({

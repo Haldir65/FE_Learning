@@ -1,8 +1,9 @@
 <template>
   <div id="app">
 
-    <app-player></app-player>
-    <app-controller></app-controller>
+    <!-- <app-player></app-player>
+    <app-controller></app-controller> -->
+    <app-header></app-header>
     <app-footer></app-footer>
     <!-- <app-about></app-about> -->
     <router-view></router-view>
@@ -18,6 +19,7 @@ import Player from './components/Player'
 import Controller from './components/Controller'
 import Footer from './components/Footer'
 import About from './components/About/About'
+import Header from './components/Front/Header'
 
 
 export default {
@@ -26,7 +28,8 @@ export default {
     'app-player': Player,
     'app-controller': Controller,
     'app-footer': Footer,
-    'app-about': About
+    'app-about': About,
+    'app-header': Header
   },
   data () {
     return {

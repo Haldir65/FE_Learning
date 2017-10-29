@@ -231,13 +231,13 @@ export default {
     border-radius: 22px;
   }
   .play-icon {
-    background: url(./play.svg) no-repeat;
+    /*background: url(./play.svg) no-repeat;*/
     width: 40px ;
     height: 200px;
 
   }
   .pause-icon {
-    background: url(./pause.svg) no-repeat;
+    /*background: url(./pause.svg) no-repeat;*/
     background-size: contain;
   }
 }

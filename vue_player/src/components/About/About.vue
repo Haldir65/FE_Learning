@@ -40,16 +40,7 @@ export default {
   created(){
     // getBaidu()
     // getDouBanViaJsonP()
-
-    // axios.get("https://news-at.zhihu.com/api/4/news/latest")
-    //     .then(response => {
-    //         console.log('get result')
-    //         this.results = response.data
-    //         console.log(this.results)
-    //       }).catch(function (error) {
-    //         console.log('error')
-    //
-    //       })
+    // getMyPost()
   }
 }
 
@@ -83,6 +74,17 @@ function getDouBanViaJsonP(){
       return data
     }
   });
+}
+
+function getMyPost(){
+  axios.get('http://127.0.0.1:10877/posts').then(
+    function (res) {
+      console.log(res);
+    }).catch(function (error) {
+      console.log('errors');
+    })
+
+
 }
 
 

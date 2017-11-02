@@ -4,7 +4,7 @@
     <!-- <app-player></app-player>
     <app-controller></app-controller> -->
     <app-header></app-header>
-    <app-footer></app-footer>
+    <!-- <app-footer></app-footer> -->
     <!-- <app-about></app-about> -->
     <router-view></router-view>
 

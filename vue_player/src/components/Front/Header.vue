@@ -24,8 +24,8 @@
     </div>
 
     <div >
-      <div v-for='post in posts'>
-        <app-Card :p_title="post.id" :p_msg="post.description"></app-Card>
+      <div v-for='post,index in posts'>
+        <app-Card :post='post' :index='index' ></app-Card>
       </div>
     </div>
 
@@ -52,12 +52,18 @@ import MaterialCard from '../widgets/MaterialCard'
       return {
         title: 'Hello from Header vue',
         posts: [
-        {'id':1,'description':'first'},
-        {'id':2,'description':'second'},
-        {'id':3,'description':'jsonp'}],
+        {'id':1,'description':'first',extra:[]},
+        {'id':2,'description':'second',extra:[]},
+        {'id':3,'description':'jsonp',extra:[]}],
         msg: '消息的内容',
         content : '消息的详细内容'
 
+      }
+    },
+    methods:{
+      computeClick:function (post,index) {
+        console.log(post);
+        console.log(index);
       }
     },
     components :{
@@ -73,18 +79,22 @@ import MaterialCard from '../widgets/MaterialCard'
       //   console.log(self.posts)
       // },1000)
       // this.log(this.posts)
-
+      // this.log(this.posts)
+      // let first = self.getElementsByClassName('flip_card_item')
+      // this.log(first)
+      let tag = this.$el.getElementsByClassName('flip_card_item')
+      this.log(tag)
 
     },
     beforeMount: function () {
-      this.log(this.posts)
+      // this.log(this.posts)
       prepare_data(this.posts)
 
     },
     updated:function () {
-      this.log('updated')
-      // this.log(this.posts)
+
     }
+
 
 
   }
@@ -95,20 +105,32 @@ import MaterialCard from '../widgets/MaterialCard'
     for(let i=0;i<10;i++){
       dice = (Math.random()+1)*100000%4
        data = {'id': dice,'description':'stuff'}
-      switch (i%4) {
+      switch (i%8) {
         case 0:
-          data.description ='000000000000000000'
+          data.description ='beforeCreate'
         break;
         case 1:
-        data.description ='111111111111'
-
+          data.description ='created'
         break;
         case 2:
-        data.description ='2222222'
+          data.description ='beforeMount'
         break;
         case 3:
-        data.description ='3333333333333'
+          data.description ='mounted'
         break
+        case 4:
+          data.description='beforeUpdate'
+        break;
+        case 5:
+          data.description='updated'
+        break;
+        case 6:
+          data.description='beforeDestory'
+        break;
+        case 7:
+          data.description='destoryed'
+        break;
+          data.description='unKnown'
         default:
           // data.description ='333333思思思思思思思思光时代'
       }

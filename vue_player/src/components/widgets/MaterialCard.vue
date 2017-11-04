@@ -1,20 +1,20 @@
 <template>
-  <div class="card_margin_wrapper">
+  <div class="card_margin_wrapper" @click='handleClick($event)'>
     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
       <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">{{p_title}}</h2>
+        <h2 class="mdl-card__title-text">{{post.id}}</h2>
       </div>
       <div class="mdl-card__supporting-text">
-        {{msg}}
+      {{post.id}}
       </div>
-      <div class="mdl-card__actions mdl-card--border">
+      <div class="mdl-card__actions mdl-card--border" @click.stop='handleClickButton'>
         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-          {{p_button_text}}
+          {{post.description}}
         </a>
       </div>
       <div class="mdl-card__menu">
         <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-          <i class="material-icons">{{share}}</i>
+          <i class="material-icons">{{post.id}}</i>
         </button>
       </div>
     </div>
@@ -25,20 +25,30 @@
 <script>
   export default{
     name: 'Card',
-    props :['p_title' ,'p_msg','p_share','p_button_text'
-    ],
+    props :['post','index'],
       data () {
         return {
-          title: this.p_title,
-          msg: this.p_msg,
-          share : this.p_share,
-          buttonText : this.p_button_text
+          title: '',
+          msg: '',
+          can_share : false,
+          extra: []
+        }
+      },
+      methods:{
+        handleClick:function (event) {
+          // console.log('clicked');
+          console.log(event);
+          console.log('this post says '+this.post.description+' index is '+this.index);
+        },
+        handleClickButton:function () {
+          this.log('you just clicked this button '+this.index )
         }
       },
 
       created :function () {
 
-      }
+      },
+
   }
 
 

@@ -37,6 +37,12 @@ export default {
         'src': './assets/赵雷-成都.mp3'
       }
     }
+  },
+  created:function () {
+
+  },
+  beforeCreate: function () {
+
   }
 
 }

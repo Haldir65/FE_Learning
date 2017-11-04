@@ -23,25 +23,20 @@
           <!-- https://getmdl.io/components/index.html#cards-section -->
     </div>
 
-    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-      <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">Welcome</h2>
-      </div>
-      <div class="mdl-card__supporting-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Mauris sagittis pellentesque lacus eleifend lacinia...
-      </div>
-      <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-          Get Started
-        </a>
-      </div>
-      <div class="mdl-card__menu">
-        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-          <i class="material-icons">share</i>
-        </button>
+    <div >
+      <div v-for='post in posts'>
+        <app-Card :p_title="post.id" :p_msg="post.description"></app-Card>
       </div>
     </div>
+
+    <!-- <app-Card :p_title="title" :p_msg="content"></app-Card>
+    <app-Card></app-Card>
+    <app-Card></app-Card>
+    <app-Card></app-Card>
+    <app-Card></app-Card>
+    <app-Card></app-Card>
+    <app-Card></app-Card> -->
+
 
 
 
@@ -50,25 +45,75 @@
 
 <script>
 
+import MaterialCard from '../widgets/MaterialCard'
+
   export default{
     data() {
       return {
-        msg: 'Hello from Header vue',
+        title: 'Hello from Header vue',
         posts: [
         {'id':1,'description':'first'},
         {'id':2,'description':'second'},
-        {'id':3,'description':'jsonp'}]
+        {'id':3,'description':'jsonp'}],
+        msg: '消息的内容',
+        content : '消息的详细内容'
 
       }
     },
+    components :{
+      'app-Card' : MaterialCard
+    },
     created: function () {
+      // prepare_data()
+    },
+
+    mounted: function () {
+      // self.setInterval(function () {
+      //   window.location.reload(true)
+      //   console.log(self.posts)
+      // },1000)
+      // this.log(this.posts)
+
 
     },
-    mounted: function () {
+    beforeMount: function () {
+      this.log(this.posts)
+      prepare_data(this.posts)
 
+    },
+    updated:function () {
+      this.log('updated')
+      // this.log(this.posts)
     }
 
 
+  }
+
+
+  function prepare_data(array) {
+    let dice, data
+    for(let i=0;i<10;i++){
+      dice = (Math.random()+1)*100000%4
+       data = {'id': dice,'description':'stuff'}
+      switch (i%4) {
+        case 0:
+          data.description ='000000000000000000'
+        break;
+        case 1:
+        data.description ='111111111111'
+
+        break;
+        case 2:
+        data.description ='2222222'
+        break;
+        case 3:
+        data.description ='3333333333333'
+        break
+        default:
+          // data.description ='333333思思思思思思思思光时代'
+      }
+      array.push(data)
+    }
   }
 
 
@@ -106,10 +151,7 @@ color: #fff;
 
 a {
     text-decoration: none;
-    color: #ffffff;
-    position: absolute;
-    left:50%;
-    bottom: 20%
+
 }
 
 

@@ -12,6 +12,8 @@ import axios from 'axios'
 
 import {clog} from './mixins/utils'
 export {axios}
+import MaterialCard from './components/widgets/MaterialCard'
+
 
 
 Vue.config.productionTip = false

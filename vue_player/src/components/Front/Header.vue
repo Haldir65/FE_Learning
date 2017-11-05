@@ -83,7 +83,7 @@ import MaterialCard from '../widgets/MaterialCard'
       // let first = self.getElementsByClassName('flip_card_item')
       // this.log(first)
       let tag = this.$el.getElementsByClassName('flip_card_item')
-      this.log(tag)
+      // this.log(tag)
 
     },
     beforeMount: function () {

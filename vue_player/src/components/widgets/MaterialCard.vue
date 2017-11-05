@@ -1,7 +1,7 @@
 <template>
   <div class="card_margin_wrapper" @click='handleClick($event)'>
     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-      <div class="mdl-card__title">
+      <div v-bind:class="[{ background: 'classObject.img_url'}" class="mdl-card__title]" >
         <h2 class="mdl-card__title-text">{{post.id}}</h2>
       </div>
       <div class="mdl-card__supporting-text">
@@ -31,17 +31,27 @@
           title: '',
           msg: '',
           can_share : false,
-          extra: []
+          extra: [],
+          isActive : true,
+          error : false
         }
       },
       methods:{
         handleClick:function (event) {
           // console.log('clicked');
-          console.log(event);
-          console.log('this post says '+this.post.description+' index is '+this.index);
+          // console.log(event);
+          // console.log('this post says '+this.post.description+' index is '+this.index);
         },
         handleClickButton:function () {
-          this.log('you just clicked this button '+this.index )
+          // this.log('you just clicked this button '+this.index )
+        }
+      },
+      computed:{
+        classObject : function () {
+          return {
+            active: this.isActive && !this.error,
+            img_url: '../../../static/imgs/scene3.jpg'
+          }
         }
       },
 
@@ -71,6 +81,8 @@ color: #fff;
 .card_margin_wrapper{
   margin: 10px
 }
-
+.random_img {
+  margin: 1px
+}
 
 </style>

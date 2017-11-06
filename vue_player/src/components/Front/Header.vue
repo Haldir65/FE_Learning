@@ -4,24 +4,7 @@
   <div id="header_wrapper">
 
 
-    <div id="flip_card_container">
 
-      <div>
-          <div class="flip_card_item">
-            <img src="../../assets/logo.png" width="120px" height="120px"/>
-            <router-link to='./'>Home</router-link>
-          </div>
-      </div>
-
-          <!-- <ul>
-            <li><router-link to='./'>Home</router-link></li>
-            <li><router-link to='./about'>News</router-link></li>
-            <li><router-link to='./'>Contact</router-link></li>
-            <li><router-link to='./about'>About</router-link></li>
-          </ul> -->
-
-          <!-- https://getmdl.io/components/index.html#cards-section -->
-    </div>
 
     <div >
       <div v-for='post,index in posts'>
@@ -38,6 +21,15 @@
     <app-Card></app-Card> -->
 
 
+
+    <!-- <ul>
+      <li><router-link to='./'>Home</router-link></li>
+      <li><router-link to='./about'>News</router-link></li>
+      <li><router-link to='./'>Contact</router-link></li>
+      <li><router-link to='./about'>About</router-link></li>
+    </ul> -->
+
+    <!-- https://getmdl.io/components/index.html#cards-section -->
 
 
   </div>

@@ -1,23 +1,37 @@
 <template>
   <div class="card_margin_wrapper" @click='handleClick($event)'>
     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-      <div v-bind:class="[classObject.img_class,' mdl-card__title']" >
+      <div v-bind:class="[' mdl-card__title',classObject.img_class]">
         <h2 class="mdl-card__title-text">{{post.id}}</h2>
       </div>
       <div class="mdl-card__supporting-text">
       {{post.id}}
       </div>
-      <div class="mdl-card__actions mdl-card--border" @click.stop='handleClickButton'>
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      <div class="mdl-card__actions mdl-card--border" @click.stop='handleClickButton' >
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" >
           {{post.description}}
         </a>
       </div>
       <div class="mdl-card__menu">
         <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
           <i class="material-icons">{{post.id}}</i>
+
+
         </button>
       </div>
     </div>
+
+    <div id="flip_card_container">
+
+      <div>
+          <div class="flip_card_item">
+            <img src="../../assets/logo.png" width="120px" height="120px"/>
+            <router-link to='./'>Home</router-link>
+          </div>
+      </div>
+
+
+</div>
 
   </div>
 </template>
@@ -50,8 +64,8 @@
         classObject : function () {
           return {
             active: this.isActive && !this.error,
-            img_url: '../../../static/imgs/scene3.jpg',
-            img_class: 'random_img_url'
+            img_class: 'random_img_url',
+            img_url: '../../../static/imgs/scene5.jpg'
           }
         }
       },
@@ -84,7 +98,7 @@ color: #fff;
 }
 .random_img_url {
   margin: 1px ;
-  background: url('../../../static/imgs/scene3.jpg') center /cover;
+  background: url('../../../static/imgs/scene4.jpg') center /cover;
 }
 
 </style>

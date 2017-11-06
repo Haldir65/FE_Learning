@@ -1,9 +1,20 @@
 <template>
   <div id="app">
-
+    <div>
+      <router-link :to="{ name: 'Home', params: {} }">Home</router-link>
+    </div>
+    <div>
+      <router-link :to="{ name: 'About', params: {} }">About</router-link>
+    </div>
+    <div>
+      <router-link :to="{ name: 'Player', params: {} }">Player</router-link>
+    </div>
+    <div>
+      <router-link :to="{ name: 'Header', params: {} }">Header</router-link>
+    </div>
     <!-- <app-player></app-player>
     <app-controller></app-controller> -->
-    <app-header></app-header>
+    <!-- <app-header></app-header> -->
     <!-- <app-footer></app-footer> -->
     <!-- <app-about></app-about> -->
     <router-view></router-view>

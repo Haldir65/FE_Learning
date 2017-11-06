@@ -1,17 +1,24 @@
 <template>
   <div id="app">
     <div>
-      <router-link :to="{ name: 'Home', params: {} }">Home</router-link>
+      <div class="container">
+        <router-link :to="{ name: 'Home', params: {} }">Home</router-link>
+      </div>
+      <div>
+        <router-link :to="{ name: 'About', params: {} }">About</router-link>
+      </div>
+      <div>
+        <router-link :to="{ name: 'Player', params: {} }">Player</router-link>
+      </div>
+      <div>
+        <router-link :to="{ name: 'Header', params: {} }">Header</router-link>
+      </div>
+      <div>
+        <router-link :to="{ name: 'vifs', params: {} }">Vifs</router-link>
+
+      </div>
     </div>
-    <div>
-      <router-link :to="{ name: 'About', params: {} }">About</router-link>
-    </div>
-    <div>
-      <router-link :to="{ name: 'Player', params: {} }">Player</router-link>
-    </div>
-    <div>
-      <router-link :to="{ name: 'Header', params: {} }">Header</router-link>
-    </div>
+
     <!-- <app-player></app-player>
     <app-controller></app-controller> -->
     <!-- <app-header></app-header> -->

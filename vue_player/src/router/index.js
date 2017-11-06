@@ -5,6 +5,8 @@ import Player from '@/components/Player'
 import Controller from '@/components/Controller'
 import About from '../components/About/About'
 import Header from '../components/Front/Header'
+import Home from '../components/Home'
+import Vifs from '../components/Front/Vifs'
 
 Vue.use(Router)
 
@@ -13,6 +15,7 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
+      component: Home
     },
     {
       path: '/Hello',
@@ -35,6 +38,11 @@ export default new Router({
       path: '/header',
       name: 'Header',
       component: Header
+    },
+    {
+      path: '/vifs',
+      name: 'vifs',
+      component: Vifs
     }
   ],
 	mode:'history'

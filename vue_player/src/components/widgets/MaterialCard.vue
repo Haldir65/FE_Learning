@@ -1,7 +1,7 @@
 <template>
   <div class="card_margin_wrapper" @click='handleClick($event)'>
     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-      <div v-bind:class="[{ background: 'classObject.img_url'}" class="mdl-card__title]" >
+      <div v-bind:class="[classObject.img_class,' mdl-card__title']" >
         <h2 class="mdl-card__title-text">{{post.id}}</h2>
       </div>
       <div class="mdl-card__supporting-text">
@@ -50,7 +50,8 @@
         classObject : function () {
           return {
             active: this.isActive && !this.error,
-            img_url: '../../../static/imgs/scene3.jpg'
+            img_url: '../../../static/imgs/scene3.jpg',
+            img_class: 'random_img_url'
           }
         }
       },
@@ -73,7 +74,7 @@ width: 512px;
 .demo-card-wide > .mdl-card__title {
 color: #fff;
 height: 176px;
-background: url('../../assets/welcome_card.jpg') center / cover;
+/*background: url('../../assets/welcome_card.jpg') center / cover;*/
 }
 .demo-card-wide > .mdl-card__menu {
 color: #fff;
@@ -81,8 +82,9 @@ color: #fff;
 .card_margin_wrapper{
   margin: 10px
 }
-.random_img {
-  margin: 1px
+.random_img_url {
+  margin: 1px ;
+  background: url('../../../static/imgs/scene3.jpg') center /cover;
 }
 
 </style>

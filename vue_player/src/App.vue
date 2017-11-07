@@ -1,21 +1,22 @@
 <template>
   <div id="app">
-    <div>
-      <div class="container">
-        <router-link :to="{ name: 'Home', params: {} }">Home</router-link>
-      </div>
-      <div>
-        <router-link :to="{ name: 'About', params: {} }">About</router-link>
-      </div>
-      <div>
-        <router-link :to="{ name: 'Player', params: {} }">Player</router-link>
-      </div>
-      <div>
-        <router-link :to="{ name: 'Header', params: {} }">Header</router-link>
-      </div>
-      <div>
-        <router-link :to="{ name: 'vifs', params: {} }">Vifs</router-link>
-
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2" >
+          <router-link :to="{ name: 'Home', params: {} }">Home</router-link>
+        </div>
+        <div  class="col-lg-2">
+          <router-link :to="{ name: 'About', params: {} }">About</router-link>
+        </div>
+        <div  class="col-lg-2" >
+          <router-link :to="{ name: 'Player', params: {} }">Player</router-link>
+        </div>
+        <div class="col-lg-2">
+          <router-link :to="{ name: 'Header', params: {} }">Header</router-link>
+        </div>
+        <div class="col-lg-2">
+          <router-link :to="{ name: 'vifs', params: {} }">Vifs</router-link>
+        </div>
       </div>
     </div>
 
@@ -67,12 +68,5 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>

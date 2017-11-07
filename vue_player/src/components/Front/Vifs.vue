@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="marginTop50">
     <div v-if="type === 'A'">
       A
     </div>
@@ -14,6 +14,9 @@
     </div>
     <button class="mdl-button mdl-js-button mdl-button--raised">Save</button>
     <a href="https://getmdl.io/components/index.html#buttons-section" target='_blank'>Docs for fab</a>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+      Ripple
+    </button>
   </div>
 
 

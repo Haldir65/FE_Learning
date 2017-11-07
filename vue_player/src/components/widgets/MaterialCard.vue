@@ -15,8 +15,6 @@
       <div class="mdl-card__menu">
         <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
           <i class="material-icons">{{post.id}}</i>
-
-
         </button>
       </div>
     </div>
@@ -29,6 +27,9 @@
             <router-link to='./'>Home</router-link>
           </div>
       </div>
+      <switch>
+        哈哈哈
+      </switch>
 
 
 </div>

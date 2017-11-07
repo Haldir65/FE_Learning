@@ -1,7 +1,7 @@
 <template>
-  <div class=" about_container">
+  <div class="about_container marginTop50">
 
-    <p class="Card" >
+    <p class="Card">
       中新社北京10月22日电(记者曾鼐)针对记者有关“入园难”“择校热”等提问，中国教育部党组书记、部长
       <strong>陈宝生
       </strong>
@@ -11,7 +11,7 @@
     </p>
 
 
-    <div class="Card margin">
+    <div class="Card marginTop50">
       <p>
         中新社北京10月22日电(记者曾鼐)针对记者有关“入园难”“择校热”等提问，中国教育部党组书记、部长
         <strong>陈宝生
@@ -116,10 +116,7 @@ function getMyPost(){
       color: #009688;
     }
 
-    .margin {
-      margin-top: 50px;
 
-    }
 
 
 

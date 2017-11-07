@@ -1,7 +1,7 @@
 <template>
 
 
-  <div id="header_wrapper">
+  <div id="header_wrapper" class="marginTop50">
 
 
 

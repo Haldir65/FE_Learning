@@ -1,11 +1,14 @@
 <template>
   <div id="player">
       <h2>Supposedly the main Controller</h2>
-      <button v-on:click='play' class='normal_button play_button'>Play</button>
-      <button v-on:click='pause' class='normal_button pause_button' v-text='pause_button_text'>Pause</button>
-      <button v-on:click ='mute' class='normal_button mute_button'>Mute</button>
-      <button v-on:click = 'next' class="normal_button" >Next</button>
-      <button v-on:click = 'advance' class="normal_button">advance</button>
+      <button v-on:click='play' class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Play</button>
+      <button v-on:click='pause' class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" v-text='pause_button_text'>Pause</button>
+      <button v-on:click ='mute' class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Mute</button>
+      <button v-on:click = 'next' class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" >Next</button>
+      <button v-on:click = 'advance' class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">advance</button>
+      <button class="mdl-button mdl-js-button mdl-button--raised">
+        Button
+      </button>
       <audio  ref='audiofile' :src='this.src' preload="auto"></audio>
       <div class="music-progress">
         <div class="progress">

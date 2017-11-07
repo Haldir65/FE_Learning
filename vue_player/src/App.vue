@@ -2,19 +2,19 @@
   <div id="app">
     <div class="container">
       <div class="row">
-        <div class="col-lg-2" >
+        <div class="col-lg-2 text-success" >
           <router-link :to="{ name: 'Home', params: {} }">Home</router-link>
         </div>
-        <div  class="col-lg-2">
+        <div  class="col-lg-2 text-info">
           <router-link :to="{ name: 'About', params: {} }">About</router-link>
         </div>
-        <div  class="col-lg-2" >
+        <div  class="col-lg-2 text-warning" >
           <router-link :to="{ name: 'Player', params: {} }">Player</router-link>
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-2 text-primary" >
           <router-link :to="{ name: 'Header', params: {} }">Header</router-link>
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-2 text-danger">
           <router-link :to="{ name: 'vifs', params: {} }">Vifs</router-link>
         </div>
       </div>

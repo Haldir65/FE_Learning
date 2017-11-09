@@ -37,7 +37,7 @@ const store = new Vuex.Store({
   }
 })
 Vue.use(VueBus);
-Vue.use(router)
+
 Vue.mixin({
   methods:{
     log : msg => clog(msg)

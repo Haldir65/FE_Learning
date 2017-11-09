@@ -68,6 +68,14 @@ export default {
   },
   beforeCreate: function() {
 
+  },
+  watch: {
+    '$route' (to, from) {
+      // 对路由变化作出响应...
+      // this.log('to = ' + to + ' from ' + from)
+      let Name = from['name']
+      let fullPath = from['fullpath']
+    }
   }
 
 }

@@ -19,7 +19,7 @@
     </div>
   </div>
 
-  <div id="flip_card_container">
+  <div id="flip_card_container" style='display:none'>
 
     <div>
       <div class="flip_card_item">

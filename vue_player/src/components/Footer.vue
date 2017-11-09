@@ -1,38 +1,40 @@
 <template>
-  <div id="footer">
+<div id="footer">
 
-    <div class="wrapper">
-      <div class="box a" id='btn_a'@click='handle_mouse_on(0)' @mouseover='handle_mouse_over()' @mouseout='handle_mouse_out()'>
-        <a href="http://www.baidu.com" target="_blank" >a</a>
-      </div>
-      <div class="box b">B</div>
-      <div class="box c">C</div>
-      <div class="box d">D</div>
-      <div class="box e">E</div>
-      <div class="box f">F</div>
+  <div class="wrapper">
+    <div class="box a" id='btn_a' @click='handle_mouse_on(0)' @mouseover='handle_mouse_over()' @mouseout='handle_mouse_out()'>
+      <a href="http://www.baidu.com" target="_blank">a</a>
     </div>
-
-
-    <router-link to='./'>Go to another page</router-link>
-
-
+    <div class="box b">B</div>
+    <div class="box c">C</div>
+    <div class="box d">D</div>
+    <div class="box e">E</div>
+    <div class="box f">F</div>
   </div>
+
+
+  <router-link to='./'>Go to another page</router-link>
+
+
+</div>
 </template>
 
 <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 
 <script>
-import { bus } from '../main';
+  import {
+    bus
+  } from '../main';
 
 
 export default {
 
   name: 'footer',
-  data () {
+  data() {
     return {
       msg: 'copyRight footer',
       baidu: 'https://www.baidu.com',
-      results : ''
+      results: ''
     }
   },
   methods: {
@@ -40,7 +42,7 @@ export default {
 
       // console.log(this.msg);
     },
-    handle_mouse_over(args){
+    handle_mouse_over(args) {
       let current_tag = this.$el //find html tag of for this component , div tag in this case
       let my_document = window.document //don't use this.window,use window will do
       let button = my_document.getElementById('btn_a')
@@ -48,7 +50,7 @@ export default {
       mouse_on(button)
 
     },
-    handle_mouse_out(){
+    handle_mouse_out() {
       let the_tag = this.$el
       mouse_outed(the_tag.firstElementChild.firstElementChild)
     }
@@ -56,11 +58,11 @@ export default {
   computed: {
 
   },
-  created (){
+  created() {
 
   },
-  mounted(){
-    let timeStamp = Math.round(new Date().getTime()/1000)
+  mounted() {
+    let timeStamp = Math.round(new Date().getTime() / 1000)
     // console.log('mounted time is '+timeStamp);
     // this.log(this.$bus)
 
@@ -70,7 +72,7 @@ export default {
 
 
 function mouse_on(tag) {
-  tag.style.backgroundColor = '#'+Math.random().toString(16).slice(2, 8);
+  tag.style.backgroundColor = '#' + Math.random().toString(16).slice(2, 8);
   tag.style.zoom = 1.2
 }
 
@@ -78,7 +80,6 @@ function mouse_outed(tag) {
   tag.style.backgroundColor = '#ffffff'
   tag.style.zoom = 1
 }
-
 </script>
 
 <style scoped>
@@ -92,7 +93,7 @@ function mouse_outed(tag) {
   margin-top: 60px;
 }
 
-#btn1{
+#btn1 {
   background-color: white;
   color: black;
   width: auto;
@@ -109,6 +110,4 @@ function mouse_outed(tag) {
   left: 40%;
 
 }
-
-
 </style>

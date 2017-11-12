@@ -6,12 +6,13 @@ import router from './router'
 import VueBus from 'vue-bus'
 import Vuex from 'vuex'
 import axios from 'axios'
+export {axios}
+
 
 
 
 
 import {clog} from './mixins/utils'
-export {axios}
 import MaterialCard from './components/widgets/MaterialCard'
 
 

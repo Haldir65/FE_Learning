@@ -8,7 +8,7 @@
 export default {
   data() {
     return {
-
+      msg: ''
     }
   },
   computed: {
@@ -19,6 +19,13 @@ export default {
 
     }
   },
+
+  watch: {
+    msg: function(val) { // the new value
+
+    }
+  }
+
   created() {
     //do something after creating vue instance
 

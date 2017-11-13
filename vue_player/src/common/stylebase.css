@@ -87,3 +87,8 @@ a {
 .marginLeft50{
   margin-left: 50px;
 }
+
+img.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }

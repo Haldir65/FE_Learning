@@ -11,10 +11,8 @@ export default {
 
     }
   },
-  computed() {
-    return {
+  computed: {
 
-    }
   },
   methods: {
     methodName() {

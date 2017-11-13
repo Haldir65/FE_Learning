@@ -8,6 +8,8 @@ import Header from '../components/Front/Header'
 import Home from '../components/Home'
 import Vifs from '../components/Front/Vifs'
 import Layout from '../components/Front/Layout'
+import VuexSample from '../components/Front/VuexSample'
+
 
 Vue.use(Router)
 
@@ -43,6 +45,10 @@ export default new Router({
       path: '/layout',
       name: 'layout',
       component: Layout
+    },{
+      path: '/samples/vuex',
+      name: 'vuex',
+      component: VuexSample
     }
   ],
   mode: 'history'

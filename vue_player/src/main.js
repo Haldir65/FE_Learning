@@ -4,7 +4,6 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueBus from 'vue-bus'
-import Vuex from 'vuex'
 import axios from 'axios'
 
 
@@ -12,30 +11,14 @@ import axios from 'axios'
 
 import {clog} from './mixins/utils'
 export {axios}
+import store from './state/state.js'
 import MaterialCard from './components/widgets/MaterialCard'
 
 
 
 Vue.config.productionTip = false
-Vue.use(Vuex)
-const store = new Vuex.Store({
-  state: {
-    count: 0
-  },
-  mutations: {
-  	increment: state => state.count++,
-    decrement: state => state.count--
-  },
-  actions: {
 
-  },
-  getters: {
 
-  },
-  modules: {
-
-  }
-})
 Vue.use(VueBus);
 
 Vue.mixin({

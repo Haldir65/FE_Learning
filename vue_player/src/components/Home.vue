@@ -9,7 +9,7 @@
       <router-link :to="{ name: 'Home', params: {} }">Home</router-link>
     </div>
     <div @click='(ev) => log(ev)' class="demo-card-wide mdl-card mdl-shadow--2dp">
-      <p class="text-primary">Modern Dictionary primary class</p>
+      <router-link :to="{ name: 'vuex', params: {} }">VuexSample</router-link>
     </div>
     <div @click='(ev) => log(ev)' class="demo-card-wide mdl-card mdl-shadow--2dp">
       <p class="text-success">Modern Dictionary success class</p>

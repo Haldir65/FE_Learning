@@ -24,12 +24,12 @@
 
   </div>
 </template>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-<script src="https://cdn.bootcss.com/axios/0.16.2/axios.js"></script>
 
 <script>
 import {axios} from '../../main'
+import {http} from '../../utils/httpUtil'
+import {api} from '../../utils/api'
 
 export default {
   name : 'about',
@@ -44,7 +44,15 @@ export default {
   methods:{
     getcount: function () {
 
-    }
+    },
+    fetchData: async function () {
+          let params = {
+          }
+          const res = await http.get(api.right, params)
+          if (res.data.success) {
+            alert('请求成功')
+          }
+        }
   },
   computed:{
 
@@ -53,6 +61,9 @@ export default {
     // getBaidu()
     // getDouBanViaJsonP()
     // getMyPost()
+    // getCNposts()
+    // this.log(axios)
+    getJsonViaMyAxios()
   }
 }
 
@@ -98,6 +109,28 @@ function getMyPost(){
 
 
 }
+
+function getCNposts() {
+  axios.get('https://cnodejs.org/api/v1/topics').then(
+    function (res) {
+      console.log(res);
+    }).catch(function (error) {
+      console.log('errors');
+    })
+}
+
+function getJsonViaMyAxios() {
+  let params = {}
+  http.get(api.posts,params).then(
+    function (res) {
+      console.log(res);
+    }).catch(function (error) {
+      console.log('errors');
+    })
+}
+
+
+
 
 
 </script>

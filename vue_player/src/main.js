@@ -5,12 +5,13 @@ import App from './App'
 import router from './router'
 import VueBus from 'vue-bus'
 import axios from 'axios'
+export {axios}
+
 
 
 
 
 import {clog} from './mixins/utils'
-export {axios}
 import store from './state/state.js'
 import MaterialCard from './components/widgets/MaterialCard'
 

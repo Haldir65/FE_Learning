@@ -5,7 +5,6 @@
         <div v-for='blog in filteredBlogs' class="singel-blog">
             <h2>{{body.title}}</h2>
         </div>
-    
     </div>
 </template>
 
@@ -30,7 +29,7 @@ export default {
            this.blogs = data.body.slice(0,10) ;
         });
   }
- 
+
 
 }
 </script>

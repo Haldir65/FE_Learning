@@ -9,6 +9,7 @@ import Home from '../components/Home'
 import Vifs from '../components/Front/Vifs'
 import Layout from '../components/Front/Layout'
 import VuexSample from '../components/Front/VuexSample'
+import CSS_PlayGround from '../components/Front/CSS_PlayGround'
 
 
 Vue.use(Router)
@@ -49,6 +50,10 @@ export default new Router({
       path: '/samples/vuex',
       name: 'vuex',
       component: VuexSample
+    },{
+      path: '/css/css_positioning',
+      name: 'cssPositioning',
+      component: CSS_PlayGround
     }
   ],
   mode: 'history'

@@ -4,28 +4,29 @@
     The new curtains are hedious
   </p>
   <div class="text-left">
-    <div @click='(ev) => log(ev)' class="demo-card-wide mdl-card mdl-shadow--2dp">
+    <div @click='(ev) => log(ev)' class="demo-card-wide mdl-card mdl-shadow--2dp center_positioning_text">
       <!-- <p class="text-muted">Modern Dictionary</p> -->
       <router-link :to="{ name: 'Home', params: {} }">Home</router-link>
     </div>
-    <div @click='(ev) => log(ev)' class="demo-card-wide mdl-card mdl-shadow--2dp">
+    <div @click='(ev) => log(ev)' class="demo-card-wide mdl-card mdl-shadow--2dp center_positioning_text">
       <router-link :to="{ name: 'vuex', params: {} }">VuexSample</router-link>
     </div>
-    <div @click='(ev) => log(ev)' class="demo-card-wide mdl-card mdl-shadow--2dp">
-      <p class="text-success">Modern Dictionary success class</p>
+    <div @click='(ev) => log(ev)' class="demo-card-wide mdl-card mdl-shadow--2dp center_positioning_text">
+      <router-link :to="{ name: 'cssPositioning', params: {}}">Css Positioning</router-link>
+      <p class="text-success ">Modern Dictionary success class</p>
       </div/>
-      <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+      <div class="demo-card-wide mdl-card mdl-shadow--2dp center_positioning_text">
         <p class="text-info">Modern Dictionary info class</p>
       </div>
-      <div @click='click1' class="demo-card-wide mdl-card mdl-shadow--2dp">
+      <div @click='click1' class="demo-card-wide mdl-card mdl-shadow--2dp center_positioning_text">
         <p class="text-warning">Modern Dictionary warning class</p>
       </div>
-      <div @click='click1' class="demo-card-wide mdl-card mdl-shadow--2dp">
+      <div @click='click1' class="demo-card-wide mdl-card mdl-shadow--2dp center_positioning_text">
         <p class="text-danger">Modern Dictionary danger class</p>
       </div>
     </div>
-
   </div>
+</div>
 </template>
 
 
@@ -64,8 +65,7 @@ export default {
 @import "../common/stylebase.css";
 .demo-card-wide.mdl-card {
   width: 512px;
-  height: auto;
-  min-height: 80px;
+  height: 80px;
   margin-top: 10px
 }
 
@@ -80,6 +80,21 @@ export default {
 }
 
 .card_margin_wrapper {
-  margin: 10px
+  margin: auto;
+}
+
+.center_positioning_text {
+  min-height: 80px;
+}
+
+.center_positioning_text a {
+  top: 50%;
+  transform: translateY(-50%);
+  color: chocolate;
+  text-decoration: underline;
+  text-transform: capitalize;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
 }
 </style>

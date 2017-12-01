@@ -1,6 +1,6 @@
 <template>
 <div>
-
+  Definitely template
 </div>
 </template>
 
@@ -24,7 +24,7 @@ export default {
     msg: function(val) { // the new value
 
     }
-  }
+  },
 
   created() {
     //do something after creating vue instance

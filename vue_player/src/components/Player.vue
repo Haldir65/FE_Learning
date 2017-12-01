@@ -9,7 +9,7 @@
   <button class="mdl-button mdl-js-button mdl-button--raised">
         Button
       </button>
-  <audio ref='audiofile' :src='this.src' preload="auto"></audio>
+  <audio id='audioPlay' ref='audiofile' :src='this.src' preload="auto" v-bind:timeupdate="updatePlayTime"></audio>
   <div class="music-progress">
     <div class="progress">
       <br/>
@@ -118,6 +118,25 @@ export default {
         this.audio.currentTime += 60
       }
     },
+    updatePlayTime() {
+      console.log('hhha');
+      let myaudio = document.getElementById('audioPlay');
+      let time = parseInt(myaudio.currentTime);
+      let timelength = myaudio.duration;
+      console.log('hhha');
+      if (isNaN(timelength)) {
+        // this.tipshow = true;
+      } else {
+        // this.tipshow = false;
+        // this.mwidth = time / timelength * 100;
+        // this.time.start = changeTime(time);
+        // this.time.end = changeTime(timelength);
+        // if (timelength === time) {
+        //   // this.togglePlay();
+        // }
+        this.log('currentTime ' + time + ' Total Time' + timelength)
+      }
+    },
     transformTime(seconds) {
       let m, s;
       m = Math.floor(seconds / 60);
@@ -183,10 +202,10 @@ export default {
         this.next()
       })
     }
-    // this.audio.addEventListener('ended',function () {
-    //   this.audio.currentTime = 0
-    //   this.audio.play() // for looping this audio
-    // })
+    let that = this
+    this.audio.addEventListener('timeupdate', function() {
+      console.log(that.audio.currentTime);
+    })
   },
   beforeUpdate() {
     // console.log('before updated')

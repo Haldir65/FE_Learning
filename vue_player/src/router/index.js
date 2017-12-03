@@ -10,6 +10,7 @@ import Vifs from '../components/Front/Vifs'
 import Layout from '../components/Front/Layout'
 import VuexSample from '../components/Front/VuexSample'
 import CSS_PlayGround from '../components/Front/CSS_PlayGround'
+import CSS_positioning from '../components/Front/CSS_positioning'
 
 
 Vue.use(Router)
@@ -54,6 +55,10 @@ export default new Router({
       path: '/css/css_positioning',
       name: 'cssPositioning',
       component: CSS_PlayGround
+    },{
+      path:'/css/css_positioning2',
+      name: 'css_positioning_2',
+      component: CSS_positioning
     }
   ],
   mode: 'history'

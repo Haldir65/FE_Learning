@@ -16,7 +16,7 @@
       <p class="text-success ">Modern Dictionary success class</p>
       </div/>
       <div class="demo-card-wide mdl-card mdl-shadow--2dp center_positioning_text">
-        <p class="text-info">Modern Dictionary info class</p>
+        <router-link :to="{ name: 'css_positioning_2', params: {}}">Css Positioning2</router-link>
       </div>
       <div @click='click1' class="demo-card-wide mdl-card mdl-shadow--2dp center_positioning_text">
         <p class="text-warning">Modern Dictionary warning class</p>

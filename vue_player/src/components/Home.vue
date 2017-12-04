@@ -1,8 +1,8 @@
 <template>
 <div class="container  marginTop50">
-  <p class="text-center" style="color : #b050b5 ,font-size:250%">
+  <h2 class="text-center center_positioning_text">
     The new curtains are hedious
-  </p>
+  </h2>
   <div class="text-left">
     <div @click='(ev) => log(ev)' class="demo-card-wide mdl-card mdl-shadow--2dp center_positioning_text">
       <!-- <p class="text-muted">Modern Dictionary</p> -->
@@ -24,6 +24,9 @@
       <div @click='click1' class="demo-card-wide mdl-card mdl-shadow--2dp center_positioning_text">
         <p class="text-danger">Modern Dictionary danger class</p>
       </div>
+      <div class="demo-card-wide mdl-card mdl-shadow--2dp center_positioning_text">
+        <router-link :to="{ name: 'VFors', params: { property: value}}">loops via v-for</router-link>
+      </div>
     </div>
   </div>
 </div>
@@ -33,8 +36,11 @@
 <script>
 export default {
   name: 'vifs',
+  message: '',
+
   data() {
     return {
+      message: '',
       name: 'home'
     }
   },

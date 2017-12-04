@@ -153,7 +153,7 @@ function prepare_data(array) {
 .demo-card-wide>.mdl-card__title {
   color: #fff;
   height: 176px;
-  background: url('../../assets/welcome_card.jpg') center / cover;
+  background: url('../../assets/images/welcome_card.jpg') center / cover;
 }
 
 .demo-card-wide>.mdl-card__menu {

@@ -23,7 +23,7 @@
 
     <div>
       <div class="flip_card_item">
-        <img src="../../assets/logo.png" width="120px" height="120px" />
+        <img src="../../assets/icons/logo.png" width="120px" height="120px" />
         <router-link to='./'>Home</router-link>
       </div>
     </div>

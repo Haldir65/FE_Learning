@@ -58,6 +58,7 @@ export default {
   },
   data() {
     return {
+      message: '',
       'audio': {
         'src': './assets/赵雷-成都.mp3'
       }

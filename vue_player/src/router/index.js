@@ -11,6 +11,7 @@ import Layout from '../components/Front/Layout'
 import VuexSample from '../components/Front/VuexSample'
 import CSS_PlayGround from '../components/Front/CSS_PlayGround'
 import CSS_positioning from '../components/Front/CSS_positioning'
+import VFors from '../components/Front/VFors'
 
 
 Vue.use(Router)
@@ -59,6 +60,10 @@ export default new Router({
       path:'/css/css_positioning2',
       name: 'css_positioning_2',
       component: CSS_positioning
+    },{
+      path: '/syntax/v-fors',
+      name: 'VFors',
+      component: VFors
     }
   ],
   mode: 'history'

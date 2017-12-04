@@ -121,6 +121,7 @@ export default {
 
   data() {
     return {
+      message: '',
       name: 'ifstatement',
       type: 'C'
     }

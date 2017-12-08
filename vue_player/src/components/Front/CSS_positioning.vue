@@ -1,20 +1,23 @@
 <template>
-  <div id="css_positioning_contaier">
-    <nav>
-      <ul>
-        <li>link</li>
-        <li>link</li>
-        <li>link</li>
-        <li>link</li>
-        <li>link</li>
-        <li>link</li>
-      </ul>
-    </nav>
-    <h2>
-      this template can be made in Atom via input vue in an .vue file ,darn simple
+<div id="css_positioning_contaier">
+  <nav>
+    <ul>
+      <li>link</li>
+      <li>link</li>
+      <li>link</li>
+      <li>link</li>
+      <li>link</li>
+      <li>link</li>
+    </ul>
+  </nav>
+  <h2>
+      this template can be made in Atom via input vue in an .vue file ,darn simple。
     </h2>
+  <section>
+    Or maybe you can click temp... It will automatically notice
+  </section>
 
-  </div>
+</div>
 </template>
 <script>
 export default {

@@ -90,7 +90,9 @@ a {
   margin-left: 50px;
 }
 
-
+.img-ablolute-circle {
+  border-radius: 50%;
+}
 
 img.displayed {
     display: block;

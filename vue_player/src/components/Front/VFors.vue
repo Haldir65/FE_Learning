@@ -107,7 +107,12 @@
     <button class="btn btn-primary btn btn-xs">Primary button</button>
     <button class="btn btn-default" disable='disable'>Disable button</button>
 
-    <hr>
+    
+
+
+  </div>
+
+  <hr>
     <!-- forms -->
     <div class="container">
       <form>
@@ -138,15 +143,77 @@
               </option>
             </select>
         </div>
-
-
-
       </form>
+
+
     </div>
 
+  <hr/>
 
 
+  <div class="container">
+
+     <ul class="list-group">
+      <li  class="list-group-item active"> Item Number 1</li>
+      <li  class="list-group-item"> Item Number 2</li>
+      <li  class="list-group-item"> Item Number 3</li>
+      <li class="list-group-item"> Item Number 4</li>
+      <li  class="list-group-item"> Item Number 5</li>
+    </ul>
+    <ul class="list-group">
+      <a href="#" class="list-group-item active"> Item Number 1</a>
+      <a href="#" class="list-group-item"> Item Number 2</a>
+      <a href="#" class="list-group-item"> Item Number 3</a>
+      <a href="#" class="list-group-item"> Item Number 4</a>
+      <a href="#" class="list-group-item"> Item Number 5</a>
+    </ul>
+
+   
   </div>
+<div class="container">
+<div class="progress">
+  <div class="progress-bar progress-bar-success progress-bar-striped active">
+    50%
+  </div>
+</div>
+ </div>
+
+ <div class="container">
+   <img class="thumbnail" src='../../../static/imgs/scene2.jpg' style="width:200px">
+   <img class="img-rounded" src='../../../static/imgs/scene2.jpg'style="width:200px">
+   <img class="img-circle" src='../../../static/imgs/scene2.jpg'style="width:200px">
+  <img class="img-ablolute-circle" src='../../../static/imgs/scene2.jpg'style="width:120px;height:120px">
+ </div>
+
+
+<!-- Grids 12 blocks-->
+ <div class="container">
+    <h2 class="text-success text-center">不用去管float这种烦人的属性了</h2>
+
+   <div class="row">
+     <div class="col-md-8">Bootstrap’s grid system uses a series of containers, rows, and columns to layout and align content. It’s built with flexbox and is fully responsive. Below is an example and an in-depth look at how the grid comes together.</div>
+    <div class="col-md-4">Bootstrap’s grid system uses a series of containers, rows, and columns to layout and align content. It’s built with flexbox and is fully responsive. Below is an example and an in-depth look at how the grid comes together.</div>
+   </div>
+
+   <div class="row">
+    <div class="col-md-3">Containers provide a means to center and horizontally pad your site’s contents. Use .container for a responsive pixel width or .container-fluid for width: 100% across all viewport and device sizes.</div>
+    <div class="col-md-3">Rows are wrappers for columns. Each column has horizontal padding (called a gutter) for controlling the space between them. This padding is then counteracted on the rows with negative margins. This way, all the content in your columns is visually aligned down the left side.</div>
+    <div class="col-md-3">In a grid layout, content must be placed within columns and only columns may be immediate children of rows.</div>
+    <div class="col-md-3">Thanks to flexbox, grid columns without a specified width will automatically layout as equal width columns. For example, four instances of .col-sm will each automatically be 25% wide from the small breakpoint and up. See the auto-layout columns section for more examples.</div>
+   </div>
+
+   <div class="row">
+     <div class="col-md-8 col-sm-8">注意这个md的意思是medium screnn Size</div>
+    <div class="col-md-4 col-sm-4 col-xs-4">sm表示small，xs表示更小。缩窄屏幕宽度时会自动响应变化，变成从上往下列表一样的排列</div>
+   </div>
+
+ </div>
+
+ 
+
+
+
+
 
   <div style="height:400px">
 
@@ -156,62 +223,54 @@
 </div>
 </template>
 <script>
-import {
-  generateRandomInteger
-} from '../../utils/randoms'
+import { generateRandomInteger } from "../../utils/randoms";
 
 export default {
   name: "v-fors",
   data: () => ({
-    name: 'items',
-    items: [{
-        name: 'charley',
+    name: "items",
+    items: [
+      {
+        name: "charley",
         age: 20
       },
       {
-        name: 'John',
+        name: "John",
         age: 22
       },
       {
-        name: 'Josh',
+        name: "Josh",
         age: 27
       }
     ]
   }),
   methods: {
     itemClicked: function(ev, index) {
-      ev.preventDefault()
-      let data = this.items[index]
-      this.log(data['age'])
+      ev.preventDefault();
+      let data = this.items[index];
+      this.log(data["age"]);
     }
   },
   beforeCreate() {},
   created() {
     // prepareData(this)
   },
-  updated() {
-
-  },
-
-}
+  updated() {}
+};
 
 function prepareData(component) {
   for (let i = 0; i < 10; i++) {
     let Rookie = {
-      name: 'Harry',
+      name: "Harry",
       age: generateRandomInteger()
-    }
-    component.items.push(Rookie)
+    };
+    component.items.push(Rookie);
   }
 }
 
-function selfDefinedMethods() {
+function selfDefinedMethods() {}
 
-}
-
-function handleClick() {
-
-}
+function handleClick() {}
 </script>
 <style >
 @import "../../common/stylebase.css";

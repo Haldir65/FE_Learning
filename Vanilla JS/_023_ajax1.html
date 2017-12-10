@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax-Text-File</title>
+</head>
+<body>
+    <h2>Fetch local File using Ajax asynchronously</h2>
+    <button id='button'>Get Text File</button>
+    <div id ='text'>Original text</div>
+    <script>
+        document.getElementById("button")
+        .addEventListener('click',loadText);
+
+        function loadText() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET','data/sample.txt',true);
+            xhr.onload = function () {
+                if(this.readyState==4&&this.status==200){
+                    console.log(this.responseText)
+                    document.getElementById('text').textContent = this.responseText;
+                }
+            }
+
+            xhr.onerror = function () {
+                console.log('error')
+            }
+            xhr.send();
+        }
+    </script>
+</body>
+
+</html>

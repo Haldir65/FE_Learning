@@ -40,11 +40,11 @@ window.onload = function(){
     //promise(ES6) is a placeholder for something that will happen in the future 
     function get(url){
         return new Promise(function(resolve,reject){
-            var http = new XMLHttpRequest();
+            var http = new XMLHttpRequest();  
             http.open('GET',url,true);
             http.onload = function(){
                 if(http.status==200){
-                    resolve(JSON.parse(http.response));
+                    resolve(JSON.parse( http.response));
                 }else{
                     reject(http.statusText);
                 }

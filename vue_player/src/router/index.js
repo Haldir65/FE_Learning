@@ -1,17 +1,18 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Hello from '@/components/Hello'
-import Player from '@/components/Player'
-import Controller from '@/components/Controller'
-import About from '../components/About/About'
-import Header from '../components/Front/Header'
-import Home from '../components/Home'
-import Vifs from '../components/Front/Vifs'
-import Layout from '../components/Front/Layout'
-import vuexSample from '../components/Front/vuexSample'
-import CSS_PlayGround from '../components/Front/CSS_PlayGround'
-import CSS_positioning from '../components/Front/CSS_positioning'
-import VFors from '../components/Front/VFors'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Hello from '@/components/Hello';
+import Player from '@/components/Player';
+import Controller from '@/components/Controller';
+import About from '../components/About/About';
+import Header from '../components/Front/Header';
+import Home from '../components/Home';
+import Vifs from '../components/Front/Vifs';
+import Layout from '../components/Front/Layout';
+import vuexSample from '../components/Front/vuexSample';
+import CSS_PlayGround from '../components/Front/CSS_PlayGround';
+import CSS_positioning from '../components/Front/CSS_positioning';
+import VFors from '../components/Front/VFors';
+import axioSample from '../components/axio/axioSample';
 
 
 Vue.use(Router)
@@ -27,7 +28,6 @@ export default new Router({
       name: 'Hello',
       component: Hello
     },
-    // },
     {
       path: '/player',
       name: 'Player',
@@ -64,6 +64,10 @@ export default new Router({
       path: '/syntax/v-fors',
       name: 'VFors',
       component: VFors
+    },{
+      path: '/syntax/axios',
+      name: 'AxioSample',
+      component: axioSample
     }
   ],
   mode: 'history'

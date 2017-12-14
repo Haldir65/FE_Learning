@@ -27,6 +27,9 @@
       <div class="demo-card-wide mdl-card mdl-shadow--2dp center_positioning_text">
         <router-link :to="{ name: 'VFors', params: { property: value}}">loops via v-for</router-link>
       </div>
+      <div class="demo-card-wide mdl-card mdl-shadow--2dp center_positioning_text">
+        <router-link :to="{ name: 'AxioSample', params: { property: value}}">axios made easy</router-link>
+      </div>
     </div>
   </div>
 </div>

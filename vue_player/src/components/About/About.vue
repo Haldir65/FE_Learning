@@ -35,41 +35,30 @@
 
 
 <script>
-import {
-  axios
-} from '../../main'
-import {
-  http
-} from '../../utils/httpUtil'
-import {
-  api
-} from '../../utils/api'
+import { axios } from "../../main";
+import { getAjax,jsonp } from "../../utils/http";
+import { api } from "../../utils/api";
 
 export default {
-  name: 'about',
+  name: "about",
   data() {
     return {
       showing: true,
       ended: false,
-      results: ''
-    }
-
+      results: ""
+    };
   },
   methods: {
-    getcount: function() {
-
-    },
+    getcount: function() {},
     fetchData: async function() {
-      let params = {}
-      const res = await http.get(api.right, params)
+      let params = {};
+      const res = await http.get(api.right, params);
       if (res.data.success) {
-        alert('请求成功')
+        alert("请求成功");
       }
     }
   },
-  computed: {
-
-  },
+  computed: {},
   created() {
     // getBaidu()
     // getDouBanViaJsonP()
@@ -78,68 +67,72 @@ export default {
     // this.log(axios)
     // getJsonViaMyAxios()
   }
-}
+};
 
 function getBaidu() {
-  axios({
-    method: 'get',
-    url: 'http://api.douban.com/v2/movie/top250',
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-      'Access-Control-Allow-Origin': "*",
-      'Access-Control-Allow-Methods': ['get', 'post'],
-      'method': 'get',
-      'withCredentials': 'true'
-    },
-    crossDomain: 'true'
-  }).then(function(res) {
-    console.log(res.data)
-  }).catch(function(error) {
-    console.log(error)
-  })
+  // axios({
+  //   method: "get",
+  //   url: "http://api.douban.com/v2/movie/top250",
+  //   headers: {
+  //     "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+  //     "Access-Control-Allow-Origin": "*",
+  //     "Access-Control-Allow-Methods": ["get", "post"],
+  //     method: "get",
+  //     withCredentials: "true"
+  //   },
+  //   crossDomain: "true"
+  // })
+  //   .then(function(res) {
+  //     console.log(res.data);
+  //   })
+  //   .catch(function(error) {
+  //     console.log(error);
+  //   });
 }
 
-
 function getDouBanViaJsonP() {
-  var jsonp = require('jsonp');
-  jsonp('http://api.douban.com/v2/movie/top250', null, function(err, data) {
+  jsonp("http://api.douban.com/v2/movie/top250", null, function(err, data) {
     if (err) {
-      console.error(err.message)
+      console.error(err.message);
     } else {
-      console.log(data)
-      return data
+      console.log(data);
+      return data;
     }
   });
 }
 
 function getMyPost() {
-  axios.get('http://127.0.0.1:10877/posts').then(
-    function(res) {
+  axios
+    .get("http://127.0.0.1:10877/posts")
+    .then(function(res) {
       console.log(res);
-    }).catch(function(error) {
-    console.log('errors');
-  })
-
-
+    })
+    .catch(function(error) {
+      console.log("errors");
+    });
 }
 
 function getCNposts() {
-  axios.get('https://cnodejs.org/api/v1/topics').then(
-    function(res) {
+  axios
+    .get("https://cnodejs.org/api/v1/topics")
+    .then(function(res) {
       console.log(res);
-    }).catch(function(error) {
-    console.log('errors');
-  })
+    })
+    .catch(function(error) {
+      console.log("errors");
+    });
 }
 
 function getJsonViaMyAxios() {
-  let params = {}
-  http.get(api.posts, params).then(
-    function(res) {
-      console.log(res);
-    }).catch(function(error) {
-    console.log('errors');
-  })
+  // let params = {};
+  // http
+  //   .get(api.posts, params)
+  //   .then(function(res) {
+  //     console.log(res);
+  //   })
+  //   .catch(function(error) {
+  //     console.log("errors");
+  //   });
 }
 </script>
 
@@ -152,7 +145,7 @@ function getJsonViaMyAxios() {
   color: #2c3e50;
 }
 
-.Card>.Card_like_router {
+.Card > .Card_like_router {
   margin-top: 50px;
   color: #009688;
 }

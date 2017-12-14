@@ -103,4 +103,8 @@ export default {
   vertical-align: middle;
   position: relative;
 }
+
+.container{
+  background: white
+}
 </style>

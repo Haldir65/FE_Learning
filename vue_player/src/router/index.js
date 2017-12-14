@@ -8,7 +8,7 @@ import Header from '../components/Front/Header'
 import Home from '../components/Home'
 import Vifs from '../components/Front/Vifs'
 import Layout from '../components/Front/Layout'
-import VuexSample from '../components/Front/VuexSample'
+import vuexSample from '../components/Front/vuexSample'
 import CSS_PlayGround from '../components/Front/CSS_PlayGround'
 import CSS_positioning from '../components/Front/CSS_positioning'
 import VFors from '../components/Front/VFors'
@@ -51,7 +51,7 @@ export default new Router({
     },{
       path: '/samples/vuex',
       name: 'vuex',
-      component: VuexSample
+      component: vuexSample
     },{
       path: '/css/css_positioning',
       name: 'cssPositioning',

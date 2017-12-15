@@ -29,6 +29,13 @@ var postAjax = function ajaxPost(url,callback){
 };
 
 
+// todo axios，jQuery以及原生Ajax封装
+// 以Promise形式异步处理http请求
+// https://ykloveyxk.github.io/2017/02/25/axios%E5%85%A8%E6%94%BB%E7%95%A5/
+
+
+
+
 
 
 

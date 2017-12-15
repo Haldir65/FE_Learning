@@ -2,11 +2,12 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
+var router = require('./routers/router');
 
 
 var app = express();
 
-var port = 9889;
+var port = process.env.port||9889;
 
 /* var logger = function(req,res,next){
     console.log('logging...');
@@ -22,10 +23,16 @@ app.set('views',path.join(__dirname,'views'));
 // Body Parser Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
+// the order of middleware matters
+
 
 
 // Set Static Path
 app.use(express.static(path.join(__dirname,'public')))
+
+
+// use the middle ware
+app.use('/api',router);
 
 
 /* var person = {

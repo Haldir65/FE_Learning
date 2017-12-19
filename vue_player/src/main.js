@@ -6,17 +6,9 @@ import router from './router'
 import VueBus from 'vue-bus'
 import axios from 'axios'
 export {axios}
-
-
-
-
-
 import {clog} from './mixins/utils'
 import store from './state/state.js'
 import MaterialCard from './components/widgets/MaterialCard'
-
-
-
 Vue.config.productionTip = false
 
 

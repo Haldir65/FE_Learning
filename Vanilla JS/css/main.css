@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.container{
+    margin: 0px 10px;
+}
+
+.container>h1{
+    font-family: 'Alegreya', serif;
+}
+
+
+
+ul li {
+    list-style: none;
+    width: 100%;
+    height: 100px;
+    margin: 20px auto;
+    padding: 0;
+    text-align: left;
+    vertical-align: middle;
+    border: .5px solid #ffeeff;
+    -webkit-box-shadow: 7px 6px 24px -12px rgba(0,0,0,0.21);
+    -moz-box-shadow: 7px 6px 24px -12px rgba(0,0,0,0.21);
+    box-shadow: 7px 6px 24px -12px rgba(0,0,0,0.21);
+}
+
+ul li:hover{
+   transform: scale(1.02,1.02);
+   transition-duration: .3s;
+   background: #5e5e5e;
+}
+
+ul li img{
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    position: relative;
+    left: 20px;
+    top: 20px;
+    float: left;
+    border-radius: 25px;
+    background-repeat: no-repeat;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #f35e3d;
+    font-size: 18px;
+    height: 100px;
+    padding: 30px 40% 30px 0px;
+    position: relative;
+    top: 40px;
+    text-align: left;
+    margin: 0 4%;
+    font-family: 'Alegreya', serif;
+}
+
+
+footer{
+    margin: 10px auto;
+    text-align: center;
+    height: 300px;
+}
+
+footer a.bottom-link{
+    background: url("../assets/images/1102533911-1.jpg") no-repeat;
+    text-decoration: none;
+    color: #fff;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    left: 10px;
+    background-size: cover;
+    text-align: center;
+    vertical-align: middle;
+    padding: 30px;
+}
+
+footer a.bottom-link p{
+    margin: 0;
+    position: absolute;              
+    top: 50%;                        
+    transform: translate(0, -50%) 
+}   
+
+footer .bottom-slogan{
+    color: #5e5e5e;
+}
+

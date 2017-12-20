@@ -17,7 +17,6 @@
       <div class="col-lg-2 text-danger">
         <router-link :to="{ name: 'vifs', params: {} }">Vifs</router-link>
       </div>
-
       <div class="col-lg-2 text-danger">
         <router-link :to="{ name: 'layout', params: {} }">BootStrap</router-link>
       </div>

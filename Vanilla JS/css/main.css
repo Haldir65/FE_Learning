@@ -8,17 +8,40 @@ ul{
     margin: 0px;
     padding: 0px;
     text-align: center;
-    vertical-align: middle;
+}
+
+.nav-top{
+    overflow: auto;
+    background-color: #35424a;
 }
 
 .nav-top img{
-    width: 100px;
+    min-width: 30%;
     height: 100px;
     float: left;
 }
 
+.nav-top ul{
+    float: right;
+    margin-top: 10px;
+    padding: 0;
+    width: 70%;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+
 .nav-top ul li{
     display: inline;
+    margin: 0 10px;
+    text-align: right;
+    margin-right: 60px;
+}
+
+.nav-top ul li a{
+  text-decoration: none;
+  color: #f35e3d;
+  padding: 20px;
 }
 
 .nav-top::after{
@@ -66,13 +89,14 @@ ul{
 }
 
 
-ul li {
+.container ul li {
     list-style: none;
     width: 100%;
     height: 100px;
     margin: 20px auto;
     padding: 0;
     text-align: left;
+    background-color: #555555;
     vertical-align: middle;
     border: .5px solid #ffeeff;
     -webkit-box-shadow: 7px 6px 24px -12px rgba(0,0,0,0.21);
@@ -82,48 +106,45 @@ ul li {
     
 }
 
-ul li:hover{
+.container ul li:hover{
    /* transform: scale(1.02,1.02); */
    transition-duration: .3s;
    background: rgb(233, 228, 228);
 }
 
-ul li img{
+.container ul li img{
+    position: absolute;
+    left: 10%;
+    top: 0;
+    margin-top: 25px;
     width: 50px;
     height: 50px;
-    background-size: cover;
-    position: relative;
-    left: 20px;
-    top: 20px;
-    border-radius: 25px;
-    background-repeat: no-repeat;
-    margin-top: 2px;
+    border-radius: 100%;    
+    display: inline-block;    
 }
 
 
-
-ul li span{
-    display: inline-block;
-    width: 30%;
-    height: 100%;
-    vertical-align: middle;
+.container  ul li span{
+    margin-top: -20px;
+    top: 0;
     border: 1px solid #5e5e5e;
 }
 
-ul li a {
+.container ul li a {
     text-decoration: none;
     color: #f35e3d;
+    background-color: coral;
     font-size: 18px;
-    top: 0px;
-    left: 0px;
+    left: 100px;
     text-align: left;
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    font-family: 'Alegreya', serif;
-    box-sizing: border-box;
     vertical-align: middle;
-    align-items: center;
+    margin: auto;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    font-family: 'Alegreya', serif;
+    transform: translateY(-50%);
+    
 }
 
 

@@ -126,7 +126,7 @@ app.get('/users',function (req,res) {
             name: 'Sandy',
             id : 4
         }
-    ]
+    ];
 
  
       console.log(req.fresh+' '+req.stale);
@@ -135,17 +135,32 @@ app.get('/users',function (req,res) {
         'Content-Type': 'application/json',
         'Content-Length': '123',
         'ETag': '12345',
-        'Cache-Control': 'max-age=5'
+        'Cache-Control': 'max-age=5',
+        "Access-Control-Allow-Origin": 'http://127.0.0.1:5500'
     });
     res.cookie('name', 'tobi', { domain: '.example.com', path: '/admin', secure: true });
     console.log('response send');
     res.json(sample);
-})
+});
 
 
-app.post('/api/personal', function (req, res) { //针对/api/personal 的 post请求返回
+app.post('/users',function (req,res){
+    console.log(req.params);
+    console.log(req.body);
+    res.set({
+        'Content-Type': 'application/json',
+        'ETag': '12345',
+        'Cache-Control': 'max-age=5',
+        "Access-Control-Allow-Origin": 'http://127.0.0.1:5500'
+    });
+    res.json(sample);
+});
+
+
+app.post('/api/personal', function(req, res){ 
+    //针对/api/personal 的 post请求返回
     // console.log(`request params = ${req.params}`);
-    console.log(JSON.stringify(req.params))
+    console.log(JSON.stringify(req.params));
 
     var output = '';
     for (var property in req.params) {
@@ -158,7 +173,7 @@ app.post('/api/personal', function (req, res) { //针对/api/personal 的 post�
     // console.log(` request body = ${req.body}`);
     // console.log(`request query = ${req.query}`);
     // console.log(JSON.stringify(req.query))
-    console.log(req.params)
+    console.log(req.params);
 	res.writeHead(200, {'Content-Type': 'text/json;charset=utf-8'});
 	res.end(JSON.stringify({
     code : 0,

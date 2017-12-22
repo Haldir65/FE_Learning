@@ -24,6 +24,10 @@ ul{
     margin: 0.5em 0;
   }
 
+  a{
+      text-decoration: none;
+  }
+
 
 /* Global styles */
 
@@ -88,8 +92,8 @@ ul{
     background-size: cover;
     width: 100%;
     height: 450px;
-    z-index: -1;
     opacity: 0.8;
+    z-index: -1;
   }
   
   #showcase h1 {
@@ -103,106 +107,46 @@ ul{
   }
   
 
-
-
-
-
 /* Section style */
+
 .container-wrapper{
-    border: .9px rgb(209, 202, 202) solid;
-    margin-top: 80px;
-}
-
-.container-wrapper:after{
-    content: '';
-    display: block;
-    clear: both;
-  }
-
-.container-wrapper div:nth-of-type(1){
-    float: left;
-    width: 48%;
-    box-sizing: border-box;
-}
-
-.container-wrapper div:nth-of-type(2){
-    float: right;
-    width: 45%;
-    box-sizing: border-box;
-    
-}
-
-.container{
-    margin: 0 10px;
-}
-
-
-.container>h1{
-    font-family: 'Alegreya', serif;
-}
-
-
-
-
-.container ul li {
-    list-style: none;
-    width: 100%;
-    height: 100px;
-    margin: 20px auto;
+    margin: 0;
     padding: 0;
-    text-align: left;
-    background-color: rgba(230, 231, 231, 0.425);
-    vertical-align: middle;
-    border: .5px solid #ffeeff;
-    -webkit-box-shadow: 7px 6px 24px -12px rgba(0,0,0,0.21);
-    -moz-box-shadow: 7px 6px 24px -12px rgba(0,0,0,0.21);
-    box-shadow: 7px 6px 24px -12px rgba(0,0,0,0.21);
-    position: relative;
+    display: flex;
 }
 
 
-
-.container ul li:hover{
-   /* transform: scale(1.02,1.02); */
-   transition-duration: .3s;
-   background: rgb(233, 228, 228);
+/* Style for individual cell  */
+.container-wrapper ul li{
+   display: flex;
+   justify-content: center;
+   flex-direction: row;
+   align-items: center;
+   padding: 10px 0;
+   background-color: #dfdae7;
+   flex-basis: 20px;
+   margin: 20px;
+   padding: 12px;
 }
 
-.container ul li img{
-    position: absolute;
-    left: 10%;
-    top: 0;
-    margin-top: 25px;
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;    
-    display: inline-block;    
+.container-wrapper ul li:hover{
+    cursor: pointer;
 }
 
 
-.container  ul li span{
-    margin-top: -20px;
-    top: 0;
-    border: 1px solid #5e5e5e;
+.container-wrapper ul li img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    padding: 20px;
 }
 
-.container ul li a {
-    text-decoration: none;
-    color: #f35e3d;
-    background-color: coral;
-    font-size: 18px;
-    left: 100px;
-    text-align: left;
-    vertical-align: middle;
-    margin: auto;
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    font-family: 'Alegreya', serif;
-    transform: translateY(-50%);
-    
-}
 
+.container-wrapper ul li a{
+  color: #c57363;
+  font-size: 20px;
+  line-height: 20px;
+}
 
 /* Footter Style */
 

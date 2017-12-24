@@ -15,28 +15,43 @@
 <body>
 
 	<body>
-		<nav class="nav-top">
-			<img src="assets/images/fresh-sparkle-dew-drops-on-red-flower-wallpaper-53861cf580909.jpg" alt="">
-			<ul>
-				<li>
-					<a href="#">Home</a>
-				</li>
-				<li>
-					<a href="#">Home</a>
-				</li>
-				<li>
-					<a href="#">Home</a>
-				</li>
-				<li>
-					<a href="#bottom-footer">Footer</a>
-				</li>
-			</ul>
-		</nav>
 
+		<div class="nav-wrapper">
+			<nav>
+				<ul>
+					<li>
+						<a href="#">Blog</a>
+					</li>
+					<li>
+						<a href="#">Home</a>
+					</li>
+					<li>
+						<a href="#">About</a>
+					</li>
+					<li>
+						<a href="#">Contact</a>
+					</li>
+					<li>
+						<a href="#bottom-footer">Footer</a>
+					</li>
+				</ul>
+
+				<ul>
+					<li>
+						<a href="#" class="tw">
+							<i class="fa fa-twitter" aria-hidden="true"></i>Twitter</a>
+					</li>
+					<li>
+						<a href="#" class="fb">
+							<i class="fa fa-facebook" aria-hidden="true"></i>Facebook</a>
+					</li>
+				</ul>
+		</div>
 
 		<!-- ShowCase  Area-->
 		<header id="showcase">
-			<div class="bg-image"></div>
+			<div class="bg-image">
+			</div>
 			<div class="content-wrap">
 				<h1>Welcome to Acme Web Solutions</h1>
 				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci eum error earum soluta voluptatum nisi laboriosam
@@ -45,63 +60,64 @@
 			</div>
 		</header>
 
+		<main>
+			<section class="section-a grid">
+				<div class="section-a-content-wrapper">
+					<h2>This is Section a</h2>
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, voluptas atque fuga molestiae minus quasi! Recusandae,
+						totam voluptatem cupiditate, accusantium nam sunt libero a culpa nihil, quibusdam veritatis eum nisi.</p>
+				</div>
 
-		<section class="container-wrapper">
-
-				<h1>new Stuff</h1>
-			<div class="container">
+			</section>
+			<section class="section-b grid">
 				<ul>
 					<li>
-						<img src="assets/images/fresh-sparkle-dew-drops-on-red-flower-wallpaper-53861cf580909.jpg" onclick="console.log('clicked picture')"/>
-						<div class="link-wrapper">
-							<a href="html/_011_vue_demo.html">Vue-js-02</a>
+						<div class="card">
+							<img src="img/pexels-photo-574077.jpeg" alt="">
+							<div class="card-content">
+								<h3>Card Title Web Design is awesome</h3>
+								<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo commodi culpa consequatur quo, officia adipisci quia
+									quibusdam ipsam dolore dignissimos asperiores at omnis velit neque deserunt error, voluptas illum esse.</p>
+							</div>
 						</div>
 					</li>
 					<li>
-						<img src="assets/images/fresh-sparkle-dew-drops-on-red-flower-wallpaper-53861cf580909.jpg" onclick="console.log('clicked picture')"
-						/>
-						<a href="html/_012_vue_demo_02.html">Vue-js-03</a>
+						<div class="card">
+							<img src="img/pexels-photo-574077.jpeg" alt="">
+							<div class="card-content">
+								<h3>Card Title Web Design is awesome</h3>
+								<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo commodi culpa consequatur quo, officia adipisci quia
+									quibusdam ipsam dolore dignissimos asperiores at omnis velit neque deserunt error, voluptas illum esse.</p>
+							</div>
+						</div>
 					</li>
 					<li>
-						<img src="assets/images/fresh-sparkle-dew-drops-on-red-flower-wallpaper-53861cf580909.jpg" onclick="console.log('clicked picture')"
-						/>
-						<a href="html/_013_conditionals.html">Vue-conditionals</a>
-					</li>
-					<li>
-						<a href="html/_014_loops.html">Vue-Loops</a>
-					</li>
-					<li>
-						<a href="html/_014_punching_bags.html">Punching Bags</a>
-					</li>
-					<li>
-						<a href="html/_015_multiple_vue.html">Multiple Vue</a>
-					</li>
-					<li>
-						<a href="html/_017_components.html">Reusable Components</a>
-					</li>
-					<li>
-						<a href="html/_018_refs.html">Read Refs</a>
-					</li>
-					<li>
-						<a href="html/_020_keyframes.html">Css3 keyFrames</a>
-					</li>
-					<li>
-						<a href="html/_021_transitions.html">transitions</a>
-					</li>
-					<li>
-						<a href="html/_022_landing.html">Landing Page</a>
-					</li>
-					<li>
-						<a href="html/_023_ajax1.html">get local file using ajax</a>
-					</li>
-					<li>
-						<a href="html/_024_ajax2.html">get local json using ajax</a>
-					</li>
-					<li>
-						<a href="html/_025_ajax3.html">get external api using ajax</a>
+						<div class="card">
+							<img src="img/pexels-photo-574077.jpeg" alt="">
+							<div class="card-content">
+								<h3>Card Title Web Design is awesome</h3>
+								<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo commodi culpa consequatur quo, officia adipisci quia
+									quibusdam ipsam dolore dignissimos asperiores at omnis velit neque deserunt error, voluptas illum esse.</p>
+							</div>
+						</div>
 					</li>
 				</ul>
-			</div>
+
+			</section>
+			<section class="section-c grid">
+				<div class="section-c-content-wrapper">
+					<h2>This is Section c</h2>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium ad dolore numquam minus labore aut et repellat
+						iste exercitationem temporibus, amet voluptate est commodi quae, adipisci quod deleniti vel consequatur!</p>
+					<a href="#" class="btn">Start</a>
+				</div>
+			</section>
+
+		</main>
+
+
+
+		<section class="section-1">
 
 			<div class="container">
 				<ul>
@@ -128,6 +144,9 @@
 
 		</section>
 
+
+
+
 		<footer id="bottom-footer">
 			<div class="block">
 				<a href="#" class="block-link">Donate Now</a>
@@ -145,36 +164,6 @@
 
 		<div class="clearfix">
 		</div>
-
-		<h1>Legacy Fashion</h1>
-		<p>
-			<a href="html/_01_page.html">基本段落、标题演示</a>
-		</p>
-		<p>
-			<a href="html/_02_page.html">图片插入演示</a>
-		</p>
-		<p>
-			<a href="html/_03_page.html">列表展示</a>
-		</p>
-		<p>
-			<a href="html/_04_page.html">布局展示</a>
-		</p>
-		<img src="assets/images/20120103214255_nTsVt.jpg" width="600px" onclick="console.log('clicked picture')" />
-
-		<p>
-			<a href="html/_05_page.html">css实例</a>
-		</p>
-		<p>
-			<a href="html/_06_page.html">内部css演示</a>
-		</p>
-		<p>
-			<a href="html/_07_page.html">div背景使用</a>
-		</p>
-		<p>
-			<a href="html/_08_page.html">图片作为背景的使用</a>
-		</p>
-
-
 		<div style="margin-top:500px;">
 			</style>></div>
 

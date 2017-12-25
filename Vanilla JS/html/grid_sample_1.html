@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid</title>
+    <style>
+        .wrapper {
+            display: grid;
+            /* grid-template-columns: 1fr 2fr 1fr; */
+            grid-row-gap: 1vh;
+            grid-column-gap: 1em;
+            /* grid-template-columns: repeat(4,1fr); */
+            grid-template-columns: repeat(4, 1fr 2fr);
+            /* grid-auto-rows: 100px; */
+            grid-auto-rows: minmax(100px, auto);
+        }
+
+        .wrapper div {
+            background: #eee;
+            padding: 1em;
+        }
+
+        .wrapper>div:nth-child(odd) {
+            background: #ddd;
+        }
+
+        .nested{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 70px;
+            grid-gap: 1em;
+        }
+
+        .nested > div{
+            border: #333 1px solid;
+            padding: 1em;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod voluptates suscipit, ex fuga sed repellendus? Placeat unde
+            similique eius quibusdam inventore blanditiis, in sed molestiae architecto! Esse sint sequi maiores.
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod voluptates suscipit, ex fuga sed repellendus? Placeat unde
+            similique eius quibusdam inventore blanditiis, in sed molestiae architecto! Esse sint sequi maiores.
+        </div>
+        <div class="nested">
+           <div>Lorem </div>
+           <div>Lorem </div>
+           <div>Lorem </div>
+           <div>Lorem </div>
+           <div>Lorem </div>
+           <div>Lorem </div>
+           <div>Lorem </div>
+           <div>Lorem </div>
+           <div>Lorem </div>
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit eaque adipisci rerum, soluta blanditiis aliquam amet, fuga
+            libero obcaecati laudantium dignissimos tenetur. Numquam modi doloribus ipsum, exercitationem similique quae
+            hic!
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod voluptates suscipit, ex fuga sed repellendus? Placeat unde
+            similique eius quibusdam inventore blanditiis, in sed molestiae architecto! Esse sint sequi maiores.
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod voluptates suscipit, ex fuga sed repellendus? Placeat unde
+            similique eius quibusdam inventore blanditiis, in sed molestiae architecto! Esse sint sequi maiores.
+        </div>
+    </div>
+
+</body>
+
+</html>

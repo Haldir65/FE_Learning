@@ -4,12 +4,16 @@
     <button class="btn btn-success">GET using jQuery</button>
     <button class="btn btn-info">GET using axios</button>
     <button class="btn btn btn-outline-primary">GET using axios</button>
+
+    <button class="circle">Stylus</button>
+    
   </div>
 </template>
 
 <script>
 import { getAjax, postAjax } from "../../utils/http";
 import { AjaxUtil } from "../../utils/AjaxUtils";
+import './stylusstyle.styl'
 
 export default {
   name: "axio",

@@ -38,7 +38,9 @@
   </ul>
 
 
-
+<h1>接收参数的路由</h1>
+    <h1> params.id：{{ $route.params }}</h1>
+    <h1>query.status:{{ $route.query.queryId }}</h1>
 
 </div>
 </template>

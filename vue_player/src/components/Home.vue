@@ -11,7 +11,7 @@
     </div>
 
     <div @click='(ev) => log(ev)' class="demo-card-wide mdl-card mdl-shadow--2dp center_positioning_text">
-      <router-link :to="{ name: 'vuex', params: {} }">VuexSample</router-link>
+      <router-link :to="{ name: 'vuex', params: { id: 200 ,id2: 201},query: { queryId:  202 } }">VuexSample</router-link>
     </div>
 
     <div @click='(ev) => log(ev)' class="demo-card-wide mdl-card mdl-shadow--2dp center_positioning_text">

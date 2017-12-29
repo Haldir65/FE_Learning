@@ -52,7 +52,8 @@ export default {
   data() {
     return {
       message: "",
-      name: "home"
+      name: "home",
+      value: "precious"
     };
   },
   comuted() {

@@ -42,6 +42,25 @@
     <h1> params.id：{{ $route.params }}</h1>
     <h1>query.status:{{ $route.query.queryId }}</h1>
 
+    <div class='home' @click="()=> this.$router.push('/')" >
+      Home
+      // 字符串
+this.$router.push('home')
+<br>
+// 对象
+this.$router.push({ path: 'home' })
+<br>
+
+// 命名的路由
+this.$router.push({ name: 'user', params: { userId: 123 }})
+<br>
+
+// 带查询参数，变成 /register?plan=private
+this.$router.push({ path: 'register', query: { plan: 'private' }})
+
+
+    </div>
+
 </div>
 </template>
 
@@ -126,4 +145,21 @@ export default {
 
 <style scoped>
 @import "../../common/stylebase.css";
+
+.home{
+  text-decoration: none;
+  color: #fff;
+  margin:20px;
+  padding: 15px 30px;
+  border: 1px #5e5e5e solid;
+  display: inline-block;
+  background: rgba(73,155,234,1);
+background: -moz-linear-gradient(-45deg, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%);
+background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(73,155,234,1)), color-stop(100%, rgba(32,124,229,1)));
+background: -webkit-linear-gradient(-45deg, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%);
+background: -o-linear-gradient(-45deg, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%);
+background: -ms-linear-gradient(-45deg, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%);
+background: linear-gradient(135deg, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5', GradientType=1 );
+}
 </style>

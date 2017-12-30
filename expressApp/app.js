@@ -96,6 +96,7 @@ var sample = {
   }
 
 app.get('/',function(req,res) {
+console.log(path.join(__dirname,"public"));
     res.render('index',{
         title: 'Customers',
         users: users

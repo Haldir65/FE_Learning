@@ -1,6 +1,6 @@
 # lily
 
-> a collection of images
+> a new hope
 
 ## Build Setup
 

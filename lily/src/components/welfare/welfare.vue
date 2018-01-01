@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     loadMore () {
-      console.log('load more');
+      console.log('load more triggered');
       if (get) {
         get(`${API}10/${this.page}`).then((response) => {
           console.log(`current page count ${this.page}`);
@@ -57,7 +57,11 @@ export default {
       obj.M = 9;
       obj.D = 20;
       get(`http://gank.io/api/history/content/day/${obj.Y}/${obj.M}/${obj.D}`).then((response) => {
-        console.log(response.results);
+        this.detailsData = response.results[0];
+        this.$refs.details.show();
+        this.$nextTick(() => {
+          // this.$store.commit('UPDATE_LOADING', false);
+        });
       });
     }
   },

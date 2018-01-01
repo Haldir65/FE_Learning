@@ -21,7 +21,7 @@ export default{
   },
   mounted: function () {
   }
-}
+};
 </script>
 
 <style lang="stylus" rel='stylesheet/stylus'>

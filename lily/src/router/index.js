@@ -1,12 +1,12 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import card from '@/components/card/card'
-import day from '@/components/day/day'
-import welfare from '@/components/welfare/welfare'
+import Vue from 'vue';
+import Router from 'vue-router';
+import card from '@/components/card/card';
+import day from '@/components/day/day';
+import welfare from '@/components/welfare/welfare';
 
-import App from '../App'
+import App from '../App';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   mode: 'history',
@@ -32,4 +32,4 @@ export default new Router({
       component: welfare
     }
   ]
-})
+});

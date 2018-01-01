@@ -42,7 +42,6 @@ export default {
     show () {
       this.showFlag = true;
       this.$nextTick(() => {
-        console.log('tick');
       });
     },
     hide () {

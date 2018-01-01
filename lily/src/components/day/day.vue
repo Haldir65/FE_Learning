@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import vImg from '../lazyloadImg/lazyimg.vue'
+import vImg from '../lazyloadImg/lazyimg.vue';
 export default {
   name: 'v-day',
   props: {
@@ -17,25 +17,25 @@ export default {
   data () {
     return {
       content: false
-    }
+    };
   },
   components: {
     vImg
   },
   created () {
-    this.clearStyle()
+    this.clearStyle();
   },
   methods: {
     clearStyle () {
       this.$nextTick(() => {
-        let tags = this.$el.getElementsByTagName('img')
+        let tags = this.$el.getElementsByTagName('img');
         for (let i = 0; i < tags.length; i++) {
-          tags[i].removeAttribute('style')
+          tags[i].removeAttribute('style');
         }
-      })
+      });
     }
   }
-}
+};
 </script>
 
 <style lang="stylus" rel='stylesheet/stylus'>

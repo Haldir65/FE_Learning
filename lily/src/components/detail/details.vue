@@ -10,6 +10,7 @@
                       <div class="title">Detail title</div>
                   </header>
               </header>
+              <v-day :data='detailsData' ref="day"></v-day>
           </div>
 
       </div>
@@ -18,6 +19,7 @@
 </template>
 
 <script>
+import vDay from '../day/day.vue';
 export default {
   name: 'v-details',
   props: {
@@ -31,27 +33,30 @@ export default {
   data () {
     return {
       showFlag: false
-    }
+    };
   },
   created () {
 
   },
   methods: {
     show () {
-      this.showFlag = true
+      this.showFlag = true;
       this.$nextTick(() => {
-        console.log('tick')
-      })
+        console.log('tick');
+      });
     },
     hide () {
-      this.showFlag = false
+      this.showFlag = false;
     }
+  },
+  components: {
+    vDay
   }
-}
+};
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-
+@import 'details.styl';
 </style>
 
 

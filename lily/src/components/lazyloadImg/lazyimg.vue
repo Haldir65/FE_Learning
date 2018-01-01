@@ -12,10 +12,10 @@ export default {
   },
   computed: {
     imgObj () {
-      return `${this.imgUrl}?imageView2/0/w/200`
+      return `${this.imgUrl}?imageView2/0/w/200`;
     }
   }
-}
+};
 </script>
 
 <style>

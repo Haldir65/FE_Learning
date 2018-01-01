@@ -1,7 +1,7 @@
 <template>
   <div class="welfare-wrapper" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
     <div class="welfare-center">
-      <figure v-show="totalData.length >0" v-for="data in totalData">
+      <figure v-show="totalData.length >0" v-for="data in totalData" v-on:click= "showDetail(data.createdAt)">
         <v-img :imgUrl="data.url"></v-img>    
     </figure>    
     </div> 
@@ -15,9 +15,10 @@
 </template>
 
 <script>
-import vImg from '../lazyloadImg/lazyimg.vue'
-import vDetails from '../detail/details.vue'
-import {get} from '../../common/js/api'
+import vImg from '../lazyloadImg/lazyimg.vue';
+import vDetails from '../detail/details.vue';
+import {get, API} from '../../common/js/api';
+import {objectDate} from '../../common/js/date';
 
 export default {
   data () {
@@ -32,24 +33,39 @@ export default {
       page: 1,
       detailsData: {},
       time: ''
-    }
+    };
+  },
+  mounted () {
   },
   methods: {
     loadMore () {
-      console.log('load more')
+      console.log('load more');
       if (get) {
-        get('https://gank.io/api/data/福利/10/1').then((response) => {
-          console.log(response)
-          this.totalData = response.results
-        })
+        get(`${API}10/${this.page}`).then((response) => {
+          console.log(`current page count ${this.page}`);
+          this.totalData = this.totalData.concat(response.results);
+          this.page++;
+          this.busy = false;
+        });
       }
+    },
+    showDetail (time) {
+      this.time = time;
+      console.log(time);
+      let obj = objectDate(time);
+      console.log(obj);
+      obj.M = 9;
+      obj.D = 20;
+      get(`http://gank.io/api/history/content/day/${obj.Y}/${obj.M}/${obj.D}`).then((response) => {
+        console.log(response.results);
+      });
     }
   },
   components: {
     vImg,
     vDetails
   }
-}
+};
 </script>
 
 <style lang="stylus" rel='stylesheet/stylus'>

@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "axios": "^0.17.1",
-    "vue-infinite-scroll": "^2.0.2",
-    "vue-lazyload": "^1.1.4"
-  }
-}

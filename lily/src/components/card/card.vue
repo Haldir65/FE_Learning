@@ -18,6 +18,8 @@ export default{
     data: {
       type: Object
     }
+  },
+  mounted: function () {
   }
 }
 </script>

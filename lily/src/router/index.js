@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import card from '@/components/card/card'
 import day from '@/components/day/day'
+import welfare from '@/components/welfare/welfare'
 
 import App from '../App'
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/day',
       name: 'day',
       component: day
+    },
+    {
+      path: '/welfare',
+      name: 'welfare',
+      component: welfare
     }
   ]
 })

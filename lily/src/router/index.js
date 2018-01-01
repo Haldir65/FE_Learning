@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import card from '@/components/card/card'
+import day from '@/components/day/day'
+
+import App from '../App'
 
 Vue.use(Router)
 
@@ -10,13 +12,18 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'index',
+      component: App
     },
     {
       path: '/card',
       name: 'card',
       component: card
+    },
+    {
+      path: '/day',
+      name: 'day',
+      component: day
     }
   ]
 })

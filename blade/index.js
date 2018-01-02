@@ -4,29 +4,15 @@ const app = express();
 var fs = require('fs');
 var path = require('path');
 
-function readFiles(dirname, onFileContent, onError) {
-    fs.readdir(dirname, function(err, filenames) {
-      if (err) {
-        onError(err);
-        return;
-      }
-      filenames.forEach(function(filename) {
-        fs.readFile(path.resolve(dirname, filename), 'utf-8', function(err, content) {
-          if (err) {
-            onError(err);
-            return;
-          }
-          onFileContent(filename, content);
-        });
-      });
-    });
-  };
+var fileUtils = require('./common/fileUtils');
+
 
 // app.get('/', (req, res) => res.send('Hello World!'));
+// http://weizhifeng.net/node-js-exports-vs-module-exports.html
 
 app.get('/', function (req, res) {
     console.log('request made');
-    readFiles(path.resolve('./imgs'), function onOpen(name, content) {
+    fileUtils.scanFile( path.resolve('./imgs'), function onOpen(name, content) {
         console.log(`get file name ${name}`);
     }, function onError (error){
         console.log(error);

@@ -1,6 +1,7 @@
 var fs = require('fs');
+var path = require('path');
 
-export function readFiles(dirname, onFileContent, onError) {
+exports.scanFile = function readFiles(dirname, onFileContent, onError) {
   fs.readdir(dirname, function(err, filenames) {
     if (err) {
       onError(err);

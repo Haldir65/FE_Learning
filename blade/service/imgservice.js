@@ -14,3 +14,5 @@ function generateUrl(id) {
 }
 
 modules.generateUrl = generateUrl;
+
+export {generateUrl};

@@ -2,7 +2,7 @@
   <div class="menu">
       <div class="menu-list" :class="{'show':show}">
           <div class="menu-header">
-              <img class="menu-avtar" src="url('../../assets/logo.png')" alt="avatar">
+              <img class="menu-avtar" src="../../assets/logo.png" alt="avatar">
               <div class="menu-title">About Author</div>
           </div>
 

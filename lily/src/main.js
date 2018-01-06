@@ -6,6 +6,7 @@ import router from './router';
 import VueLazyload from 'vue-lazyload';
 import infiniteScroll from 'vue-infinite-scroll';
 import store from './vuex/store';
+import './common/css/index.styl';
 
 Vue.config.productionTip = false;
 

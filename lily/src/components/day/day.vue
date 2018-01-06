@@ -1,7 +1,7 @@
 <template>
   <div class="day bounceInRight" rel='dom'>
-      <h1>{{data.title}}</h1>
-      <div v-html="data.content"></div>
+      <h1 v-if="data && data.title">{{data.title}}</h1>
+      <div v-if='data' v-html="data.content"></div>
   </div>
 </template>
 

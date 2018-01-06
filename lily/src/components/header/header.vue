@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="page-over"  v-on:click="toggleShow"></div>
+    <div class="page-over" v-show="menuShow" v-on:click="toggleShow" ></div>
     <header class="header" :class="{'show': menuShow}" @click="toggleShow">
         <header class="bar bar-nav">
           <div class="pull-left">
@@ -37,7 +37,8 @@ export default {
   },
   methods: {
     toggleShow () {
-      this.$store.commit('UPDATE_MENUS');
+      console.log('toggle');
+      this.$store.commit('UPDATE_MENUSHOW');
     },
     hideDetail () {
       this.detailShow = false;

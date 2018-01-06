@@ -19,7 +19,7 @@ const mutations = {
     console.log(title);
     state.headerTitle = title;
   },
-  UPDATE_MENUS (state) {
+  UPDATE_MENUSHOW (state) {
     state.menuShow = !state.menuShow;
   },
   UPDATE_LOADING (state, data) {

@@ -21,6 +21,11 @@ export default {
       'loadingShow'
     ])
   },
+  methods: {
+    hideDetail () {
+      this.detailShow = false;
+    }
+  },
   components: {
     vHeader
   }
@@ -40,4 +45,16 @@ export default {
 #app .show {
   transform: translateX(250px)
 }
+
+#app .page-over {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 3;
+}
+
+
 </style>

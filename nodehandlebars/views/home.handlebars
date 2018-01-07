@@ -1,0 +1,18 @@
+<h1>Welcome hbs</h1>
+{{#if published}}
+    {{content}}
+{{/if}}   
+
+<ul>
+    {{#each people}}
+    <li>{{this}}</li>
+    {{/each}}
+</ul>
+
+<ul>
+    {{#each morePeople}}
+        <li>{{this.firstname}}  {{this.lastname}}</li>
+    {{/each}}
+</ul>
+
+    

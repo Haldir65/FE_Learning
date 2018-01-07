@@ -7,6 +7,8 @@ import VueLazyload from 'vue-lazyload';
 import infiniteScroll from 'vue-infinite-scroll';
 import store from './vuex/store';
 import './common/css/index.styl';
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.config.productionTip = false;
 
@@ -16,7 +18,7 @@ Vue.use(VueLazyload, {
   attempt: 1
 }
 );
-
+Vue.use(ElementUI);
 Vue.use(infiniteScroll);
 /* eslint-disable no-new */
 new Vue({

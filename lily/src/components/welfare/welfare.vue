@@ -54,14 +54,18 @@ export default {
       console.log(time);
       let obj = objectDate(time);
       console.log(obj);
-      obj.M = 9;
-      obj.D = 20;
+      // obj.M = 9;
+      // obj.D = 20;
       get(`http://gank.io/api/history/content/day/${obj.Y}/${obj.M}/${obj.D}`).then((response) => {
-        this.detailsData = response.results[0];
-        this.$refs.details.show();
-        this.$nextTick(() => {
-          // this.$store.commit('UPDATE_LOADING', false);
-        });
+        if (response.results[0]) {
+          showConcreteDetail(this, response);
+        } else {
+          get(`http://gank.io/api/history/content/day/2017/9/20`).then((response) => {
+            showConcreteDetail(this, response);
+          });
+        }
+      }).catch((error) => {
+        console.log(error);
       });
     }
   },
@@ -70,6 +74,14 @@ export default {
     vDetails
   }
 };
+
+function showConcreteDetail (_this, response) {
+  _this.$refs.details.show();
+  _this.$nextTick(() => {
+  // this.$store.commit('UPDATE_LOADING', false);
+  });
+  _this.detailsData = response.results[0];
+}
 </script>
 
 <style lang="stylus" rel='stylesheet/stylus'>

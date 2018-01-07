@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import card from '@/components/card/card';
 import day from '@/components/day/day';
 import welfare from '@/components/welfare/welfare';
+import testlist from '../components/test/list/list';
 
 import App from '../App';
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/welfare',
       name: 'welfare',
       component: welfare
+    },
+    {
+      path: '/test/list',
+      name: 'list',
+      component: testlist
     }
   ]
 });

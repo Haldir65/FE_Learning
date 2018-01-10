@@ -2,6 +2,9 @@
 
 > a new hope
 
+### Status
+[![Build Status](https://travis-ci.org/Haldir65/Web.svg?branch=lily)](https://github.com/Haldir65/Web)
+
 ## Build Setup
 
 ``` bash

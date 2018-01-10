@@ -1,0 +1,34 @@
+language: node_js
+
+branches:
+  only:
+    - master
+    - dev
+    - lily
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+node_js:
+ - "node
+ - "8"
+
+
+
+before_script:
+  - yarn install
+
+script: 
+  - yarn run build 
+
+# install:
+#   - npm i -g yarn && yarn
+
+# deploy:
+#   provider: s3
+#   local-dir: public
+#   on:
+#     branch: cloudfront
+  

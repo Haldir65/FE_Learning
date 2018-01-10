@@ -1,4 +1,6 @@
 language: node_js
+node_js:
+ - "node"
 
 branches:
   only:
@@ -11,9 +13,7 @@ cache:
   directories:
     - node_modules
 
-node_js:
- - "node
- - "8"
+
 
 
 

@@ -33,16 +33,51 @@ var Student = mongoose.model('Student', studentSchema);
 
 
 
-app.get('/', function(req,res){
+app.get('/students/', function(req,res){
     var result = {};
     result = Student.find({}, function (err,students) {
-        if(err){
+        if(err) {
            console.log(err) ;
         } else {
             res.send(students);
         }
     });
 });
+
+
+// add a specific student to db
+app.post('/students/add',function(req,res){
+    var studentName = req.body.name;
+    var studentAge = req.body.age;
+    var student = new Student( {
+        _id: new mongoose.Types.ObjectId(),
+        name: studentName,
+        age: studentAge
+    });
+
+    student.save(function(err) {
+        if (err) throw err;
+        else {
+            console.log('Author updated successfully');
+            res.redirect('/students/');
+        }
+    });
+});
+
+
+// find a specific student ById 
+// app.get('/students/', function(req,res){
+//     var result = {};
+//     result = Student.find({
+//         age: 26
+//     }, function (err,students) {
+//         if(err) {
+//            console.log(err) ;
+//         } else {
+//             res.send(students);
+//         }
+//     });
+// });
 
 app.listen(app.get('port'),function () {
     console.log('server started on port '+app.get('port'));

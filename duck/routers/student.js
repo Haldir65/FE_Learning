@@ -78,11 +78,13 @@ var addStudent = app.post('/add/',function(req,res){
     student.save(function(err) {
         if (err) throw err;
         else {
-            console.log('Author updated successfully');
-            res.redirect('/student/list/all');
+            // console.log('Author updated successfully');
+            res.redirect('/student/all');
         }
     });
 });
+
+
 
 
 

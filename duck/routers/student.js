@@ -26,7 +26,7 @@ app.get('/all/', function(req,res){
            console.log(err) ;
         } else {
             // res.send(students);
-            res.render('students/studentlist', {
+            res.render('students/list/all', {
                 title: "All students in the list",
                 students: students
             })
@@ -35,8 +35,38 @@ app.get('/all/', function(req,res){
 });
 
 
+
+// /student/12 
+app.get('/getById/:age', function(req,res){
+    var result = {};
+    var _age = req.params.age;
+    result = Student.find({
+        age : _age
+    }, function (err,students) {
+        if(err) {
+           console.log(err) ;
+        } else {
+            // res.send(students);
+            res.header("Content-Type", "text/html");
+            res.render('students/list/all', {
+                title: `students whose age is === ${_age}`,
+                students: students
+            })
+        }
+    });
+});
+
+
+
+// /student/all 
+app.get('/add/', function(req,res){
+    res.render('students/add/add', {
+        title: "Click that buttom to add student"
+    });
+});
+
 // add a specific student to db
-app.post('/add/',function(req,res){
+var addStudent = app.post('/add/',function(req,res){
     var studentName = req.body.name;
     var studentAge = req.body.age;
     var student = new Student( {
@@ -49,44 +79,14 @@ app.post('/add/',function(req,res){
         if (err) throw err;
         else {
             console.log('Author updated successfully');
-            res.redirect('/students/');
-        }
-    });
-});
-
-
-// /student/all 
-app.get('/getById/:age', function(req,res){
-    var result = {};
-    var _age = req.params.age;
-    result = Student.find({
-        age : _age
-    }, function (err,students) {
-        if(err) {
-           console.log(err) ;
-        } else {
-            // res.send(students);
-            res.render('students/studentlist', {
-                title: "All students in the list",
-                students: students
-            })
+            res.redirect('/student/list/all');
         }
     });
 });
 
 
 
-// find a specific student ById 
-// app.get('/students/', function(req,res){
-//     var result = {};
-//     result = Student.find({
-//         age: 26
-//     }, function (err,students) {
-//         if(err) {
-//            console.log(err) ;
-//         } else {
-//             res.send(students);
-//         }
-//     });
-// });
+
+
 module.exports.router = app;
+module.exports.addStudent = addStudent;

@@ -35,8 +35,17 @@ app.set('view engine','hbs');
 // app.use(express.static(__dirname + '/node_modules/jquery/dist'));
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
 
-// serving bootstrap as static assets
-app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
+// // serving bootstrap as static assets
+// app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
+
+app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/'));
+
+app.use('/js', express.static(__dirname + '/js'));
+
+app.use('/css', express.static(__dirname + '/css'));
+
+
+
 
 
 // setup port number 

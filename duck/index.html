@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Duck</title>
     <script language="javascript" src="/jquery/jquery.min.js"></script> 
-    <script language="javascript" src="/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-    <!-- <script src="./js/bundle.js"></script> -->
+    <script language="javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
     <div class="container">
@@ -50,18 +50,24 @@
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
         </nav>
+    </div>
+    
+    <!-- buttons  -->
+    <div class="container btn_contanier">
+        
         
         <a type="button" class="btn btn-primary" href="/student/all">View All Students</a>
         <hr>
-        <a type="button" class="btn btn-secondary" href="/student/add">insert a student</a>
+        <a type="button" class="btn  btn-info btn-add-student" href="/student/add">insert a student</a>
         <hr>
+        <!-- <a type="button" class="btn btn-success" href="/student/getById/27">get a student</a> -->
         
-        <a type="button" class="btn btn-success" href="/student/getById/27">get a student</a>
+     
         <hr>
         
         <a type="button" class="btn btn-danger" href="/student/deleteById">delete a student form db</a>
         <hr>
-
+        
         <button type="button" class="btn btn-warning">Warning</button>
         <button type="button" class="btn btn-info">Info</button>
         <button type="button" class="btn btn-light">Light</button>
@@ -69,5 +75,7 @@
         
         <button type="button" class="btn btn-link">Link</button>
     </div>
+    
+    
 </body>
 </html>

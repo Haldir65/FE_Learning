@@ -2,8 +2,8 @@ var mongoose = require('mongoose');
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
+var exphbs= require('express-handlebars');
 
-var studentSchema = require('./schemas/student');
 
 const uri = 'mongodb://localhost/mydb';
 
@@ -24,6 +24,12 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
+app.set('views',path.join(__dirname,'views'));
+app.engine('hbs',exphbs({
+    defaultLayout: 'main',
+    extname: '.hbs'
+}));
+app.set('view engine','hbs');
 
 // jquery stuff
 // app.use(express.static(__dirname + '/node_modules/jquery/dist'));
@@ -38,57 +44,12 @@ app.set('port',(process.env.PORT || 8989));
 
 // setup mongoose schema
 
-var Student = mongoose.model('Student', studentSchema);
 
 // portal 
 app.get('/',(req, res) => res.sendFile(path.resolve(__dirname,"index.html")));
 
-
-app.get('/students/', function(req,res){
-    var result = {};
-    result = Student.find({}, function (err,students) {
-        if(err) {
-           console.log(err) ;
-        } else {
-            res.send(students);
-        }
-    });
-});
-
-
-// add a specific student to db
-app.post('/students/add',function(req,res){
-    var studentName = req.body.name;
-    var studentAge = req.body.age;
-    var student = new Student( {
-        _id: new mongoose.Types.ObjectId(),
-        name: studentName,
-        age: studentAge
-    });
-
-    student.save(function(err) {
-        if (err) throw err;
-        else {
-            console.log('Author updated successfully');
-            res.redirect('/students/');
-        }
-    });
-});
-
-
-// find a specific student ById 
-// app.get('/students/', function(req,res){
-//     var result = {};
-//     result = Student.find({
-//         age: 26
-//     }, function (err,students) {
-//         if(err) {
-//            console.log(err) ;
-//         } else {
-//             res.send(students);
-//         }
-//     });
-// });
+// router for students
+app.use('/student', require('./routers/student').router);
 
 app.listen(app.get('port'),function () {
     console.log('server started on port '+app.get('port'));

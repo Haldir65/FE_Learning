@@ -17,8 +17,8 @@ var people = ['john', 'george','same']
 
 var morePeople = [
     {
-     firstname: 'John',
-     lastname: 'Doe'
+        firstname: 'John',
+        lastname: 'Doe'
     },
     {
         firstname:'sarah',

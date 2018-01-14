@@ -2,17 +2,19 @@
   "name": "duck",
   "version": "1.0.0",
   "description": "duck or goose",
-  "main": "./js/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./js/index.js"
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "bootstrap": "^3.3.7",
     "express": "^4.16.2",
+    "jquery": "^3.2.1",
     "mongoose": "^4.13.9",
     "nodemon": "^1.14.11"
   }

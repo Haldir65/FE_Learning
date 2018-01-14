@@ -15,6 +15,6 @@ module.exports = {
                 test: /\.hbs$/,
                 exclude: path.resolve(__dirname, "node_modules"),
                 loader: "handlebars-loader" }
-          ]
+            ]
+        }
     }
-}

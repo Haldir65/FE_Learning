@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 
-var studentSchema = require('../schemas/student');
+var studentSchema = require('./schemas/student');
 
 const uri = 'mongodb://localhost/mydb';
 
@@ -24,6 +24,15 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
+
+// jquery stuff
+// app.use(express.static(__dirname + '/node_modules/jquery/dist'));
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
+
+// serving bootstrap as static assets
+app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
+
+
 // setup port number 
 app.set('port',(process.env.PORT || 8989));
 
@@ -31,6 +40,8 @@ app.set('port',(process.env.PORT || 8989));
 
 var Student = mongoose.model('Student', studentSchema);
 
+// portal 
+app.get('/',(req, res) => res.sendFile(path.resolve(__dirname,"index.html")));
 
 
 app.get('/students/', function(req,res){

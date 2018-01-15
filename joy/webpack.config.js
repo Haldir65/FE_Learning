@@ -1,22 +1,30 @@
+var path = require("path");
+
 module.exports = {
     entry: './app.js',
     output: {
         filename: "./bundle.js"
     },
+   
     watch: true,
     module:{
-        loaders: [
-            {
-                test: /\.css$/,
-                loader: "style-loader!css-loader"
-            },
+        rules: [
             {
                 test: /\.js$/,
-                loader: "babel-loader",
-                exclude: /node_modules$/,
-                query: {
-                    presets: ['babel-preset-env']
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['babel-preset-env']
+                    }
                 }
+            },
+            {
+                test: /\.css$/,
+                use: [ 'style-loader', 'css-loader' ]
+            },
+            {   test: /\.hbs$/, 
+                loader: "handlebars-loader"
             }
         ]
     }

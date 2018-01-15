@@ -2,11 +2,18 @@ language: node_js
 node_js:
  - "node"
 
+# whitelist
 branches:
   only:
     - master
-    - dev
     - lily
+
+# blacklist
+branches:
+  except:
+    - dev
+    - legacy
+    - experimental    
 
 cache:
   yarn: true

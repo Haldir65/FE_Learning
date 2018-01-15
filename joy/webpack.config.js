@@ -25,7 +25,23 @@ module.exports = {
             },
             {   test: /\.hbs$/, 
                 loader: "handlebars-loader"
+            },
+            // stylus configs >>>
+      {
+        test: /\.styl$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[name]__[local]___[hash:base64:5]'
             }
+          },
+          'stylus-loader'
+        ]
+      }
+     // <<< stylus configs
         ]
     }
 }

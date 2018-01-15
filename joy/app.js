@@ -17,6 +17,7 @@ require("./style.css");
 const jam = "js"
 
 console.log(jam);
+require('./styls/style.styl');
 
 
 

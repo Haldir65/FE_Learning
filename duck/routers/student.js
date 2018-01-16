@@ -29,7 +29,7 @@ app.get('/all/', function(req,res){
             res.render('students/list/all', {
                 title: "All students in the list",
                 students: students
-            })
+            });
         }
     });
 });

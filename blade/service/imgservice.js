@@ -8,11 +8,16 @@ function generateUrl(id) {
         fs.readdirSync(testFolder).forEach(file => {
             console.log(file);
             imgsArray.push(file);
-        })
+        });
     } 
     return imgsArray[id]; 
 }
 
 modules.generateUrl = generateUrl;
 
-export {generateUrl};
+// export {generateUrl};
+   // fileUtils.scanFile( path.resolve('./imgs'), function onOpen(name, content) {
+    //     console.log(`get file name ${name}`);
+    // }, function onError (error){
+    //     console.log(error);
+    // })

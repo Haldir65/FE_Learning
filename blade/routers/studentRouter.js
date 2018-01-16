@@ -68,7 +68,7 @@ app.get('/all/', function(req,res){
 });
 
 ///  /api/student/queryById?id=5a584a9d1b0f202248cf61ea
-app.get('/queryById/', function(req,res){
+app.get('/queryById', function(req,res){
     var result = {};
     var id = req.query.id;
     result = Student.findById(id, function (err,students) {

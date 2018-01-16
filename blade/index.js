@@ -1,11 +1,10 @@
-
 const express = require('express');
 const bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var fs = require('fs');
 const path = require('path');
 const studentRouter = require('./routers/studentRouter');
-var fileUtils = require('./common/fileUtils');
+const imgRouter = require('./service/imgservice');
 
 
 // mongoose configuration
@@ -25,6 +24,8 @@ const port = process.env.port || 9889;
 
 
 const app = express();
+
+module.exports.app = app;
 
 
 // app.get('/', (req, res) => res.send('Hello World!'));
@@ -50,6 +51,7 @@ app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/'
 // 使用shift + alt +a 可以块注释
 
 app.use('/api/student/',studentRouter);
+app.use('/imgs',imgRouter.router);
 
 app.get('/', function (req, res) {
     res.send({name: 'John', age: 10});

@@ -5,7 +5,6 @@ node_js:
 # whitelist
 branches:
   only:
-    - master
     - lily
 
 # blacklist
@@ -14,6 +13,7 @@ branches:
     - dev
     - legacy
     - experimental    
+    - master
 
 cache:
   yarn: true

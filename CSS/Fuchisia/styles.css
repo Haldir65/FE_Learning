@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 12px;
+  color: #222;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  background: #f0f0f0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.wrapper {
+  width: 800px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.wrapper h1 {
+  height: 50px;
+  line-height: 50px;
+  font-size: 22px;
+  font-weight: normal;
+  font-family: "Microsoft YaHei", SimHei;
+  text-align: center;
+}
+
+/* style for imgs */
+
+#focus {
+  height: 280px;
+  width: 800px;
+  overflow: hidden;
+  position: relative;
+}
+
+#focus ul {
+  position: absolute;
+}
+
+#focus ul li {
+  float: left;
+  width: 800px;
+  height: 280px;
+  background: #000;
+}

@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack",
+    "live":
+      "webpack-dev-server --progress --hot --inline --config webpack.config.js",
     "build": "webpack app.js bundle.js -p"
   },
   "keywords": [],
@@ -23,6 +25,7 @@
     "style-loader": "^0.19.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
   }
 }

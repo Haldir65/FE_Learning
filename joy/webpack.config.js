@@ -7,6 +7,9 @@ module.exports = {
     filename: "bundle.js"
   },
 
+  resolve: {
+    fallback: path.join(__dirname, "template/helpers")
+  },
   watch: true,
   module: {
     rules: [

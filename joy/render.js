@@ -3,7 +3,7 @@ const bookListingTemplate = require("./template/muscle.hbs");
 let addContent = document.addEventListener("DOMContentLoaded", function() {
   var div = document.createElement("div");
   div.innerHTML = bookListingTemplate({
-    username: "test",
+    username: "John Doe",
     info: "Your books are due next Tuesday",
     books: [
       { title: "A book", synopsis: "With a description" },

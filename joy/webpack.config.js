@@ -6,10 +6,6 @@ module.exports = {
     path: path.resolve(__dirname, "build"),
     filename: "bundle.js"
   },
-
-  resolve: {
-    fallback: path.join(__dirname, "template/helpers")
-  },
   watch: true,
   module: {
     rules: [
@@ -29,7 +25,8 @@ module.exports = {
       },
       {
         test: /\.hbs$/,
-        loader: "handlebars-loader"
+        loader: "handlebars-loader",
+        options: { helperDirs: path.resolve(__dirname, "./template/helpers") }
       },
       // stylus configs >>>
       {

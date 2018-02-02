@@ -1,4 +1,5 @@
 var path = require("path");
+var BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 
 module.exports = {
   entry: "./app.js",

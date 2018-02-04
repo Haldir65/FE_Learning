@@ -46,5 +46,6 @@ module.exports = {
     port: 8080,
     hot: true,
     inline: true
-  }
+  },
+  devtool: "source-map"
 };

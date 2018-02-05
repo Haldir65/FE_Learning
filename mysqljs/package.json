@@ -1,7 +1,7 @@
 {
-  "name": "duck",
+  "name": "mysqljs",
   "version": "1.0.0",
-  "description": "sample app for using mongodb in node js via mongoose",
+  "description": "sample of integrating mysql in node ",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,12 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "bootstrap": "^3.3.7",
+    "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
-    "express-handlebars": "^3.0.0",
-    "jquery": "^3.2.1",
-    "mongoose": "^4.13.9",
-    "nodemon": "^1.14.11"
+    "express-session": "^1.15.6",
+    "mysql": "^2.15.0",
+    "nodemon": "^1.14.12"
   }
 }

@@ -1,68 +1,113 @@
 @background-color: #f4f4f4;
 @font-family: Tahoma;
 @primary-color: #3b5998;
-@secondary-color: #20B2AA;
+@secondary-color: #20b2aa;
 @line-height: 1em+1em;
 
 // Text color mixins
 
-.text-color(@a) when (lightness(@a) > = 50% ){
-    color: black;
+.text-color(@a) when (lightness(@a) > = 50% ) {
+  color: black;
 }
 
-.text-color(@a) when (lightness(@a) < 50% ){
-    color: white;
+.text-color(@a) when (lightness(@a) < 50% ) {
+  color: white;
 }
 
 body {
-    font-family: @font-family;
-    background: @background-color;
-    line-height: @line-height;
+  font-family: @font-family;
+  background: @background-color;
+  line-height: @line-height;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-h1,h3{
-    .bordered
+h1,
+h3 {
+  .bordered;
 }
 
-.primary-text{
-    color: @primary-color;
+.primary-text {
+  color: @primary-color;
 }
 
-.primary-btn:extend(.btn){
-    background: @primary-color;
-    .text-color(@primary-color);
+.primary-btn:extend(.btn) {
+  background: @primary-color;
+  .text-color(@primary-color);
 }
 
-
-ul#menu{
-    list-style: none;
-    background-color: lighten(@secondary-color,50%);
-    li {
-        padding: 10px 0;
-        a {
-            color: @secondary-color;
-            text-decoration: none;
-            &:hover{
-                color: #000;
-            }
-
-        }
+ul#menu {
+  list-style: none;
+  background-color: lighten(@secondary-color, 50%);
+  li {
+    padding: 10px 0;
+    a {
+      color: @secondary-color;
+      text-decoration: none;
+      &:hover {
+        color: #000;
+      }
     }
+  }
 }
 
 .btn {
-    padding: 10px 15px;
-    border: 0;
-    .border-radius(10px);
+  padding: 10px 15px;
+  border: 0;
+  .border-radius(10px);
 }
-
 
 .border-radius(@radius) {
-    border-radius: @radius;
+  border-radius: @radius;
 }
 
-.bordered{
-    border-top: dotted 1px #000;
-    border-bottom: solid2px #000;
+.bordered {
+  border-top: dotted 1px #000;
+  border-bottom: solid2px #000;
 }
 
+.container {
+  position: relative;
+
+  button.close {
+    position: absolute;
+    background: #dddddd;
+    color: #000;
+    top: 0px;
+    right: 10px;
+    width: 10%;
+    text-align: center;
+  }
+}
+
+//  start of flex container
+.container.flex-container {
+  display: flex-wrap;
+  background: #666967;
+  padding: 0;
+  flex-direction: row;
+  height: auto;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+
+  .flex_item {
+    width: 100px; /* Or whatever */
+    height: 100px; /* Or whatever */
+    margin: auto; /* Magic! */
+    flex-grow: 1;
+
+    img {
+      width: 100px;
+      height: 100px;
+      background-size: cover;
+      border: 10px solid #fff;
+    }
+  }
+
+  :nth-child(2) {
+    img {
+      border: 10px solid #fff;
+    }
+  }
+}

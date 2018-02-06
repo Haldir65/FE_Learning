@@ -1,16 +1,30 @@
 {
   "dependencies": {
-    "less": "^2.7.3",
-    "less-watch-compiler": "^1.10.2"
+    "extract-text-webpack-plugin": "^3.0.2"
   },
   "name": "lesstutorial",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.9",
+    "jquery": "^3.3.1",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "less-watch-compiler": "^1.10.2",
+    "style-loader": "^0.20.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "lessc styles.less styles.css",
-    "dev": "less-watch-compiler"
+    "dev": "less-watch-compiler",
+    "start": "webpack",
+    "live": "webpack-dev-server --progress --hot --inline --config webpack.config.js"
   },
   "keywords": [],
   "author": "",

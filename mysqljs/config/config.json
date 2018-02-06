@@ -1,0 +1,8 @@
+{
+  "dbPort": 3306,
+  "userName": "",
+  "password": "",
+  "dbHost": "",
+  "dbName": "",
+  "tableName": ""
+}

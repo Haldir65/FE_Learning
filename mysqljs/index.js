@@ -1,6 +1,6 @@
 var express = require("express");
 var mysql = require("mysql");
-var CONFIG = require(".config/config.json");
+var CONFIG = require("./config/config.json");
 
 var port = 7890;
 
@@ -19,7 +19,7 @@ var connection = mysql.createConnection({
 
 connection.connect(function(error) {
   if (!!error) {
-    console.log("Error");
+    console.log("Error" + error);
   } else {
     console.log("We are connected!");
   }

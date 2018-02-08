@@ -22,7 +22,7 @@
     "dev": "less-watch-compiler",
     "start": "webpack",
     "live":
-      "webpack-dev-server --progress --hot --inline --config webpack.config.js && yarn start"
+      "webpack-dev-server --progress --hot --inline --config webpack.config.js && yarn dev"
   },
   "keywords": [],
   "author": "",

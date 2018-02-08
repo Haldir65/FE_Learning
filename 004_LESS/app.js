@@ -10,4 +10,10 @@ $(document).ready(function() {
     imgElements[i].getElementsByTagName("img")[0].src = gen();
   }
   $(".primary-btn").css("background-color", "#000");
+
+  let gridItems = $(".container.grid-container .item");
+  gridItems.each(function() {
+    $(this).css("border", "3px solid black");
+    $(this).css("background-image", "url(" + gen() + ")");
+  });
 });

@@ -85,29 +85,33 @@ ul#menu {
   height: 300px;
 }
 
+@image-width : 100px;
+@horizontal-gap: 2px;
+@vertical-gap: 2px;
 //  start of flex container
 .container.flex-container {
   display: flex-wrap;
   background: #666967;
   padding: 0;
+  flex-wrap: wrap;
   flex-direction: row;
   height: auto;
   justify-content: center;
+  align-content: flex-start;
   text-align: center;
   padding: 20px;
-  grid-row-gap: 85px;
 
   .flex_item {
-    width: 100px; /* Or whatever */
-    height: 100px; /* Or whatever */
-    margin: auto; /* Magic! */
+    width: @image-width; /* Or whatever */
+    height: @image-width; /* Or whatever */
     flex-grow: 1;
 
     img {
-      width: 100px;
-      height: 100px;
+      width: @image-width;
+      height: @image-width;
       background-size: cover;
-      border: 10px solid #fff;
+      border: 2px solid #fff;
+      margin: 2px;
     }
   }
 
@@ -115,5 +119,55 @@ ul#menu {
     img {
       border: 10px solid #fff;
     }
+  }
+
+  :nth-child(5) {
+    img {
+      border: 10px solid #fff;
+    }
+  }
+
+  :nth-child(8) {
+    img {
+      border: 10px solid #fff;
+    }
+  }
+}
+
+@imagepath: "/imgs/";
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 200px;
+  border: 1px solid chocolate;
+  grid-row-gap: 20px;
+  grid-column-gap: 10px;
+  background-color: #fff;
+  color: #444;
+  padding: @vertical-gap;
+
+  .item {
+    background: url("@{imagepath}b4.jpg") no-repeat center;
+    background-size: cover;
+
+    font-size: 150%;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    height: 20vh;
+    border: 1px solid red;
+  }
+
+  .item-1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .item-2 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
   }
 }

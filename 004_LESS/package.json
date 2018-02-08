@@ -1,7 +1,4 @@
 {
-  "dependencies": {
-    "extract-text-webpack-plugin": "^3.0.2"
-  },
   "name": "lesstutorial",
   "version": "1.0.0",
   "main": "index.js",
@@ -24,7 +21,8 @@
     "compile": "lessc styles.less styles.css",
     "dev": "less-watch-compiler",
     "start": "webpack",
-    "live": "webpack-dev-server --progress --hot --inline --config webpack.config.js"
+    "live":
+      "webpack-dev-server --progress --hot --inline --config webpack.config.js"
   },
   "keywords": [],
   "author": "",

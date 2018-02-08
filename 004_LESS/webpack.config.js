@@ -19,20 +19,19 @@ module.exports = {
           }
         }
       },
-      {
-        test: /\.css$/ /*end with .css*/,
-        use: ["style-loader", "css-loader"]
-      },
+      // {
+      //   test: /\.css$/ /*end with .css*/,
+      //   use: ["style-loader", "css-loader"]
+      // },
       {
         test: /\.less$/,
         use: [
           "style-loader",
           {
-            loader: "css-loader" // translates CSS into CommonJS
+            loader: "css-loader",
+            options: { importLoaders: 1 }
           },
-          {
-            loader: "less-loader" // compiles Less to CSS
-          }
+          "less-loader"
         ]
       }
     ]
@@ -41,6 +40,6 @@ module.exports = {
     inline: true,
     contentBase: __dirname,
     compress: true,
-    port: 8989
+    port: 8990
   }
 };

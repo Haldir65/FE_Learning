@@ -53,6 +53,10 @@ ul#menu li a:hover {
   width: 10%;
   text-align: center;
 }
+.img-responsive {
+  width: 300px;
+  height: 300px;
+}
 .container.flex-container {
   display: flex-wrap;
   background: #666967;
@@ -62,6 +66,7 @@ ul#menu li a:hover {
   justify-content: center;
   text-align: center;
   padding: 20px;
+  grid-row-gap: 85px;
 }
 .container.flex-container .flex_item {
   width: 100px;

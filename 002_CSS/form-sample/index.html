@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form Sample</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>This the sample for displaying a form submit</h1>
+        </div>
+    </header>
+    <article>
+        <div class="container">
+            <p>Form for submiting stuff</p>
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input"> Check me out
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <hr>
+            <h2>How about select a picture</h2>
+            <form>
+                <div class="form-group">
+                    <a href="javascript:;" class="a-upload">
+                        <input type="file" name="" id="file1">点击这里上传文件
+                    </a>
+                    <a href="javascript:;" class="file">选择文件
+                        <input type="file" name="" id="file2">
+                    </a>
+                    <div class="fullPath">全路径：</div>
+                    <div class="showFileName">文件名：</div>
+                    <div class="fileerrorTip">非jpg,png格式：</div>
+                </div>
+            </form>
+
+            <input type="file" id="file1" onchange="showPreview(this, 'portrait1')" />
+            <img src="" id="portrait1" style="width: 200px; height: 200px; display: block;" />
+
+            <input type="file" id="file_2" multiple/>
+            <img src="" id="portrait2" style="width: 200px; height: 200px; display: block;" />
+
+            
+        </div>
+    </article>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

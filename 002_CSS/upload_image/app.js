@@ -3,6 +3,7 @@ var app = express();
 var path = require("path");
 var formidable = require("formidable");
 var fs = require("fs");
+var crypto = require("crypto");
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -18,7 +19,14 @@ app.post("/upload", (req, res) => {
   form.uploadDir = path.join(__dirname, "/uploads");
 
   form.on("file", (filed, file) => {
-    fs.rename(file.path, path.join(form.uploadDir, file.name));
+    let originName = path.join(form.uploadDir, file.name);
+    originName = cryptPwd(originName) + ".jpeg";
+    console.log(originName + ".jpeg");
+    fs.rename(file.path, path.join(form.uploadDir, originName), error => {
+      if (error) {
+        console.log("some thing bad happens oops" + error);
+      }
+    });
   });
 
   form.on("error", error => {
@@ -36,3 +44,8 @@ app.post("/upload", (req, res) => {
 const server = app.listen(3000, () => {
   console.log("server listen on port 3000");
 });
+
+function cryptPwd(password) {
+  var md5 = crypto.createHash("md5");
+  return md5.update(password).digest("hex");
+}

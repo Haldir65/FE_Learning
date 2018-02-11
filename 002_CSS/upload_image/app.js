@@ -21,7 +21,7 @@ app.post("/upload", (req, res) => {
   form.on("file", (filed, file) => {
     let originName = path.join(form.uploadDir, file.name);
     originName = cryptPwd(originName) + ".jpeg";
-    console.log(originName + ".jpeg");
+    console.log(originName);
     fs.rename(file.path, path.join(form.uploadDir, originName), error => {
       if (error) {
         console.log("some thing bad happens oops" + error);

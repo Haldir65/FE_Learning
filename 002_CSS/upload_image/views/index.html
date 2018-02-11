@@ -12,17 +12,23 @@
 </head>
 
 <body>
+
     <div class="container">
         <div class="row">
-            <h3>
-                choose your desired image here
-            </h3>
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <span class="glyphicon glyphicon-cloud-upload"></span>
+                        <h2>File uploader</h2>
+                        <h4>Choose your desire picture here</h4>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar"></div>
+                        </div>
+                        <button type="button" class="btn btn-success btn-upload">start upload</button>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <button type="button" class="btn btn-success btn-upload">start upload</button>
-
-
-
     </div>
 
     <input type="file" id="image_upload" name='uploads[]' multiple>

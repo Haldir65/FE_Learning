@@ -33,6 +33,6 @@ app.post("/upload", (req, res) => {
   form.parse(req);
 });
 
-const server = app.listen(5500, () => {
+const server = app.listen(3000, () => {
   console.log("server listen on port 3000");
 });

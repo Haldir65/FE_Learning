@@ -1,0 +1,15 @@
+body {
+  height: 100%;
+  background: #4791d2;
+}
+
+.container .btn-success {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+input[type="file"] {
+  margin: 10px;
+  display: none;
+}

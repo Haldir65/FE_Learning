@@ -4,6 +4,7 @@ var path = require("path");
 var formidable = require("formidable");
 var fs = require("fs");
 var crypto = require("crypto");
+require("dotenv").config();
 
 app.use(express.static(path.join(__dirname, "public")));
 

@@ -35,6 +35,9 @@ $(document).ready(function() {
                 "==============" + percentCompleted + "====================="
               );
 
+              $(".progress-bar").text(percentCompleted + "%");
+              $(".progress-bar").width(percentCompleted + "%");
+
               if (percentCompleted === 100) {
                 console.log("we are done here");
               }

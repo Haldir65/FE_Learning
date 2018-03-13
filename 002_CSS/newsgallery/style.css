@@ -102,13 +102,13 @@ ul {
 
 .pictwo {
     width: 270px;
-    height: 88px;
+    height: 128px;
     overflow: hidden;
 }
 
 .pictwo ul li {
     width: 120px;
-    height: 88px;
+    height: 128px;
     position: relative;
     overflow: hidden;
     display: inline-block;
@@ -119,6 +119,10 @@ ul {
 .pictwo ul li>a {
     outline: none;
     display: inline-block;
+    position: absolute;
+    height: 98px;
+    left: 0;
+    bottom: 0;
 }
 
 .pictwo ul li img {
@@ -129,13 +133,12 @@ ul {
 
 .imgdivtext {
     position: absolute;
-    bottom: 0px;
-    height: 25px;
+    left: 0px;
     width: 120px;
+    bottom: 10px;
     background: rgba(0, 0, 0, 0.6);
     line-height: 25px;
     text-align: center;
-    left: 0px;
     z-index: 4;
     *background: #000;
     *filter: alpha(opacity=50);
@@ -145,6 +148,8 @@ ul {
     color: white;
     line-height: 30px;
     height: 30px;
+    text-decoration: none;
+    vertical-align: bottom;
 }
 
 .returnbtn {

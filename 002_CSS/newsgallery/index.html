@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,57 +9,232 @@
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
     <link href="https://cdn.bootcss.com/normalize/8.0.0/normalize.css" rel="stylesheet">
     <link rel="stylesheet" href="./style.css" rel="stylesheet">
-<body>
-    <!-- 主体内容 -->
-    <div class="main">
-        <div class="bodymodal"></div>
-        <!-- 播放到第一张图弹出的提示 -->
-        <div class="firsttop">
-            <div class="firsttop_left">
-                <h1>这里会通过百度插入一个iframe</h1>
+
+    <body>
+        <!-- 主体内容 -->
+        <div class="main">
+            <div class="bodymodal"></div>
+            <!-- 播放到第一张图弹出的提示 -->
+            <div class="firsttop">
+                <div class="firsttop_left">
+                    <h1>这里会通过百度插入一个iframe</h1>
+                </div>
+                <div class="firsttop_right">
+                    <div class="close2">
+                        <a href="javascript:void(0)" class="closettn1"></a>
+                    </div>
+                    <div class="replay">
+                        <h2 id="div-end-h2">已经到第一张图片了。</h2>
+                        <p>
+                            <a href="javascript:;" class="replaybtn1">重新播放</a>
+                        </p>
+                    </div>
+                    <div class="pictwo">
+                        <ul>
+                            <li>
+                                <a href="https://www.baidu.com" title="这是鼠标移上去时显示的文字" target="_blank">
+                                    <img src="./images/prev.jpg" alt="这是img标签里面鼠标移上去之后显示的效果">
+                                </a>
+                                <div class="imgdivtext">
+                                    <a href="https://www.baidu.com" title="成都举行最美女孩大赛 高校美女身穿旗袍秀身材" target="_blank">上一图集</a>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="https://www.baidu.com" title="这是鼠标移上去时显示的文字" target="_blank">
+                                    <img src="./images/prev.jpg" alt="这是img标签里面鼠标移上去之后显示的效果">
+                                </a>
+                                <div class="imgdivtext">
+                                    <a href="https://www.baidu.com" title="成都举行最美女孩大赛 高校美女身穿旗袍秀身材" target="_blank">上一图集</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="returnbtn">
+                        <a href="http://www.ifeng.com">返回凤凰网首页</a>
+                    </div>
+                </div>
             </div>
-            <div class="firsttop_right">
-                <div class="close2">
-                    <a href="javascript:void(0)" class="closettn1"></a>
-                </div>
-                <div class="replay">
-                    <h2 id="div-end-h2">已经到第一张图片了。</h2>
-                    <p>
-                        <a href="javascript:;" class="replaybtn1">重新播放</a>
-                    </p>
-                </div>
-                <div class="pictwo">
-                    <ul>
-                        <li>
-                            <a href="https://www.baidu.com" title="这是鼠标移上去时显示的文字" target="_blank">
-                                <img src="./images/prev.jpg" alt="这是img标签里面鼠标移上去之后显示的效果">
-                            </a>
-                            <div class="imgdivtext">
-                                <a href="https://www.baidu.com" title="成都举行最美女孩大赛 高校美女身穿旗袍秀身材" target="_blank">上一图集</a>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="https://www.baidu.com" title="这是鼠标移上去时显示的文字" target="_blank">
-                                <img src="./images/prev.jpg" alt="这是img标签里面鼠标移上去之后显示的效果">
-                            </a>
-                            <div class="imgdivtext">
-                                <a href="https://www.baidu.com" title="成都举行最美女孩大赛 高校美女身穿旗袍秀身材" target="_blank">上一图集</a>
-                            </div>
-                        </li>
-                    </ul>
+            <!-- 播放到第一张图弹出的提示结束 -->
+
+            <div class="endtop">
+
+            </div>
+
+            <div class="piccontext">
+                <h2>上戏校花迪丽热巴清新写真宛若小仙女</h2>
+                <div class="source">
+                    <div class="source_left"> 来源：JS代码网
+                        <span>2018年3月17日</span>
+                    </div>
+
+                    <div class="source_right">
+                        <div class="support">
+                            支持
+                            <img src="images/jiantou1.jpg" alt=""> 键翻阅图片
+                        </div>
+                        <span>|</span>
+                        <a href="#myspeak" class="spell">我有话说</a>
+                        <span>|</span>
+                        <a href="javascript:;" class="list">列表查看</a>
+                    </div>
+                    <div class="source_right1">
+                        <a href="javascript:;" class="gaoqing">高清查看</a>
+                    </div>
                 </div>
 
-                <div class="returnbtn">
-                    <a href="http://www.ifeng.com">返回凤凰网首页</a>
+                <!-- 大图展示 -->
+                <div class="picshow">
+                    <div class="picshowtop">
+                        <a href="#">
+                            <img src="" alt="" id="pic1" curindex='0'>
+                        </a>
+                        <!-- 大图左侧的箭头，鼠标移动上去才显示 -->
+                        <a id='preArrow' href="javascript:void(0)" class="contextDiv" title="上一张">
+                            <span id="preArrow_A"></span>
+                        </a>
+                        <!-- 大图右侧的箭头，鼠标移上去才显示 -->
+                        <a id='nextArrow' href="javascript:void(0)" class="contextDiv" title="下一张">
+                            <span id="nextArrow_A"></span>
+                        </a>
+                    </div>
+
+                    <!-- 大图底部的描述文字 -->
+                    <div class="picshowtxt">
+                        <div class="picshowtxt_left">
+                            <span>1</span>/
+                            <i>12</i>
+                        </div>
+                        <div class="picshowtxt_right"></div>
+                    </div>
+
+
+                    <!-- 底部的小图的列表 -->
+                    <div class="picshowlist">
+                        <!-- 上一条图库 -->
+                        <div class="picshowlist_left">
+                            <div class="picleftimg">
+                                <a href="http://www.baidu.com" title="成都举行最美女孩大赛 高校美女身穿旗袍秀身材" target="_blank">
+                                    <img src="images/prev.jpg" alt="成都举行最美女孩大赛 高校美女身穿旗袍秀身材">
+                                </a>
+                            </div>
+                            <div class="piclefttxt">
+                                <a href="#" title="成都举行最美女孩大赛 高校美女身穿旗袍秀身材" target="_blank">成都举行最美女孩大赛 高校美女身穿旗袍秀身材</a>
+                            </div>
+                        </div>
+
+
+                        <!-- 向左的那个箭头 -->
+                        <div class="picshowlist_mid">
+                            <div class="picmidleft">
+                                <a href="javascript:void(0)" id="preArrow_B">
+                                    <img src="images/left1.jpg" alt="上一个">
+                                </a>
+                            </div>
+
+
+                            <!-- 中间的小图的列表 -->
+                            <div class="picmidmid">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="images/1.jpg" alt="" bigimg="images/1.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="images/2.jpg" alt="" bigimg="images/2.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="images/3.jpg" alt="" bigimg="images/3.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="images/4.jpg" alt="" bigimg="images/4.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="images/5.jpg" alt="" bigimg="images/5.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="images/6.jpg" alt="" bigimg="images/6.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="images/7.jpg" alt="" bigimg="images/7.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="images/8.jpg" alt="" bigimg="images/8.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="images/9.jpg" alt="" bigimg="images/9.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="images/10.jpg" alt="" bigimg="images/10.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="images/11.jpg" alt="" bigimg="images/11.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <img src="images/12.jpg" alt="" bigimg="images/12.jpg" text="《古剑》小师妹迪丽热巴清新写真宛若小仙女">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <!-- 列表向右的箭头 -->
+                            <div class="picmidright">
+                                <a href="javascript:void(0);" id="nextArrow_B">
+                                    <img src="images/right1.jpg" alt="下一个">
+                                </a>
+                            </div>
+
+                            <div class="picshowlist_right">
+                                <div class="picleftimg">
+                                    <a href="#" title="王诗龄一家三口赴美开启梦幻的“公主之旅”假期">
+                                        <img src="images/next.jpg" alt="王诗龄一家三口赴美开启梦幻的“公主之旅”假期">
+                                    </a>
+                                </div>
+                                <div class="piclefttxt">
+                                    <a href="#" title="王诗龄一家三口赴美开启梦幻的“公主之旅”假期">王诗龄一家三口赴美开启梦幻的“公主之旅”假期</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+
+
+
+
+
+                <!-- 列表展示 -->
+                <div class="piclistshow"></div>
+
             </div>
+
+
         </div>
-        <!-- 播放到第一张图弹出的提示结束 -->
-        
-        
-        
-    </div>
-    
-    
-</body>
-</html>·
+
+
+    </body>
+
+</html>

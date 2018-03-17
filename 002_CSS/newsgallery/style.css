@@ -279,8 +279,231 @@ a.list:hover {
 /* 大图展示 */
 
 .picshow{
+    width: 950px;
+    margin-top: 20px;
+    margin-left: 25px;
+    overflow: hidden;
+}
+
+.picshowtop {
+    width: 950px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* 中间大图的样式 */
+#pic1 {
+    max-width: 950px;
     
 }
+
+#preArrow {
+    left: 0px;
+}
+
+#nextArrow {
+    right: 0px;
+}
+
+.contextDiv {
+    cursor: pointer;
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    top: 0px;
+    z-index: 5;
+}
+
+.contextDiv span {
+    position: absolute;
+    top: 50%;
+    margin-top: -10%;
+    width: 46px;
+    height: 80px;
+}
+
+#preArrow_A {
+    left: 0px;
+    background: url("http://img1.askci.com/images/photo/left.png") 0px 0px no-repeat;
+}
+
+#nextArrow_A {
+    right: 0px;
+    background: url("http://img1.askci.com/images/photo/right.png") 0px 0px no-repeat;
+}
+
+.picshowtxt {
+    width: 950px;
+    min-height: 40px;
+    height: 40px;
+    margin-top: 20px;
+}
+
+.picshowtxt_left {
+    float: left;
+    width: 50px;
+    height: 50px;
+    line-height: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.picshowtxt_left span {
+    color: #e55656;
+    font-size: 30px;
+}
+
+.picshowtxt_left i {
+    color: #666666;
+    font-size: 20px;
+}
+
+.picshowtxt_right {
+    margin-left: 10px;
+    display: inline-block;
+    line-height: 23px;
+    color: #666666;
+    font-size: 14px;
+    width: 880px;
+    font-family: "宋体";
+    margin-top: 5px;
+}
+
+.picshowlist {
+    width: 950px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    overflow: hidden;
+}
+
+.picshowlist_left {
+    float: left;
+    width: 120px;
+    overflow: hidden;
+}
+
+.picleftimg {
+    width: 120px;
+    height: 80px;
+    background: url('http://img1.askci.com/images/photo/photo.jpg') no-repeat;
+    padding-top: 9px;
+    padding-left: 5px;
+    overflow: hidden;
+}
+
+.picleftimg img {
+    width: 106px;
+    height: 66px;
+}
+
+.piclefttxt {
+    width: 120px;
+    line-height: 20px;
+    font-family: "宋体"
+}
+
+.piclefttxt a {
+    color: #444444;
+}
+
+.piclefttxt a:hover {
+    color: #ff5d11;
+    text-decoration: underline;
+}
+
+.picshowlist_mid {
+    width: 680px;
+    margin-left: 15px;
+    overflow: hidden;
+    height: 76px;
+    display: inline-block;
+}
+
+.picmidleft {
+    float: left;
+    width: 24px;
+    height: 76px;
+    overflow: hidden;
+}
+
+.picmidleft a {
+    display: block;
+    width: 24px;
+    height: 76px;
+}
+
+
+.picmidmid {
+    float: left;
+    width: 630px;
+    overflow: hidden;
+    height: 76px;
+    padding-left: 2px;
+}
+
+.picmidmid ul {
+    width: 630px;
+    overflow: hidden;
+    position: relative;
+    height: 76px;
+}
+
+.picmidmid ul li {
+    float: left;
+    margin-left: 8px;
+    display: inline;
+    width: 116px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    height: 76px;
+}
+
+.picmidmid ul li img {
+    max-width: 106px;
+    height: 76px;
+}
+
+.picmidright {
+    float: left;
+    width: 24px;
+    height: 76px;
+    overflow: hidden;
+}
+
+.picmidright a {
+    display: block;
+    width: 24px;
+    height: 76px;
+}
+
+.picshowlist_right {
+    width: 120px;
+    float: right;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

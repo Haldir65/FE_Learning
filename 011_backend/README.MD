@@ -17,3 +17,13 @@ a real world express app
 
 
 [file upload sample](https://github.com/k55k32/file-upload-nodejs/blob/master/index.js)
+
+
+workout for proxy
+```js
+npm config set proxy http://127.0.0.1:1080
+npm i node-sass
+
+// delete proxy
+npm config delete proxy
+```

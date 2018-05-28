@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "socket.io": "^2.1.1"
   },
@@ -9,9 +10,10 @@
   "devDependencies": {},
   "scripts": {
     "start": "node index.js",
+    "chat": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "demo frontend and backend application based on socketio"
 }

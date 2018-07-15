@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="output">
+        <p>place holder stuff</p>
+    </div>
+
+    <script src="promises.js">
+    </script>
+</body>
+<script>
+
+// function getPosts(){
+//     let url = "https://jsonplaceholder.typicode.com/posts";
+//     fetch(url).then((res) => res.json()).then((data) => {
+//         let outPuts = '<h2>Posts</h2>';
+//         data.forEach(function(post){
+//             outPuts+=`
+//                 <div>
+//                     <h3>${post.title}</h3>
+//                     <p>${post.body}</p>
+//                 </div>
+//             `;
+//         });
+//         document.getElementById('output').innerHTML = outPuts;
+//     })
+// }
+
+// getPosts();
+
+// (async ()=>{
+//  try {
+//     let url = "https://jsonplaceholder.typicode.com/posts";    
+//  let res = await fetch(url, {mode: 'no-cors'});//等待fetch被resolve()后才能继续执行
+//     console.log(res);
+//  } catch(e) {
+//    console.log(e);
+//  }
+// })();
+// </script>
+
+</html>

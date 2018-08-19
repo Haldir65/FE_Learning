@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+}
+/* crap for centering a text inside an element*/
+
+p::before {
+    content: "可以是空的";
+    background: red;
+    font-size: 20px;
+    color: white;
+    font-weight: 900;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+p::after {
+    content: "drawable right";
+    background: red;
+    font-size: 20px;
+    color: white;
+    font-weight: 900;
+    display: block;
+}

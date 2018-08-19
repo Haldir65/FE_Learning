@@ -1,9 +1,0 @@
-{
-    "tweest" : [
-        {"content":"hello"},
-        {"content":"world"},
-        {
-            "content":"不能用单引号"
-        }
-    ]
-}

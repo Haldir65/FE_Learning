@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 var fs = require('fs');
 const path = require('path');
 const config = require("./config")
-
+const outputs = require("./verbose")
 
 
 const app = express();
@@ -27,7 +27,8 @@ var uploadHandler = require('./users/upload');
 app.use('/upload',uploadHandler);
 
 app.get('/',function(req,res){
-    res.send({name:"John",lastName:"Smith",age:32});
+    console.log("we have an incoming request");
+    setTimeout(() => res.send(outputs.chitext), 1000);
 });
 
 app.listen(port, () => console.log(`APP listen on port ${port}`));

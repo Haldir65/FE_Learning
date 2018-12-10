@@ -1,5 +1,10 @@
 ## 一个backend的实践
 
+TL DR
+yarn install && yarn start
+
+localhost:15000 //port can be configured via config.js file
+
 待办：
 Authentication(session Handling)
 Cookie

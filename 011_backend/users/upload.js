@@ -6,14 +6,16 @@ var http = require('http')
 var router = express.Router()
 var uuid = require('node-uuid').v4
 
+const cfg = require("../config")
+
 
 var config = {
     uploadDir : path.join(__dirname,"../..",'upload'),
     Authorization: {
-        api: 'http://localhost:9679/user/',
+        api: `http://localhost:${cfg.port}/user/`,
         headerName: 'Authorization'
       },
-  downDomain: 'http://localhost:9679/file/',
+  downDomain: `http://localhost:${cfg.port}/file/`,
 }
 
 router.all('*', function(req, res, next) {

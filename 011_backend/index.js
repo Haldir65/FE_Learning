@@ -2,12 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 var fs = require('fs');
 const path = require('path');
+const config = require("./config")
 
 
 
 const app = express();
 
-const port = process.env.port || 9679;
+const port = process.env.port || config.port;
 
 
 app.use(bodyParser.json());

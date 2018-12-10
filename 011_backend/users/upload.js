@@ -8,7 +8,7 @@ var uuid = require('node-uuid').v4
 
 
 var config = {
-    uploadDir : path.join(__dirname,"../..",upload),
+    uploadDir : path.join(__dirname,"../..",'upload'),
     Authorization: {
         api: 'http://localhost:9679/user/',
         headerName: 'Authorization'

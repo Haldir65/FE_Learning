@@ -27,7 +27,8 @@ var uploadHandler = require('./users/upload');
 app.use('/upload',uploadHandler);
 
 app.get('/',function(req,res){
-    console.log("we have an incoming request");
+    var current_timestamp = new Date().toLocaleString();
+    console.log(`incoming request at ${current_timestamp}`);
     setTimeout(() => res.send(outputs.chitext), 1000);
 });
 

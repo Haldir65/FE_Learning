@@ -27,9 +27,19 @@ var uploadHandler = require('./users/upload');
 app.use('/upload',uploadHandler);
 
 app.get('/',function(req,res){
+<<<<<<< Updated upstream
     var current_timestamp = new Date().toLocaleString();
     console.log(`incoming request at ${current_timestamp}`);
+=======
+    console.log(`host: ${req.path} baseurl ${req.httpVersion}`) 
+>>>>>>> Stashed changes
     setTimeout(() => res.send(outputs.chitext), 1000);
+});
+
+app.get('/api/:id',function(req,res){
+    let id = req.params.id;
+    res.
+    setTimeout(() => res.send({"data":`someting old ${id}`,"status_code": id}), 1000);
 });
 
 app.listen(port, () => console.log(`APP listen on port ${port}`));

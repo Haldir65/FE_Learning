@@ -73,5 +73,6 @@ const chiText = {
 module.exports = {
   "output": output,
   "plain": plainText,
-  "chitext": chiText
+  "chitext": chiText,
+  "status_code" : -1
 }
